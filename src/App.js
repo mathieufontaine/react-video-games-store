@@ -1,30 +1,32 @@
-import React,{useContext, useState} from 'react';
-import { StoreContext } from './context/StoreContext';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Header from './components/Header';
-import Store from './components/Store';
 import StoreContextProvider from './context/StoreContext';
+import Header from './components/Header';
 import Navbar from './components/Navbar';
-import Cart from './components/Cart';
-import Search from './components/Search';
+import Index from './components/Index';
+import VideoGamePage from './components/VideoGamePage';
 
-import './App.css';
+// import Store from './components/Store';
+// import Cart from './components/Cart';
+// import Search from './components/Search';
+
+import './assets/App.css';
 
 function App() {
-
-  
- const [storePage, setStorePage] = useState(true);
 
 
   return (
     <StoreContextProvider >
-      <div className="container">
-        <Header />
-        <Navbar storePage={storePage} setStorePage={setStorePage}/>
-        {storePage === true && <Search />}
-        {storePage === true && <Store />}
-        {storePage === false &&  <Cart />}
-      </div>
+      <Router>
+        <div className="container">
+          <Header />
+          <Switch>
+              <Route exact path="/" component={Index} />
+              <Route exact path="/game/:id" component={VideoGamePage} />
+            </Switch>
+        </div>
+      </Router>
     </StoreContextProvider >
   );
 }

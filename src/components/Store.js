@@ -1,19 +1,26 @@
 import React, {useContext} from 'react';
 import { StoreContext }  from '../context/StoreContext'
 import VideoGameStore from './VideoGameStore'
+import Spinner from './Spinner';
 
 const Store = () => {
 
-    const { storeGames } = useContext(StoreContext)
+    const { storeGames, heading} = useContext(StoreContext)
 
     
     return (
         <div className="store">
-            <ul className="video-game-list">
-                {storeGames && storeGames.map((game) => (
-                    <VideoGameStore game={game} key={game.id}/>
-                ))}
-            </ul>
+            {(storeGames === undefined  || storeGames.length === 0) ?
+                <Spinner /> :
+                <>
+                <h3 className="heading">{heading}</h3>
+                <ul className="video-game-list">
+                    {storeGames && storeGames.map((game) => (
+                        <VideoGameStore game={game} key={game.id}/>
+                    ))}
+                </ul>
+                </>
+            }
         </div>
     )
 }

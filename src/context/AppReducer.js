@@ -1,5 +1,15 @@
 export const AppReducer = (state, action) => {
     switch(action.type){
+        case 'SHOW_GAMES':
+            return {
+                ...state,
+                storeGames: [...action.payload]
+            }
+        case 'UPDATE_HEADING':
+            return {
+                ...state,
+                heading: `Search Results for: "${action.payload}"`
+            }
         case 'ADD_TO_CART':
             return {
               ...state,
