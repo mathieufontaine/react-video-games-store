@@ -40,23 +40,31 @@ const VideoGamePage = props => {
         return <Spinner />;
       } else {
     return (
-        <div className="video-game-page">
-
-            {/* <div className="game-details"> */}
-                <h2 className="game-title">{game.name}</h2>
 
 
-                {/* {game.short_screenshots.map((screenshot) => (
+<div className="video-game-page">
+<h2 className="game-title">{game.name}</h2>
+
+                {game.background_image_additional !== null ?
+                // game.short_screenshots.map((screenshot) => (
+                    <div className="caroussel">
                     <Slider {...settings}>
-                        <img src={screenshot.image} alt="screnshot" className="cover"/>
+                        <div>
+                        <img src={game.background_image} alt="screnshot" className="screenshot"/>
+                        </div>
+                        <div>
+                        <img src={game.background_image_additional} alt="screnshot" className="screenshot"/>
+                        </div>
                     </Slider>
-                ))} */}
+                    </div>
+                // ))
+                : <img src={game.background_image} alt={game.background_image} className="cover"/>
+                }
 
-
-               <img src={game.background_image} alt={game.background_image} className="cover"/>
-
+            <div className="game-details">
+   
                 <div className="game-information">
-                <p className="price">Price: ${game.price}</p>
+                {/* <p className="price">Price: ${game.price}</p> */}
                 <p className="rating"><strong>Rating: </strong>{game.rating === 0 ? "N/A" : game.rating}</p>
                 {game.genres !== undefined ? 
                 <p className="genre"><strong>Genre: </strong>{game.genres[0].name}</p>
@@ -93,7 +101,7 @@ const VideoGamePage = props => {
                 : ''}
 
 
-            {/* </div> */}
+            </div>
         </div>
     )}
 }

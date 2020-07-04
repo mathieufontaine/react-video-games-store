@@ -16,9 +16,8 @@ const Store = () => {
                 <h3 className="heading">{heading}</h3>
                 <ul className="video-game-list">
                     {storeGames && storeGames.map((game) => (
-                        game.background_image !== null ?
-                        <VideoGameStore game={game} key={game.id}/>
-                        : ''
+                        game.background_image !== null || game.name !== null ?
+                        <VideoGameStore game={game} key={game.id}/>: ''
                     ))}
                 </ul>
                 </>
