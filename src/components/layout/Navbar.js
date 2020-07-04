@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
-import {StoreContext} from '../context/StoreContext';
+import {StoreContext} from '../../context/StoreContext';
+import { Link } from 'react-router-dom';
 
 const Navbar = ({setStorePage}) => {
 
-    const { cartGames} = useContext(StoreContext);
-    
+    const { cartGames } = useContext(StoreContext);
 
 
     return (
+        <Link to="/">
         <div className="navbar">
             <button className="btn nav-store white"
                     onClick ={() => setStorePage(true)}>
@@ -18,6 +19,7 @@ const Navbar = ({setStorePage}) => {
                 <span>CART({cartGames.length})</span>
             </button>
         </div>
+        </Link>
     )
 }
 

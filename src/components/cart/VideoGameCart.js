@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import {StoreContext} from '../context/StoreContext';
+import {StoreContext} from '../../context/StoreContext';
 import { Link } from 'react-router-dom';
 
 const VideoGameCart = ({game}) => {

@@ -1,0 +1,47 @@
+#root{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: linear-gradient( rgba(31, 85, 66, 0.8), rgba(18, 18, 18, 0.3)), url(https://www.pdvg.it/wp-content/uploads/2020/05/videogames-controller-1920x1080-1.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-blend-mode: multiply;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  /* font-weight: 900; */
+  color: inherit;
+}
+
+ul{
+  list-style: none;
+}
+
+.container {
+  text-align: center;
+  background-color: white;
+  color: black;
+  min-height: 100vh;
+  max-width: 1500px;
+  margin: 0 auto
+}
+
+.header {
+  font-size: 20px;
+  margin: 0 auto;
+  padding: 14px;
+  background-color: black;
+  color: white;
+}
+
+
+.white{
+  background-color: white;
+  color: black;
+  /* border-bottom: 1px solid black; */
+}
+
+.green {
+  background-color:cadetblue;
+  color: white;
+}

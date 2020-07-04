@@ -1,0 +1,65 @@
+
+.btn {
+    padding: 8px;
+    margin: 8px;
+    font-size: 12px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 900;
+    cursor: pointer;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .store .actions .btn {
+    font-size: 15px ;
+    margin: 0px;
+    padding: 20px;
+    border-radius: 0;
+    width: 50%;
+  }
+  
+  .video-game-page .actions .btn {
+    font-size: 20px ;
+    margin: 20px;
+    padding: 15px;
+  }
+  
+  .add-btn {
+    background-color: rgb(82, 211, 134);
+  }
+  
+  .add-btn:hover {
+    background-color: rgb(24, 182, 87);
+    color: white
+  }
+  
+  .black-btn{
+    background-color: rgb(56, 62, 59);
+    color: rgb(237, 235, 235);
+  
+  }
+  
+  .black-btn:hover{
+    background-color: rgb(36, 41, 38);
+    color: rgb(255, 255, 255);
+    /* border: 1px solid black; */
+  }
+  
+  .white-btn{
+    background-color: white;
+    color: black;
+  
+  }
+  
+  .white-btn:hover{
+    background-color:black;
+    color: white;
+    border: 1px solid black;
+  }

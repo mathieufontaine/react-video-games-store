@@ -1,8 +1,8 @@
 import React, { useContext, useState, useEffect } from 'react';
-import {StoreContext} from '../context/StoreContext';
+import {StoreContext} from '../../context/StoreContext';
 import { Link } from 'react-router-dom';
 import axios from "axios";
-import Spinner from './Spinner';
+import Spinner from '../layout/Spinner';
 
 
 const API_URL = 'https://api.rawg.io/api/games/';
@@ -23,7 +23,8 @@ const VideoGamePage = props => {
               .catch(err => console.log(err));
     }, []);
 
-    const gameColor = game.dominant_color;
+
+    // const divStyle = { 'background-color': `#${game.dominant_color}`};
 
     if (
         game === undefined || Object.keys(game).length === 0
