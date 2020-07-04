@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const VideoGameCart = ({game}) => {
 
-    const { removeGame } = useContext(StoreContext)
+    const { removeFromCart } = useContext(StoreContext)
 
     return (
  
@@ -17,7 +17,7 @@ const VideoGameCart = ({game}) => {
             </Link>   
             <span className="price">${game.price}</span>
             <button className="btn remove-btn"
-                    onClick={() => removeGame(game.id)}
+                    onClick={() => removeFromCart(game.id)}
             >REMOVE</button>
         </li>
     )

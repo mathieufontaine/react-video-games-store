@@ -10,8 +10,8 @@ const API_URL = 'https://api.rawg.io/api/games';
 const initialState = {
     storeGames: [], 
     cartGames: JSON.parse(localStorage.getItem("cartGames")) || [],
+    wishlistGames: JSON.parse(localStorage.getItem("wishlistGames")) || [],
     heading: "Popular Games"
-    // page: false
 };
 
 export const StoreContext = createContext(initialState);
@@ -43,7 +43,8 @@ const StoreContextProvider = ({ children }) => {
 
 
     useEffect(() => {
-        localStorage.setItem("cartGames", JSON.stringify(state.cartGames))
+        localStorage.setItem("cartGames", JSON.stringify(state.cartGames));
+        localStorage.setItem("wishlistGames", JSON.stringify(state.wishlistGames));
     });
 
 
@@ -62,24 +63,46 @@ const StoreContextProvider = ({ children }) => {
         });
     }
 
-    function addtoCart (game) {
+    function addToCart (game) {
         dispatch({
             type: 'ADD_TO_CART',
             payload: game
         });
     }
 
-    function removeGame (id) {
+    function removeFromCart (id) {
         dispatch({
             type: 'REMOVE_FROM_CART',
             payload: id
         });
     }
 
-    function findGame (id) {
-        const game = state.storeGames.find((storeGame) => storeGame.id === id);
-        addtoCart(game);
+    // function findGame (id) {
+    //     const game = state.storeGames.find((storeGame) => storeGame.id === id);
+    //     addtoCart(game);
+    // }
+
+
+    function addToWishlist (game) {
+        dispatch({
+            type: 'ADD_TO_WISHLIST',
+            payload: game
+        });
     }
+
+    function removeFromWishlist (id) {
+        dispatch({
+            type: 'REMOVE_FROM_WISHLIST',
+            payload: id
+        });
+    }
+
+    function findGame (id, page) {
+        const game = state.storeGames.find((storeGame) => storeGame.id === id);
+       page === 'cart' ? addToCart(game) : addToWishlist (game);
+    }
+
+
 
 
 
@@ -104,11 +127,13 @@ const StoreContextProvider = ({ children }) => {
     <StoreContext.Provider  
         value = {{
             storeGames: state.storeGames, 
-            cartGames: state.cartGames, 
+            cartGames: state.cartGames,
+            wishlistGames: state.wishlistGames, 
             heading: state.heading,
-            page: state.page, 
+ 
             findGame, 
-            removeGame,
+            removeFromCart,
+            removeFromWishlist,
             showGames,
             updateHeading
 

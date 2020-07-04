@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import Store from "../store/Store";
 import Search from "../store/Search";
-import Cart from '../cart/Cart';
+// import Cart from '../cart/Cart';
 // import Navbar from '../layout/Navbar';
 
 const Index = ({storePage}) => {
@@ -11,9 +11,9 @@ const Index = ({storePage}) => {
   return (
     <React.Fragment>
         {/* <Navbar setStorePage={setStorePage}/> */}
-        {storePage === true && <Search />}
-        {storePage === true && <Store />}
-        {storePage === false &&  <Cart />}
+        <Search />
+        <Store />
+        {/* {storePage === false &&  <Cart />} */}
     </React.Fragment>
   );
 };

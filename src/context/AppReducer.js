@@ -20,6 +20,16 @@ export const AppReducer = (state, action) => {
                 ...state,
                 cartGames: state.cartGames.filter(game => game.id !== action.payload)
             }
+        case 'ADD_TO_WISHLIST':
+            return {
+                ...state,
+                wishlistGames: [...state.wishlistGames, {...action.payload}]
+            }
+        case 'REMOVE_FROM_WISHLIST':
+            return {
+                ...state,
+                wishlistGames: state.wishlistGames.filter(game => game.id !== action.payload)
+            }
         case 'FILTER_GAMES':
             return {
                 ...state,

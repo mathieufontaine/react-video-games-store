@@ -45,3 +45,12 @@ ul{
   background-color:cadetblue;
   color: white;
 }
+
+.purple {
+  background-color: rgb(153, 128, 177);
+  color: white;
+}
+
+.purple:hover {
+  background-color: rgb(89, 43, 89);
+  }

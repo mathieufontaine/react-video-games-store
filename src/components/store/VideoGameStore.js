@@ -17,12 +17,14 @@ const VideoGameStore = ({game}) => {
             </div>
             </Link>
             <div className="actions">
-                <button className="btn black-btn">
-                    <Link to={`game/${game.id}`}>Go to Page</Link>
+                <button className="btn purple"
+                        onClick={() => findGame(game.id, "wishlist")}>
+                        <Link to={'/wishlist'}>Add to Wishlist</Link>
                 </button>
                 <button className="btn add-btn"
-                        onClick={() => findGame(game.id)}
-                >ADD TO CART</button>
+                        onClick={() => findGame(game.id, "cart")}>
+                        <Link to={'/cart'}>Add to Cart</Link>
+                </button>
             </div>
         </li>
     )

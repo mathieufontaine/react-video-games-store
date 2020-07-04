@@ -1,0 +1,73 @@
+.wishlist {
+    height: 100%;
+    background-color: rgb(153, 128, 177);
+  }
+  
+  .wishlist h2 {
+    font-size: 30px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .wishlist-list {
+    margin: 0 30px;
+    padding: 40px 20px;
+    min-height: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* justify-content: space-between; */
+    align-items: flex-start;
+    /* flex-wrap: wrap; */
+  }
+  
+  .video-game-wishlist {
+    height: 200px;
+    width: 300px;
+    background-color: rgb(255, 255, 255);
+    margin: 20px;
+    /* padding: 20px; */
+    padding-top: 0;
+    align-items: center;
+    font-weight: 800;
+    font-size: larger;
+    /* text-align: left; */
+    border-radius:20px ;
+
+
+  
+    /* border-bottom: 1px solid black; */
+  }
+  .video-game-wishlist:hover{
+    background-color:cadetblue;
+    color: white;
+  
+  }
+  
+  .video-game-wishlist .cover{
+    height: 160px;
+    width: 100%;
+    border-top-right-radius:20px ;
+    border-top-left-radius:20px ;
+  }
+  
+  .video-game-wishlist h3{
+    /* text-align: left; */
+    font-size: 16px;
+    margin: 6px;
+  }
+  
+  .video-game-wishlist .actions {
+    margin: 8px;
+  }
+  .video-game-wishlist .price{
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  .empty-wishlist {
+    font-size: 32px;
+    color: black;
+    padding: 32px;
+    padding-top: 64px;
+  }
+  

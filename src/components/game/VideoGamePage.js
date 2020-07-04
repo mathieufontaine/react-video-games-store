@@ -3,6 +3,7 @@ import {StoreContext} from '../../context/StoreContext';
 import { Link } from 'react-router-dom';
 import axios from "axios";
 import Spinner from '../layout/Spinner';
+import Slider from "react-slick";
 
 
 const API_URL = 'https://api.rawg.io/api/games/';
@@ -23,6 +24,13 @@ const VideoGamePage = props => {
               .catch(err => console.log(err));
     }, []);
 
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
+      };
 
     // const divStyle = { 'background-color': `#${game.dominant_color}`};
 
@@ -37,10 +45,18 @@ const VideoGamePage = props => {
             {/* <div className="game-details"> */}
                 <h2 className="game-title">{game.name}</h2>
 
-                <img src={game.background_image} alt={game.background_image} className="cover"/>
-                {/* <span className="price">Price: ${game.price}</span> */}
+
+                {/* {game.short_screenshots.map((screenshot) => (
+                    <Slider {...settings}>
+                        <img src={screenshot.image} alt="screnshot" className="cover"/>
+                    </Slider>
+                ))} */}
+
+
+               <img src={game.background_image} alt={game.background_image} className="cover"/>
 
                 <div className="game-information">
+                <p className="price">Price: ${game.price}</p>
                 <p className="rating"><strong>Rating: </strong>{game.rating === 0 ? "N/A" : game.rating}</p>
                 {game.genres !== undefined ? 
                 <p className="genre"><strong>Genre: </strong>{game.genres[0].name}</p>
@@ -57,9 +73,14 @@ const VideoGamePage = props => {
                     <button className="btn black-btn">
                         <Link to="/">Go back</Link>
                     </button>
+                    <button className="btn purple"
+                            onClick={() => findGame(game.id, 'wishlist')}>
+                            <Link to={'/wishlist'}>Add to Wishlist</Link>
+                    </button>
                     <button className="btn add-btn"
-                            onClick={() => findGame(game.id)}
-                    >ADD TO CART</button>
+                            onClick={() => findGame(game.id, 'cart')}>
+                            <Link to={'/cart'}>Add to Cart </Link>
+                    </button>
                 </div>
                 
                 {game.clip !== null ?

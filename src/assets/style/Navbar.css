@@ -1,22 +1,26 @@
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     color: white;
+  }
+
+  .navbar a {
+  width: 40%;
+  height: 100%;
   }
   
   .navbar .btn{
     margin: 0;
   }
   
-  .nav-cart, .nav-store {
-    width: 50%;
+  .nav-cart, .nav-store, .nav-wishlist {
     padding: 20px;
     border-radius: 0;
   }
   
 
-.nav-cart span, .nav-store span{
+.nav-cart span, .nav-store span, .nav-wishlist span{
     font-size: 32px;
     font-weight: 900;
   }
