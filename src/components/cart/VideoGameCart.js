@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 import {StoreContext} from '../../context/StoreContext';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
 const VideoGameCart = ({game}) => {
 
@@ -16,9 +18,12 @@ const VideoGameCart = ({game}) => {
             <h3>{game.name}</h3>
             </Link>   
             <span className="price">${game.price}</span>
-            <button className="btn remove-btn"
+            <span className="trash-btn"
                     onClick={() => removeFromCart(game.id)}
-            >REMOVE</button>
+            >
+            <FontAwesomeIcon  icon={faTrash} />
+            </span>
+            
         </li>
     )
 }

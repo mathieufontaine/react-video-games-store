@@ -29,11 +29,11 @@ const StoreContextProvider = ({ children }) => {
         axios
             .get(`${API_URL}`)
             .then(res => {
-                console.log(res.data);
+                // console.log(res.data);
                  const newGames = res.data.results.map(game => (
                    {...{price: randomNumber()}, ...game}
                 ));
-                console.log(newGames);   
+                // console.log(newGames);   
                 showGames(newGames);
               })
               .catch(err => console.log(err));

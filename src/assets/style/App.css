@@ -17,6 +17,13 @@ ul{
   list-style: none;
 }
 
+li{
+  list-style: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+
+}
+
 .container {
   text-align: center;
   background-color: white;

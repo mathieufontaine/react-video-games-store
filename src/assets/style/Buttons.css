@@ -14,7 +14,7 @@
   .actions {
     display: flex;
     justify-content: center;
-    width: 100%;
+    /* width: 100%; */
   }
   
   .store .actions .btn {
@@ -66,16 +66,26 @@
   }
 
 
-  .remove-btn{
-    background-color: white;
-    color: black;
-    /* border: 1px solid black; */
-    font-weight: 900;
-    margin-right: 28px;
-    padding: 16px;
+  .trash-btn{
+    font-size: 24px;
+    width: 30px;
+    margin:0 auto;
+    cursor: pointer;
   }
   
-  .remove-btn:hover{
-    background-color: rgb(143, 3, 3);
-    color: white;
+  .trash-btn:hover{
+    color:rgb(143, 3, 3);;
   }
+
+  .cross-btn{
+    font-size: 24px;
+    color: red;
+    width: 15px;
+    margin:0 auto;
+    cursor: pointer;
+    align-self: center;
+  }
+  
+  /* .cross-btn:hover{
+    color:rgb(143, 3, 3);;
+  } */

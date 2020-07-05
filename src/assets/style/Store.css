@@ -45,19 +45,20 @@
 
   .game-card .caroussel img {
     height: 200px;
-    width: 350px;
+    width: 100%;
     margin: 0 auto;
-    border-radius: 10px;
+    /* border-radius: 10px; */
   }
   .game-card .caroussel .slick-prev:before, .game-card .caroussel .slick-next:before{
-    color: rgb(116, 116, 116);
+    color: rgb(255, 255, 255);
   }
 
   .game-card .slick-next{
-    right: 4px
+    right: 8px;
   }
   .game-card .slick-prev{
-    left: 4px
+    left: 8px;
+    z-index: 1;
   }
 
   .game-card .title{

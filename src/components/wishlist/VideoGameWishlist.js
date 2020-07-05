@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 import {StoreContext} from '../../context/StoreContext';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 const VideoGameWishlist = ({game}) => {
 
@@ -21,10 +23,10 @@ const VideoGameWishlist = ({game}) => {
                     onClick={() => findGame(game.id, 'cart')}>
                     <Link to={'/cart'}>Add to Cart</Link>
                 </button>
-                <button className="btn remove-btn"
+                <div className="cross-btn"
                     onClick={() => removeFromWishlist(game.id)}
-                >REMOVE
-                </button>
+                ><FontAwesomeIcon  icon={faTimes} />
+                </div>
             </div>
         </li>
     )

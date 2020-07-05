@@ -23,7 +23,7 @@ useEffect(() => {
             const newGames = res.data.results.map(game => (
                 {...{price: randomNumber()}, ...game}
             ));
-            console.log(newGames);
+            // console.log(newGames);
 
             showGames(newGames);
             updateHeading(gameTitle);
