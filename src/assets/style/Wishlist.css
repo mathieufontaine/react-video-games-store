@@ -21,12 +21,12 @@
     /* flex-wrap: wrap; */
   }
   
-  .sortable-list{
-    /* margin: 0 30px;
+  .wishlist-list{
+    margin: 0 30px;
     padding: 40px 20px;
-    min-height: 600px; */
-    /* display: grid; */
-    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    min-height: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     /* display: flex; 
     justify-content: space-between;
     align-items: flex-start;

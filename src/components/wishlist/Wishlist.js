@@ -7,8 +7,8 @@ import {SortableContainer, SortableElement} from 'react-sortable-hoc';
 import arrayMove from 'array-move';
 
 
-const SortableItem = SortableElement(({game}) => 
-    <VideoGameWishlist game={game}/>);
+const SortableItem = SortableElement(({game, sortIndex}) => 
+    <VideoGameWishlist game={game} sortIndex={sortIndex}/>);
 
 
 const SortableList = SortableContainer(({sortedGames}) => {
@@ -17,7 +17,7 @@ const SortableList = SortableContainer(({sortedGames}) => {
           {/* {console.log(sortedGames)} */}
         {sortedGames.map((game, index) => (
             // console.log(game)
-          <SortableItem key={index} index={index} game={game} />
+          <SortableItem key={index} index={index} game={game} sortIndex={index}/>
         ))}
       </ul>
     );
@@ -48,7 +48,7 @@ const Wishlist = () => {
             
 
                 <ul className="wishlist-list">
-                <SortableList sortedGames={sortedGames} onSortEnd={onSortEnd}/>
+                <SortableList sortedGames={sortedGames} onSortEnd={onSortEnd}  distance={10}/>
 
                     {/* {wishlistGames.map((game) => (
                         <VideoGameWishlist game={game} key={game.id}/>
