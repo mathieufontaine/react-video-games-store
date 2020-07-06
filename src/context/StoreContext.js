@@ -10,6 +10,7 @@ const API_URL = 'https://api.rawg.io/api/games';
 const initialState = {
     storeGames: [], 
     cartGames: JSON.parse(localStorage.getItem("cartGames")) || [],
+    lists: [],
     wishlistGames: JSON.parse(localStorage.getItem("wishlistGames")) || [],
     heading: "Popular Games"
 };
@@ -45,6 +46,7 @@ const StoreContextProvider = ({ children }) => {
     useEffect(() => {
         localStorage.setItem("cartGames", JSON.stringify(state.cartGames));
         localStorage.setItem("wishlistGames", JSON.stringify(state.wishlistGames));
+        // localStorage.setItem("lists", JSON.stringify(state.lists));
     });
 
 
@@ -105,6 +107,20 @@ const StoreContextProvider = ({ children }) => {
 
 
 
+    function addList (title) {
+        dispatch({
+            type: 'ADD_LIST',
+            payload: title
+        });
+    }
+
+    
+    function removeList (id) {
+        dispatch({
+            type: 'REMOVE_LIST',
+            payload: id
+        });
+    }
 
     // function searchGames (query) {
     //     dispatch({
@@ -128,6 +144,7 @@ const StoreContextProvider = ({ children }) => {
         value = {{
             storeGames: state.storeGames, 
             cartGames: state.cartGames,
+            lists: state.lists,
             wishlistGames: state.wishlistGames, 
             heading: state.heading,
  
@@ -135,8 +152,11 @@ const StoreContextProvider = ({ children }) => {
             removeFromCart,
             removeFromWishlist,
             showGames,
-            updateHeading
+            updateHeading,
 
+
+            addList,
+            removeList
             }}>
         {children}
     </StoreContext.Provider>

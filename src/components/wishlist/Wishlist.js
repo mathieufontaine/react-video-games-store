@@ -2,6 +2,8 @@ import React, {useContext, useState} from 'react';
 import { StoreContext }  from '../../context/StoreContext';
 import VideoGameWishlist from './VideoGameWishlist';
 
+import List from './List';
+import ListForm from './ListForm';
 
 import {SortableContainer, SortableElement} from 'react-sortable-hoc';
 import arrayMove from 'array-move';
@@ -13,6 +15,7 @@ const SortableItem = SortableElement(({game, sortIndex}) =>
 
 const SortableList = SortableContainer(({sortedGames}) => {
     return (
+
       <ul className="sortable-list">
           {/* {console.log(sortedGames)} */}
         {sortedGames.map((game, index) => (
@@ -27,7 +30,7 @@ const SortableList = SortableContainer(({sortedGames}) => {
 
 const Wishlist = () => {
 
-    const { wishlistGames } = useContext(StoreContext)
+    const { lists, wishlistGames } = useContext(StoreContext)
 
 
     const [sortedGames, setGames] = useState(wishlistGames);
@@ -41,8 +44,20 @@ const Wishlist = () => {
 
     return (
         
+<>
+<div className="lists">
+      <ListForm />
+      {lists.length ?
+        <ul className="list">
+            {lists && lists.map(list => (
+              <List list={list} key={list.id}/>
+            ))}
+        </ul>
+      : ''}
+</div>
 
-        wishlistGames.length > 0 ? 
+
+        {wishlistGames.length > 0 ? 
         (<div className="wishlist">
             {/* <h2>Wishlist</h2> */}
             
@@ -57,8 +72,8 @@ const Wishlist = () => {
 
                 </ul>
         </div>)
-        : (<div className="empty-wishlist">Your wishlist is empty</div>)
-
+        : (<div className="empty-wishlist">Your wishlist is empty</div>)}
+</>
     )
 }
 

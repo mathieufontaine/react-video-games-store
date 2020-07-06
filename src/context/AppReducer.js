@@ -1,3 +1,5 @@
+import {v1 as uuid} from "uuid"; 
+
 export const AppReducer = (state, action) => {
     switch(action.type){
         case 'SHOW_GAMES':
@@ -35,6 +37,16 @@ export const AppReducer = (state, action) => {
                 ...state,
                 storeGames: state.storeGames.filter(game => Object.keys(game).some
                 (title => game.title.toLowerCase().includes(action.payload.toLowerCase())))
+            }
+        case 'ADD_LIST':
+            return {
+                ...state,
+                lists: [...state.lists, {title: action.payload, id: uuid()}]
+            }
+        case 'REMOVE_LIST':
+            return {
+                ...state,
+                lists: state.lists.filter(list => list.id !== action.payload)
             }
         case 'CLEAR_STATE':
             return {

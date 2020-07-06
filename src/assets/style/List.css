@@ -1,0 +1,97 @@
+
+.lists .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0 10px 0;
+  }
+  
+  .lists .buttons {
+      display: flex;
+      margin: 0 auto;
+      justify-content: center;
+    }
+    
+   .lists  input{
+      width: 370px;
+      margin: 10px;
+      padding: 15px 15px 15px 20px;
+      border-radius: 40px;
+      font-size: 14px;
+      border: 1px solid rgb(48, 62, 67);
+    }
+    
+   .lists  form input::placeholder {
+      color: rgb(48, 62, 67)
+    }
+    
+   .lists  form input:focus, button:focus {
+      outline: none;
+    }
+    
+   .lists  form button {
+      min-width: 100px;
+      margin: 10px;
+      padding: 10px 15px;
+      border-radius: 40px;
+      font-size: 14px;
+      color: white;
+      border: 1px solid rgb(48, 62, 67);
+      font-weight: bold;
+      background-color: rgb(100, 182, 227);
+      cursor: pointer;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  
+    }
+  
+   .lists  form button:hover{
+      color: rgb(72, 171, 225);
+      background-color: white;
+    }
+
+
+    .lists {
+        margin: 0 auto;
+        margin-top: 10px;
+        padding: 10px;
+    }
+    
+    .list {
+        background-color: rgb(226, 226, 242);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 30px;
+        border-radius: 5px;
+        /* height: 50px; */
+        padding: 10px 20px;
+        color: rgb(48, 62, 67);
+        /* line-height: 50px; */
+        position: relative
+    }
+    
+    .list .title {
+        background-color: transparent;
+        color: rgb(48, 62, 67);
+        font-size: 15px;
+        font-weight: 700;
+        border: none;
+        max-width: 300px;
+        /* min-width: 50%; */
+        min-height: 20px;
+        padding-left: 10px;
+    }
+    
+    .list button{
+        background-color: transparent;
+        margin: 0 auto;
+        cursor: pointer;
+        font-size: 15px;
+        border: none;
+    }
+    
+    .trash {
+        margin: 0 15px;
+        font-size: 20px;
+    }
