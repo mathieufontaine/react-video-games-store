@@ -47,6 +47,7 @@ const Wishlist = () => {
             {/* <h2>Wishlist</h2> */}
             
 
+
                 <ul className="wishlist-list">
                 <SortableList sortedGames={sortedGames} onSortEnd={onSortEnd}  distance={10}/>
 

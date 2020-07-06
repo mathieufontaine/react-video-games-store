@@ -38,6 +38,7 @@
 
   .video-game-wishlist {
     /* height: 200px; */
+    position: relative;
     width: 300px;
     background-color: rgb(255, 255, 255);
     margin: 20px;
@@ -59,6 +60,15 @@
   
   }
   
+  .video-game-wishlist .ranking{
+    position: absolute;
+    /* margin: 8px; */
+    font-size: 50px;
+    left: 8px;
+    z-index: 10;
+    color: white;
+  }
+
   .video-game-wishlist .cover{
     height: 160px;
     width: 100%;
@@ -67,13 +77,15 @@
   }
   
   .video-game-wishlist h3{
-    /* text-align: left; */
+    text-align: left;
     font-size: 16px;
-    margin: 6px;
+    margin: 8px;
+    /* margin-top: 0; */
   }
   
   .video-game-wishlist .actions {
     margin: 8px;
+    margin-top: 0;
   }
   .video-game-wishlist .price{
     font-size: 20px;

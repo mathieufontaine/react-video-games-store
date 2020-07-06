@@ -11,14 +11,22 @@ const VideoGameWishlist = ({game, sortIndex}) => {
     return (
  
         <li className="video-game-wishlist">
-            <div>{sortIndex+1}</div>
+            <div className="ranking">{sortIndex+1}</div>
             <Link to={`game/${game.id}`}>
                 <img src={game.background_image} alt={game.background_image} className="cover"/> 
+            </Link>  
             {/* </Link>    */}
             {/* <Link to={`game/${game.id}`}> */}
-                <h3>{game.name}</h3>
-            </Link>   
             <div className="actions">
+            <Link to={`game/${game.id}`}><h3>{game.name}</h3></Link>  
+                <div className="cross-btn"
+                    onClick={() => removeFromWishlist(game.id)}
+                ><FontAwesomeIcon  icon={faTimes} />
+                </div>
+            </div>
+
+
+            {/* <div className="actions">
                 <span className="price">${game.price}</span>
                 <button className="btn add-btn"
                     onClick={() => findGame(game.id, 'cart')}>
@@ -28,7 +36,7 @@ const VideoGameWishlist = ({game, sortIndex}) => {
                     onClick={() => removeFromWishlist(game.id)}
                 ><FontAwesomeIcon  icon={faTimes} />
                 </div>
-            </div>
+            </div> */}
         </li>
     )
 }
