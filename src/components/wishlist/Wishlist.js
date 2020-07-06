@@ -32,7 +32,6 @@ const Wishlist = () => {
 
     const { lists, wishlistGames } = useContext(StoreContext)
 
-
     const [sortedGames, setGames] = useState(wishlistGames);
 
 
@@ -45,34 +44,32 @@ const Wishlist = () => {
     return (
         
 <>
-<div className="lists">
-      <ListForm />
-      {lists.length ?
-        <ul className="list">
-            {lists && lists.map(list => (
-              <List list={list} key={list.id}/>
-            ))}
-        </ul>
-      : ''}
-</div>
-
 
         {wishlistGames.length > 0 ? 
         (<div className="wishlist">
             {/* <h2>Wishlist</h2> */}
-            
-
-
                 <ul className="wishlist-list">
-                <SortableList sortedGames={sortedGames} onSortEnd={onSortEnd}  distance={10}/>
+                {/* <SortableList sortedGames={sortedGames} onSortEnd={onSortEnd}  distance={10}/> */}
 
-                    {/* {wishlistGames.map((game) => (
+                    {wishlistGames.map((game) => (
                         <VideoGameWishlist game={game} key={game.id}/>
-                     ))} */}
+                     ))}
 
                 </ul>
         </div>)
         : (<div className="empty-wishlist">Your wishlist is empty</div>)}
+
+
+      <div className="lists-section">
+            <ListForm />
+            {lists.length ?
+              <ul className="lists">
+                  {lists && lists.map(list => (
+                    <List list={list} key={list.id}/>
+                  ))}
+              </ul>
+            : (<div className="empty-wishlist">No personal list yet. Use the form above to create your first list.</div>)}
+      </div>
 </>
     )
 }

@@ -66,7 +66,7 @@ const VideoGamePage = props => {
                 <div className="game-information">
                 {/* <p className="price">Price: ${game.price}</p> */}
                 <p className="rating"><strong>Rating: </strong>{game.rating === 0 ? "N/A" : game.rating}</p>
-                {game.genres !== undefined ? 
+                {game.genres[0] !== undefined ? 
                 <p className="genre"><strong>Genre: </strong>{game.genres[0].name}</p>
                 : ''
                 }
@@ -79,7 +79,7 @@ const VideoGamePage = props => {
 
                 <div className="actions">
                     <button className="btn black-btn">
-                        <Link to="/">Go back</Link>
+                        <Link to="/">Go to Store</Link>
                     </button>
                     <button className="btn purple"
                             onClick={() => findGame(game.id, 'wishlist')}>

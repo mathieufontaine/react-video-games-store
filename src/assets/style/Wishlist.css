@@ -9,28 +9,17 @@
     padding: 20px;
   }
 
-  .wishlist-list {
-    margin: 0 30px;
-    padding: 40px 20px;
-    min-height: 600px;
-    /* display: grid; */
-    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
-    /* display: flex; */
-    /* justify-content: space-between; */
-    align-items: flex-start;
-    /* flex-wrap: wrap; */
-  }
   
   .wishlist-list{
-    margin: 0 30px;
-    padding: 40px 20px;
-    min-height: 600px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    /* display: flex; 
-    justify-content: space-between;
+    margin: 0 ;
+    padding: 20px;
+    /* min-height: 600px; */
+    /* display: grid; */
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    display: flex; 
+    /* justify-content: space-between; */
     align-items: flex-start;
-    flex-wrap: wrap; */
+    flex-wrap: wrap;
   }
 
 

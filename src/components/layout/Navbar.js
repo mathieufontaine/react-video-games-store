@@ -24,7 +24,7 @@ const Navbar = () => {
             </div>
             </Link>
             <Link to="/cart">
-            <div className="btn nav-cart green"
+            <div className="btn nav-cart cart"
                     // onClick ={() => setStorePage(false)}
             >
                 <span>CART({cartGames.length})</span>

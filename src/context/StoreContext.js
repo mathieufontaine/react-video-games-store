@@ -10,7 +10,7 @@ const API_URL = 'https://api.rawg.io/api/games';
 const initialState = {
     storeGames: [], 
     cartGames: JSON.parse(localStorage.getItem("cartGames")) || [],
-    lists: [],
+    lists: JSON.parse(localStorage.getItem("lists")) || [],
     wishlistGames: JSON.parse(localStorage.getItem("wishlistGames")) || [],
     heading: "Popular Games"
 };
@@ -46,7 +46,7 @@ const StoreContextProvider = ({ children }) => {
     useEffect(() => {
         localStorage.setItem("cartGames", JSON.stringify(state.cartGames));
         localStorage.setItem("wishlistGames", JSON.stringify(state.wishlistGames));
-        // localStorage.setItem("lists", JSON.stringify(state.lists));
+        localStorage.setItem("lists", JSON.stringify(state.lists));
     });
 
 
@@ -55,7 +55,7 @@ const StoreContextProvider = ({ children }) => {
             type: 'SHOW_GAMES',
             payload: games
         });
-        console.log(games);
+        // console.log(games);
     }
     
     function updateHeading (text) {
@@ -99,12 +99,38 @@ const StoreContextProvider = ({ children }) => {
         });
     }
 
-    function findGame (id, page) {
-        const game = state.storeGames.find((storeGame) => storeGame.id === id);
-       page === 'cart' ? addToCart(game) : addToWishlist (game);
+
+    function addTolist (game, listId) {
+        dispatch({
+            type: 'ADD_TO_LIST',
+            payload: {game, listId}
+        });
+    }
+
+    function removeFromList (id) {
+        dispatch({
+            type: 'REMOVE_FROM_LIST',
+            payload: id
+        });
     }
 
 
+    function findGame (id, page) {
+        const game = state.storeGames.find((storeGame) => storeGame.id === id);
+        if (page === 'cart') {
+        addToCart(game);
+       } else if (page === 'wishlist'){
+        addToWishlist (game);
+        }
+    }
+
+
+    function findList (gameId, listId) {
+        const game = state.storeGames.find((storeGame) => storeGame.id === gameId);
+        // const list = state.lists.find((list) => list.id === id);
+        addTolist (game, listId);
+        // console.log(game);
+    }
 
 
     function addList (title) {
@@ -154,9 +180,10 @@ const StoreContextProvider = ({ children }) => {
             showGames,
             updateHeading,
 
-
             addList,
-            removeList
+            removeList,
+            findList,
+            removeFromList,
             }}>
         {children}
     </StoreContext.Provider>

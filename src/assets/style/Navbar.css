@@ -24,3 +24,7 @@
     font-size: 32px;
     font-weight: 900;
   }
+
+  .nav-cart:hover {
+    background-color: rgb(63, 159, 101);
+  }
