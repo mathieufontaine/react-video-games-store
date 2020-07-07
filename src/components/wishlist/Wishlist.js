@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 import { StoreContext }  from '../../context/StoreContext';
 import VideoGameWishlist from './VideoGameWishlist';
 
@@ -30,7 +30,7 @@ const SortableList = SortableContainer(({sortedGames}) => {
 
 const Wishlist = () => {
 
-    const { lists, wishlistGames } = useContext(StoreContext)
+    const { lists, wishlistGames, selectedGames, clearSelectedGames, addToList, findList } = useContext(StoreContext)
 
     const [sortedGames, setGames] = useState(wishlistGames);
 
@@ -39,7 +39,28 @@ const Wishlist = () => {
     setGames(arrayMove(sortedGames, oldIndex, newIndex));
       };
 
+      const [selectListSection, setSelectListSection] = useState(false);
+      // const [selectedList, setSelectedList] = useState('');
+      const [gamesToAdd, setGamesToAdd] = useState(selectedGames);
 
+
+      useEffect(() => {
+        setGamesToAdd(selectedGames);
+    }, [selectedGames.length]);
+
+      useEffect(() => {
+        handleCancel();
+    }, [lists]);
+
+      const handleClick = (id) => {
+      //  setSelectedList(id).then(addToList(gamesToAdd, selectedList));
+        addToList(gamesToAdd, id);
+      }
+
+      const handleCancel = () => {
+        setSelectListSection(false); 
+        clearSelectedGames();
+      }
 
     return (
         
@@ -52,10 +73,26 @@ const Wishlist = () => {
                 {/* <SortableList sortedGames={sortedGames} onSortEnd={onSortEnd}  distance={10}/> */}
 
                     {wishlistGames.map((game) => (
-                        <VideoGameWishlist game={game} key={game.id}/>
+                        <VideoGameWishlist game={game} key={game.id} setSelectListSection={setSelectListSection} selectListSection={selectListSection}/>
                      ))}
-
                 </ul>
+
+        {lists.length > 0 ?
+        <div className= { selectListSection === false ? "hide": "show"}> 
+          <h3>Select the list you want to add the game to:</h3>
+          <div className="actions-lists">
+            {lists.map(list => (
+            <button className='btn btn-list' 
+                    key={list.id} 
+                    onClick={()=>handleClick(list.id)}>
+                    {list.title}
+            </button>
+            ))}
+          </div>
+          <button className="btn remove-btn" onClick={handleCancel}>Cancel</button>
+        </div>
+        : ''}
+
         </div>)
         : (<div className="empty-wishlist">Your wishlist is empty</div>)}
 

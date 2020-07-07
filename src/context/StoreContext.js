@@ -10,8 +10,9 @@ const API_URL = 'https://api.rawg.io/api/games';
 const initialState = {
     storeGames: [], 
     cartGames: JSON.parse(localStorage.getItem("cartGames")) || [],
-    lists: JSON.parse(localStorage.getItem("lists")) || [],
     wishlistGames: JSON.parse(localStorage.getItem("wishlistGames")) || [],
+    lists: JSON.parse(localStorage.getItem("lists")) || [],
+    selectedGames: [],
     heading: "Popular Games"
 };
 
@@ -100,7 +101,10 @@ const StoreContextProvider = ({ children }) => {
     }
 
 
-    function addTolist (game, listId) {
+    function addToList (game, listId) {
+        // console.log(game);
+        console.log(listId);
+
         dispatch({
             type: 'ADD_TO_LIST',
             payload: {game, listId}
@@ -115,6 +119,21 @@ const StoreContextProvider = ({ children }) => {
     }
 
 
+    function addToSelectedGames (game) {
+        // console.log(game);
+        dispatch({
+            type: 'ADD_TO_SELECTED_GAMES',
+            payload: game
+        });
+    }
+
+    function clearSelectedGames () {
+        dispatch({
+            type: 'CLEAR_SELECTED_GAMES',
+            payload: []
+        });
+    }
+
     function findGame (id, page) {
         const game = state.storeGames.find((storeGame) => storeGame.id === id);
         if (page === 'cart') {
@@ -122,13 +141,17 @@ const StoreContextProvider = ({ children }) => {
        } else if (page === 'wishlist'){
         addToWishlist (game);
         }
+        else if (page === 'selectedGames'){
+        addToSelectedGames (game);
+        }
     }
+
 
 
     function findList (gameId, listId) {
         const game = state.storeGames.find((storeGame) => storeGame.id === gameId);
         // const list = state.lists.find((list) => list.id === id);
-        addTolist (game, listId);
+        addToList (game, listId);
         // console.log(game);
     }
 
@@ -171,6 +194,7 @@ const StoreContextProvider = ({ children }) => {
             storeGames: state.storeGames, 
             cartGames: state.cartGames,
             lists: state.lists,
+            selectedGames: state.selectedGames,
             wishlistGames: state.wishlistGames, 
             heading: state.heading,
  
@@ -182,7 +206,10 @@ const StoreContextProvider = ({ children }) => {
 
             addList,
             removeList,
+            addToSelectedGames,
+            clearSelectedGames,
             findList,
+            addToList,
             removeFromList,
             }}>
         {children}

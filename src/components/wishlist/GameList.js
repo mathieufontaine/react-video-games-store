@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
-const GameList = ({game, sortIndex}) => {
+const GameList = ({game, sortIndex, id}) => {
     // console.log(game);/
-    const { lists, removeFromList } = useContext(StoreContext)
+    const { lists, removeFromList} = useContext(StoreContext)
 
     return (
  
@@ -18,7 +18,7 @@ const GameList = ({game, sortIndex}) => {
             <div className="actions">
             <Link to={`game/${game.id}`}><h3>{game.name}</h3></Link>  
                 <div className="cross-btn"
-                    onClick={() => removeFromList(game.id, lists[1].id)}
+                    onClick={() => removeFromList(game.id, id)}
                 ><FontAwesomeIcon  icon={faTimes} />
                 </div>
             </div>

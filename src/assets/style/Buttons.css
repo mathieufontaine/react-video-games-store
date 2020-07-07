@@ -89,3 +89,18 @@
   /* .cross-btn:hover{
     color:rgb(143, 3, 3);;
   } */
+
+
+  .actions-lists{
+    padding: 20px;
+    margin: 0 40px;
+    align-items: center;
+    display: flex;
+    text-align: start;
+    flex-flow: row wrap;
+    flex-wrap: wrap;
+  }
+
+  .btn-list {
+    width: 214px;
+  }

@@ -9,16 +9,19 @@ import arrayMove from 'array-move';
 
 
 
-const SortableItem = SortableElement(({game, sortIndex}) => 
-    <GameList game={game} sortIndex={sortIndex}/>);
 
+const List = ({ list }) => {
+
+
+const SortableItem = SortableElement(({game, sortIndex}) => 
+    <GameList game={game} sortIndex={sortIndex} id={list.id}/>);
 
 
 const SortableList = SortableContainer(({sortedGames}) => {
     return (
 
       <ul className="sortable-list">
-          {console.log(sortedGames)}
+          {/* {console.log(sortedGames)} */}
         {sortedGames.map((game, index) => (
             // console.log(game)
           <SortableItem key={index} index={index} game={game} sortIndex={index}/>
@@ -28,8 +31,6 @@ const SortableList = SortableContainer(({sortedGames}) => {
   });
 
 
-
-const List = ({ list }) => {
 
     const { lists, removeList, findItem } = useContext(StoreContext);
 
@@ -62,9 +63,9 @@ const List = ({ list }) => {
                 </button> */}
             </div>
 
-            {gamesList !== undefined ?(
+            {gamesList.length > 0 ?(
                 <ul className="sortable-list">
-                <SortableList sortedGames={sortedGames} onSortEnd={onSortEnd}  distance={10}/>
+                <SortableList sortedGames={sortedGames} onSortEnd={onSortEnd} distance={10} list={list.id}/>
                 </ul>)
                 : (
                 <div className="empty-list">

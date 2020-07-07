@@ -48,11 +48,20 @@ export const AppReducer = (state, action) => {
                 ...state,
                 lists: state.lists.filter(list => list.id !== action.payload)
             }
+        case 'ADD_TO_SELECTED_GAMES':
+            return {
+                ...state,
+                selectedGames: [...state.selectedGames, {...action.payload}]
+                }
+        case 'CLEAR_SELECTED_GAMES':
+                return {...state,
+                    selectedGames: action.payload
+                }
         case 'ADD_TO_LIST':
             return {
                 ...state,
                 lists: state.lists.map(list => 
-                    (list.id === action.payload.listId ? {...list, games: [...list.games, action.payload.game]} : list
+                    (list.id === action.payload.listId ? {...list, games: [...list.games, ...action.payload.game]} : list
                 ))
             }
         case 'REMOVE_FROM_LIST':

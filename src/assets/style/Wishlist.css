@@ -88,3 +88,11 @@
     padding-top: 64px;
   }
   
+
+  .hide {
+    display: none;
+  }
+
+  .show {
+    display: inline-block;
+  }

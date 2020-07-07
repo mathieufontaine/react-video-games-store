@@ -6,9 +6,6 @@
   }
 
 
-
-
-
 .lists-section .form {
     display: flex;
     flex-direction: column;
@@ -66,15 +63,15 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-start;
-      align-items: center;
+      /* align-items: center; */
     }
 
 
 
     .list {
         background-color: rgb(226, 226, 242);
-        border-top-right-radius: 20px;
-        border-top-left-radius: 20px;
+        border-radius: 20px;
+        /* border-top-left-radius: 20px; */
         margin: 10px 30px;
 
         /* display: flex;
