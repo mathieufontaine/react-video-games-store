@@ -18,7 +18,7 @@ const SortableList = SortableContainer(({sortedGames}) => {
     return (
 
       <ul className="sortable-list">
-          {/* {console.log(sortedGames)} */}
+          {console.log(sortedGames)}
         {sortedGames.map((game, index) => (
             // console.log(game)
           <SortableItem key={index} index={index} game={game} sortIndex={index}/>
@@ -44,7 +44,7 @@ const List = ({ list }) => {
 
     useEffect(() => {
         setGames(gamesList);
-    });
+    }, [gamesList.length]);
 
    const onSortEnd = ({oldIndex, newIndex}) => {
     setGames(arrayMove(sortedGames, oldIndex, newIndex));

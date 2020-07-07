@@ -47,7 +47,7 @@ const VideoGameStore = ({game}) => {
             <div className="actions">
                 <button className="btn purple"
                         onClick={() => findGame(game.id, "wishlist")}>
-                        <Link to={'/wishlist'}>Add to Wishlist</Link>
+                        {/* <Link to={'/wishlist'}>Add to Wishlist</Link> */}
                 </button>
                 <button className="btn add-btn"
                         onClick={() => findGame(game.id, "cart")}>

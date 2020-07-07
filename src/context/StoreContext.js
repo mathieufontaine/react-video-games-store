@@ -107,10 +107,10 @@ const StoreContextProvider = ({ children }) => {
         });
     }
 
-    function removeFromList (id) {
+    function removeFromList (id, listId) {
         dispatch({
             type: 'REMOVE_FROM_LIST',
-            payload: id
+            payload: {id, listId}
         });
     }
 

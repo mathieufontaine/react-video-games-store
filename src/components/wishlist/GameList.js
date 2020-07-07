@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 const GameList = ({game, sortIndex}) => {
-    console.log(game);
-    const { removeFromList } = useContext(StoreContext)
+    // console.log(game);/
+    const { lists, removeFromList } = useContext(StoreContext)
 
     return (
  
@@ -18,7 +18,7 @@ const GameList = ({game, sortIndex}) => {
             <div className="actions">
             <Link to={`game/${game.id}`}><h3>{game.name}</h3></Link>  
                 <div className="cross-btn"
-                    onClick={() => removeFromList(game.id)}
+                    onClick={() => removeFromList(game.id, lists[1].id)}
                 ><FontAwesomeIcon  icon={faTimes} />
                 </div>
             </div>

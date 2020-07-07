@@ -54,12 +54,13 @@ export const AppReducer = (state, action) => {
                 lists: state.lists.map(list => 
                     (list.id === action.payload.listId ? {...list, games: [...list.games, action.payload.game]} : list
                 ))
-                // {...{price: randomNumber()}, ...game}
             }
         case 'REMOVE_FROM_LIST':
             return {
                 ...state,
-                lists: state.lists.filter(game => game.id !== action.payload)
+                lists: state.lists.map(list => 
+                    (list.id === action.payload.listId) ? {...list, games: list.games.filter(game => game.id !== action.payload.id)} 
+                    : list)
             }
         case 'CLEAR_STATE':
             return {
