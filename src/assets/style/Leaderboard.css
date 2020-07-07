@@ -1,0 +1,119 @@
+.leaderboard {
+    height: 100%;
+    padding: 20px;
+  }
+  
+  #lBoard {
+    margin: 0 auto;
+    width: 90%;
+    /* padding: 40px 20px; */
+    background-color:transparent;
+    color: black;
+    border: none;
+    border-collapse:separate; 
+    border-spacing: 0 12px;
+  }
+  
+  #lBoard .title{
+    display: none;
+  }
+
+  #lBoard .search{
+    background-color: transparent;
+  }
+
+  #lBoard .search td{
+    text-align: left;
+    grid-column: 1/3;
+    grid-row: 1;
+    width: 100%;
+    height: 50px;
+  }
+
+  #lBoard .search input{
+    padding: 20px;
+    width: 300px;
+  }
+
+  table td {
+    border: none;
+    text-align: center;
+    vertical-align: middle;
+    /* border-radius: 15px; */
+  }
+
+  #lBoard .table-headers{
+    background-color: black;
+    color: white;
+  }
+
+
+  #lBoard tr{
+    /* padding: 10px; */
+    color: black;
+    background-color: rgb(255, 255, 255);
+    margin: 10px 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 1fr;
+    align-items: center;
+    font-weight: 800;
+    height: 120px;
+    font-size: larger;
+    border-radius:20px ;
+    /* text-align: left; */
+    /* border-top-right-radius:20px ; */
+    /* border: 1px solid black; */
+  }
+  .video-game-cart:hover{
+    background-color:black;
+    color: white;
+  
+  }
+  
+  .video-game-cart .cover{
+    height: 150px;
+    width: 250px;
+  }
+  
+  .video-game-cart h3{
+    text-align: left;
+    padding-left: 40px;
+  }
+  
+  .video-game-cart .price{
+    font-size: 24px;
+    text-align: center;
+  }
+  
+
+  .cart .empty-cart {
+    font-size: 32px;
+    color: black;
+    padding: 32px;
+    padding-top: 64px;
+  }
+  
+  .cart-total {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+    background-color: white;
+    padding: 32px 100px;
+    /* display: flex; */
+    align-items: center;
+    /* justify-content: space-between; */
+    color: black;
+    font-size: 24px;
+    font-weight: 900;
+    border-bottom: 5px solid black;
+    border-top: 5px solid black;
+  }
+  
+  .cart-total .nb-articles {
+    grid-column: 2/4;
+    grid-row: 1;
+    text-align: left;
+  }
+  .cart-total .total-price {
+    grid-column: 3/4;
+    grid-row: 1;
+  }

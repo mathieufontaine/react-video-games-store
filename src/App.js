@@ -8,6 +8,8 @@ import Index from './components/layout/Index';
 import Cart from './components/cart/Cart';
 import Wishlist from './components/wishlist/Wishlist';
 import VideoGamePage from './components/game/VideoGamePage';
+import LeaderBoard from './components/leaderboard/Leaderboard';
+
 
 import './assets/style/App.css';
 import './assets/style/Store.css';
@@ -19,7 +21,10 @@ import './assets/style/Navbar.css';
 import './assets/style/Wishlist.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import './assets/style/List.css'
+import './assets/style/List.css';
+import './assets/style/Leaderboard.css'
+
+
 function App() {
 
   return (
@@ -32,6 +37,7 @@ function App() {
               <Route exact path="/" component={Index} />
               <Route exact path="/cart" component={Cart} />
               <Route exact path="/wishlist" component={Wishlist} />
+              <Route exact path="/leaderboard" component={LeaderBoard} />
               <Route exact path="/game/:id" component={VideoGamePage} />
           </Switch>
         </div>

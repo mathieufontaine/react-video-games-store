@@ -14,17 +14,18 @@
     margin: 0;
   }
   
-  .nav-cart, .nav-store, .nav-wishlist {
+  .nav-tab {
     padding: 20px;
     border-radius: 0;
   }
   
-
-.nav-cart span, .nav-store span, .nav-wishlist span{
+  .nav-tab span{
     font-size: 32px;
     font-weight: 900;
   }
 
-  .nav-cart:hover {
-    background-color: rgb(63, 159, 101);
+  .nav-tab:hover {
+    opacity: 150%;
   }
+
+  
