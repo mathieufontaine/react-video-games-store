@@ -7,11 +7,13 @@
     margin: 0 auto;
     width: 90%;
     /* padding: 40px 20px; */
-    background-color:transparent;
+    /* background-color:transparent;
     color: black;
-    border: none;
-    border-collapse:separate; 
-    border-spacing: 0 12px;
+    border: none; */
+    /* border-collapse:separate;  */
+    /* border-spacing: 0 12px;
+    border-collapse: collapse;
+    border-style: hidden; */
   }
   
   #lBoard .title{
@@ -20,6 +22,8 @@
 
   #lBoard .search{
     background-color: transparent;
+    height: 100px;
+
   }
 
   #lBoard .search td{
@@ -30,9 +34,28 @@
     height: 50px;
   }
 
-  #lBoard .search input{
+  /* #lBoard .search input{
     padding: 20px;
     width: 300px;
+  } */
+
+
+  #lBoard .search input {
+    min-width: 80%;
+    height: 40px;
+    padding: 15px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: rgba(232, 232, 232, 0.9);
+    box-shadow: 0 4px rgba(0,0,0,0.2);
+    transition: 0.4s ease;
+  }
+  
+  #lBoard .search input:focus{
+    background-color:rgb(205, 205, 205);
   }
 
   table td {
@@ -46,9 +69,16 @@
     background-color: black;
     color: white;
     border-radius:20px ;
+    height: 100px;
 
   }
 
+
+  #lBoard .name-header{
+    text-align: center;
+    /* margin-left: 15px; */
+  }
+ 
 
   #lBoard tr{
     /* padding: 10px; */
@@ -62,6 +92,8 @@
     height: 180px;
     font-size: 24px;
     border-radius:20px ;
+    border: 1px solid white;
+
     /* text-align: left; */
     /* border-top-right-radius:20px ; */
     /* border-bottom-right-radius:20px ; */
@@ -70,10 +102,14 @@
 
 
 
-  #lBoard .rank, #lBoard .cover, #lBoard .score {
+  #lBoard .rank, #lBoard .cover, #lBoard .score{
     text-align: center;
   }
 
+  #lBoard .name{
+    text-align: left;
+    margin-left: 15px;
+  }
   #lBoard .rank, .score{
     width: 100%;
     margin: 0 auto;
@@ -90,10 +126,8 @@
     border-bottom-left-radius:20px ;
   }
   
-  #lBoard .name, .name-header{
-    text-align: left;
-    margin-left: 15px;
-  }
+
+
 
   #lBoard .gold .rank , #lBoard .silver .rank , #lBoard .bronze .rank  {
     font-size: 50px !important;
@@ -111,49 +145,13 @@
     background-color: rgb(222, 165, 68) !important;
   }
 
-  .video-game-cart h3{
-    text-align: left;
-    padding-left: 40px;
-  }
-  
-  .video-game-cart .price{
-    font-size: 24px;
-    text-align: center;
-  }
+
   
 
-  .cart .empty-cart {
+  .leaderboard .empty {
     font-size: 32px;
     color: black;
     padding: 32px;
     padding-top: 64px;
   }
-  
-  .cart-total {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr 1fr;
-    background-color: white;
-    padding: 32px 100px;
-    /* display: flex; */
-    align-items: center;
-    /* justify-content: space-between; */
-    color: black;
-    font-size: 24px;
-    font-weight: 900;
-    border-bottom: 5px solid black;
-    border-top: 5px solid black;
-  }
-  
-  .cart-total .nb-articles {
-    grid-column: 2/4;
-    grid-row: 1;
-    text-align: left;
-  }
-  .cart-total .total-price {
-    grid-column: 3/4;
-    grid-row: 1;
-  }
-
-  .image-leaderboard {
-
-  }
+ 

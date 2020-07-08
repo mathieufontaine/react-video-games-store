@@ -61,9 +61,19 @@ export const AppReducer = (state, action) => {
             return {
                 ...state,
                 lists: state.lists.map(list => 
-                    (list.id === action.payload.listId ? {...list, games: [...list.games, ...action.payload.game]} : list
+                    (list.id === action.payload.listId ? 
+                        list.games && list.games.length > 0 ?
+                        {...list, games: [...list.games, ...action.payload.game]} : {...list, games: action.payload.game}
+                    : list
                 ))
             }
+        case  'UPDATE_ORDER_GAMES':
+                return {
+                    ...state,
+                    lists: state.lists.map(list => 
+                        (list.id === action.payload.id ? {...list, games: action.payload.games} : list
+                    ))
+                }
         case 'REMOVE_FROM_LIST':
             return {
                 ...state,

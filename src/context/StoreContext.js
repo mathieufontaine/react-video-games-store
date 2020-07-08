@@ -11,8 +11,9 @@ const initialState = {
     storeGames: [], 
     cartGames: JSON.parse(localStorage.getItem("cartGames")) || [],
     wishlistGames: JSON.parse(localStorage.getItem("wishlistGames")) || [],
-    lists: JSON.parse(localStorage.getItem("lists")) || [],
     selectedGames: [],
+    lists: JSON.parse(localStorage.getItem("lists")) || [],
+    // sortedGames: [],
     heading: "Popular Games"
 };
 
@@ -48,6 +49,7 @@ const StoreContextProvider = ({ children }) => {
         localStorage.setItem("cartGames", JSON.stringify(state.cartGames));
         localStorage.setItem("wishlistGames", JSON.stringify(state.wishlistGames));
         localStorage.setItem("lists", JSON.stringify(state.lists));
+        // localStorage.setItem("sortedGames", JSON.stringify(state.sortedGames));
     });
 
 
@@ -171,6 +173,15 @@ const StoreContextProvider = ({ children }) => {
         });
     }
 
+
+
+    function updateOrderGames (games, id) {
+        dispatch({
+            type: 'UPDATE_ORDER_GAMES',
+            payload: {games, id}
+        })
+    }
+
     // function searchGames (query) {
     //     dispatch({
     //         type: 'FILTER_GAMES',
@@ -210,6 +221,7 @@ const StoreContextProvider = ({ children }) => {
             clearSelectedGames,
             findList,
             addToList,
+            updateOrderGames,
             removeFromList,
             }}>
         {children}

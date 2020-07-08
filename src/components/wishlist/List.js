@@ -30,26 +30,35 @@ const SortableList = SortableContainer(({sortedGames}) => {
     );
   });
 
-
-
-    const { lists, removeList, findItem } = useContext(StoreContext);
+    const { lists, removeList, findItem, updateOrderGames } = useContext(StoreContext);
 
     const selectedList = lists.filter(listi => listi.id === list.id);
     // console.log(selectedList);
 
-    const gamesList = selectedList[0].games;
+    const unsortedGames = selectedList[0].games;
+    // console.log(unsortedGames);
+
+    // const gamesList = selectedList[0].games;
     // console.log(gamesList);
 
-    const [sortedGames, setGames] = useState(gamesList);
+    const [sortedGames, setGames] = useState(unsortedGames);
     // console.log(sortedGames);
 
+
     useEffect(() => {
-        setGames(gamesList);
-    }, [gamesList.length]);
+        setGames(unsortedGames);
+    }, [unsortedGames]);
+
 
    const onSortEnd = ({oldIndex, newIndex}) => {
     setGames(arrayMove(sortedGames, oldIndex, newIndex));
       };
+
+
+    useEffect(() => {
+        if (sortedGames && sortedGames.length > 1) {
+        updateOrderGames(sortedGames, list.id);}
+    }, [sortedGames]);
 
     return (
         <li className = "list">
@@ -63,7 +72,9 @@ const SortableList = SortableContainer(({sortedGames}) => {
                 </button> */}
             </div>
 
-            {gamesList.length > 0 ?(
+
+
+            {sortedGames && sortedGames.length > 0 ?(
                 <ul className="sortable-list">
                 <SortableList sortedGames={sortedGames} onSortEnd={onSortEnd} distance={10} list={list.id}/>
                 </ul>)
@@ -72,7 +83,10 @@ const SortableList = SortableContainer(({sortedGames}) => {
                     <h3>No game yet. </h3>
                     <p>Add some games in your wishlist first.</p>
                 </div>
-            )} 
+            )}   
+
+
+
 
                 <button className="btn"
                         onClick = {() => removeList(list.id)}>
