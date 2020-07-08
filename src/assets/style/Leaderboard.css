@@ -1,6 +1,6 @@
 .leaderboard {
     height: 100%;
-    padding: 20px;
+    /* padding: 20px; */
   }
   
   #lBoard {
@@ -45,36 +45,72 @@
   #lBoard .table-headers{
     background-color: black;
     color: white;
+    border-radius:20px ;
+
   }
 
 
   #lBoard tr{
     /* padding: 10px; */
     color: black;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(223, 222, 222);
     margin: 10px 60px;
     display: grid;
-    grid-template-columns: 1fr 1fr 2fr 1fr;
+    grid-template-columns: 3fr 2fr 4fr 2fr;
     align-items: center;
     font-weight: 800;
-    height: 120px;
-    font-size: larger;
+    height: 180px;
+    font-size: 24px;
     border-radius:20px ;
     /* text-align: left; */
     /* border-top-right-radius:20px ; */
+    /* border-bottom-right-radius:20px ; */
     /* border: 1px solid black; */
   }
-  .video-game-cart:hover{
-    background-color:black;
-    color: white;
-  
+
+
+
+  #lBoard .rank, #lBoard .cover, #lBoard .score {
+    text-align: center;
+  }
+
+  #lBoard .rank, .score{
+    width: 100%;
+    margin: 0 auto;
+    font-size: 30px;
+  }
+
+  #lBoard .cover{
+    height: 180px;
+    width: 100%;
+    margin: 0 auto;
+    margin-left: -1px;
+    margin-top: -0.5px;
+    border-top-left-radius:20px ;
+    border-bottom-left-radius:20px ;
   }
   
-  .video-game-cart .cover{
-    height: 150px;
-    width: 250px;
+  #lBoard .name, .name-header{
+    text-align: left;
+    margin-left: 15px;
   }
-  
+
+  #lBoard .gold .rank , #lBoard .silver .rank , #lBoard .bronze .rank  {
+    font-size: 50px !important;
+  }
+
+  .gold {
+    background-color: rgb(230, 205, 12) !important;
+  }
+
+  .silver {
+    background-color: lightslategray !important;
+  }
+
+  .bronze {
+    background-color: rgb(222, 165, 68) !important;
+  }
+
   .video-game-cart h3{
     text-align: left;
     padding-left: 40px;
@@ -116,4 +152,8 @@
   .cart-total .total-price {
     grid-column: 3/4;
     grid-row: 1;
+  }
+
+  .image-leaderboard {
+
   }

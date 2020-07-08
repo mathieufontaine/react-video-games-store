@@ -24,9 +24,9 @@ const VideoGameStore = ({game}) => {
                 {game.short_screenshots !== null ?
                 <div className="caroussel">
                     <Slider {...settings}>
-                        {game.short_screenshots.map((screenshot) => (
-                            <div>
-                                <img src={screenshot.image} alt="screnshot" className="screenshot"/>
+                        {game.short_screenshots.map((screenshot, index) => (
+                            <div key={index}>
+                                <img src={screenshot.image} alt="screnshot" className="screenshot" />
                             </div>
                         ))}
                     </Slider>
