@@ -74,3 +74,8 @@ h1 {
   .nav-tab .blue:hover {
     background-color: rgb(32, 127, 155);
     }
+
+  .abs-right{
+  position: absolute;
+  right: 20px;
+}

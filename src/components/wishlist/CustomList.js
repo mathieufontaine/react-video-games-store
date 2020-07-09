@@ -1,20 +1,15 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { StoreContext }  from '../../context/StoreContext';
-
-import GameList from './GameList';
-
-
+import CustomListGame from './CustomListGame';
 import {SortableContainer, SortableElement} from 'react-sortable-hoc';
 import arrayMove from 'array-move';
 
 
-
-
-const List = ({ list }) => {
+const CustomList = ({ list }) => {
 
 
 const SortableItem = SortableElement(({game, sortIndex}) => 
-    <GameList game={game} sortIndex={sortIndex} id={list.id}/>);
+    <CustomListGame game={game} sortIndex={sortIndex} id={list.id}/>);
 
 
 const SortableList = SortableContainer(({sortedGames}) => {
@@ -30,20 +25,12 @@ const SortableList = SortableContainer(({sortedGames}) => {
     );
   });
 
-    const { lists, removeList, findItem, updateOrderGames } = useContext(StoreContext);
+    const { customLists, removeCustomList, findItem, updateOrderGames } = useContext(StoreContext);
 
-    const selectedList = lists.filter(listi => listi.id === list.id);
-    // console.log(selectedList);
-
+    const selectedList = customLists.filter(customList => customList.id === list.id);
     const unsortedGames = selectedList[0].games;
-    // console.log(unsortedGames);
-
-    // const gamesList = selectedList[0].games;
-    // console.log(gamesList);
 
     const [sortedGames, setGames] = useState(unsortedGames);
-    // console.log(sortedGames);
-
 
     useEffect(() => {
         setGames(unsortedGames);
@@ -73,7 +60,6 @@ const SortableList = SortableContainer(({sortedGames}) => {
             </div>
 
 
-
             {sortedGames && sortedGames.length > 0 ?(
                 <ul className="sortable-list">
                 <SortableList sortedGames={sortedGames} onSortEnd={onSortEnd} distance={10} list={list.id}/>
@@ -81,19 +67,16 @@ const SortableList = SortableContainer(({sortedGames}) => {
                 : (
                 <div className="empty-list">
                     <h3>No game yet. </h3>
-                    <p>Add some games in your wishlist first.</p>
+                    <p>Add some games from your added games list.</p>
                 </div>
             )}   
 
-
-
-
                 <button className="btn"
-                        onClick = {() => removeList(list.id)}>
+                        onClick = {() => removeCustomList(list.id)}>
                     Remove list
                 </button>
         </li>
     )
 }
 
-export default List;
+export default CustomList;

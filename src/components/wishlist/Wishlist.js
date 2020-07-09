@@ -1,112 +1,101 @@
 import React, {useContext, useState, useEffect} from 'react';
 import { StoreContext }  from '../../context/StoreContext';
-import VideoGameWishlist from './VideoGameWishlist';
-
-import List from './List';
-import ListForm from './ListForm';
-
-import {SortableContainer, SortableElement} from 'react-sortable-hoc';
-import arrayMove from 'array-move';
-
-
-const SortableItem = SortableElement(({game, sortIndex}) => 
-    <VideoGameWishlist game={game} sortIndex={sortIndex}/>);
+import WishlistGame from './WishlistGame';
+import CustomList from './CustomList';
+import CustomListForm from './CustomListForm';
+import CustomListSelect from './CustomListSelect';
+import TopList from './TopList';
+import { Link } from 'react-router-dom';
 
 
-const SortableList = SortableContainer(({sortedGames}) => {
-    return (
+// import {SortableContainer, SortableElement} from 'react-sortable-hoc';
+// import arrayMove from 'array-move';
 
-      <ul className="sortable-list">
-          {/* {console.log(sortedGames)} */}
-        {sortedGames.map((game, index) => (
-            // console.log(game)
-          <SortableItem key={index} index={index} game={game} sortIndex={index}/>
-        ))}
-      </ul>
-    );
-  });
 
+
+// const SortableItem = SortableElement(({game, sortIndex}) => 
+//     <WishlistGame game={game} sortIndex={sortIndex}/>);
+
+
+// const SortableList = SortableContainer(({sortedGames}) => {
+//     return (
+
+//       <ul className="sortable-list">
+//         {sortedGames.map((game, index) => (
+//           <SortableItem key={index} index={index} game={game} sortIndex={index}/>
+//         ))}
+//       </ul>
+//     );
+//   });
 
 
 const Wishlist = () => {
 
-    const { lists, wishlistGames, selectedGames, clearSelectedGames, addToList, findList } = useContext(StoreContext)
+    const { customLists, wishlistGames, selectedGames, clearWishlist} = useContext(StoreContext);
+    // const [sortedGames, setGames] = useState(wishlistGames);
 
-    const [sortedGames, setGames] = useState(wishlistGames);
+  //  const onSortEnd = ({oldIndex, newIndex}) => {
+  //   setGames(arrayMove(sortedGames, oldIndex, newIndex));
+  //     };
 
-
-   const onSortEnd = ({oldIndex, newIndex}) => {
-    setGames(arrayMove(sortedGames, oldIndex, newIndex));
-      };
-
-      const [selectListSection, setSelectListSection] = useState(false);
-      // const [selectedList, setSelectedList] = useState('');
-      const [gamesToAdd, setGamesToAdd] = useState(selectedGames);
+    const [selectListSection, setSelectListSection] = useState(false);
+    const [gamesToAdd, setGamesToAdd] = useState(selectedGames);
 
 
       useEffect(() => {
         setGamesToAdd(selectedGames);
     }, [selectedGames.length]);
 
-      useEffect(() => {
-        handleCancel();
-    }, [lists]);
-
-      const handleClick = (id) => {
-      //  setSelectedList(id).then(addToList(gamesToAdd, selectedList));
-        addToList(gamesToAdd, id);
-      }
-
-      const handleCancel = () => {
-        setSelectListSection(false); 
-        clearSelectedGames();
-      }
+ 
 
     return (
-        
-<>
 
-        {wishlistGames.length > 0 ? 
-        (<div className="wishlist">
-            {/* <h2>Wishlist</h2> */}
-                <ul className="wishlist-list">
-                {/* <SortableList sortedGames={sortedGames} onSortEnd={onSortEnd}  distance={10}/> */}
+    <>
+       <div className="wishlist">
+            <div className="top-list-added-list-custom-list">
+                <div className="top-list-section">
+                  <TopList />
+                </div>
+                <div className="added-list-custom-list">
+                  <div className= 'added-list'>
+                      {wishlistGames.length > 0 ?   
+                      <div>
+                      <h2>Games</h2>
+                        <ul className="wishlist-list">
+                            {/* <SortableList sortedGames={sortedGames} onSortEnd={onSortEnd}  distance={10}/> */}
+                          {wishlistGames.map((game) => (
+                            <WishlistGame game={game} key={game.id} setSelectListSection={setSelectListSection} selectListSection={selectListSection}/>
+                          ))}
+                        </ul>
+                        <button className="btn remove-btn abs-right" onClick={() => clearWishlist()}>Remove all games</button>
+                        {customLists.length > 0 ?
+                          (<CustomListSelect customLists={customLists} gamesToAdd={gamesToAdd} setSelectListSection={setSelectListSection} selectListSection={selectListSection}/>) 
+                          : ''
+                        }
+                      </div> 
+                      : <div className="empty-list empty-wishlist">
+                          No Games. 
+                          <p>To update your Top List or your Custom Lists, you need to add some games from the <Link to="/">store</Link> first.</p>
+                        </div>}
+                  </div>
 
-                    {wishlistGames.map((game) => (
-                        <VideoGameWishlist game={game} key={game.id} setSelectListSection={setSelectListSection} selectListSection={selectListSection}/>
-                     ))}
-                </ul>
-
-        {lists.length > 0 ?
-        <div className= { selectListSection === false ? "hide": "show"}> 
-          <h3>Select the list you want to add the game to:</h3>
-          <div className="actions-lists">
-            {lists.map(list => (
-            <button className='btn btn-list' 
-                    key={list.id} 
-                    onClick={()=>handleClick(list.id)}>
-                    {list.title}
-            </button>
-            ))}
-          </div>
-          <button className="btn remove-btn" onClick={handleCancel}>Cancel</button>
+                  <div className="lists-section">
+                    <h2>Custom Lists</h2>
+                      <CustomListForm />
+                      {customLists.length ?
+                        <ul className="lists">
+                            {customLists && customLists.map(list => (
+                              <CustomList list={list} key={list.id}/>
+                            ))}
+                        </ul>
+                      : (<div className="empty-wishlist">No custom list. Use the form above to create your first custom list.</div>)}
+                    </div>
+                  </div>
+            </div>
         </div>
-        : ''}
-
-        </div>)
-        : (<div className="empty-wishlist">Your wishlist is empty</div>)}
 
 
-      <div className="lists-section">
-            <ListForm />
-            {lists.length ?
-              <ul className="lists">
-                  {lists && lists.map(list => (
-                    <List list={list} key={list.id}/>
-                  ))}
-              </ul>
-            : (<div className="empty-wishlist">No personal list yet. Use the form above to create your first list.</div>)}
-      </div>
+
 </>
     )
 }

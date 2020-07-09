@@ -5,20 +5,23 @@ import axios from "axios";
 // const API_KEY = process.env.RAWG_API_KEY;
 const API_URL = 'https://api.rawg.io/api/games';
 
-
+const leaderboardGames = [
+    {name: "The Last of Us" , id: 3990, score: "200", cover: <img className= "leaderboard cover" src='https://media.rawg.io/media/games/a26/a26df52a846d2f5b3e6d5f7bbe58ed28.jpg' alt="img"/>, background_image:'https://media.rawg.io/media/games/a26/a26df52a846d2f5b3e6d5f7bbe58ed28.jpg' },    
+    {name: "Tomb Raider" , id: 5286, score: "100", cover: <img className= "leaderboard cover" src='https://media.rawg.io/media/games/81b/81b138691f027ed1f8720758daa0d895.jpg' alt="img"/>, background_image:"https://media.rawg.io/media/games/81b/81b138691f027ed1f8720758daa0d895.jpg" },
+    {name: "GTA V" , id: 3498, score: "150", cover: <img className= "leaderboard cover" src='https://media.rawg.io/media/games/b11/b115b2bc6a5957a917bc7601f4abdda2.jpg' alt="img"/>, background_image:'https://media.rawg.io/media/games/b11/b115b2bc6a5957a917bc7601f4abdda2.jpg' }
+  ]
 
 const initialState = {
     storeGames: [], 
     cartGames: JSON.parse(localStorage.getItem("cartGames")) || [],
     wishlistGames: JSON.parse(localStorage.getItem("wishlistGames")) || [],
     selectedGames: [],
-    lists: JSON.parse(localStorage.getItem("lists")) || [],
-    // sortedGames: [],
+    customLists: JSON.parse(localStorage.getItem("customLists")) || [{title: 'my first list'}],
+    topList: JSON.parse(localStorage.getItem("topList")) || leaderboardGames,
     heading: "Popular Games"
 };
 
 export const StoreContext = createContext(initialState);
-
 
 
 const StoreContextProvider = ({ children }) => {
@@ -36,8 +39,9 @@ const StoreContextProvider = ({ children }) => {
                  const newGames = res.data.results.map(game => (
                    {...{price: randomNumber()}, ...game}
                 ));
-                // console.log(newGames);   
                 showGames(newGames);
+                // const gamesTopList = newGames.slice(Math.floor(Math.random() * (5 - 0) + 0), Math.floor(Math.random() * (12 - 6) + 6));
+                //  addToTopList(gamesTopList);
               })
               .catch(err => console.log(err));
     }, []);
@@ -48,8 +52,8 @@ const StoreContextProvider = ({ children }) => {
     useEffect(() => {
         localStorage.setItem("cartGames", JSON.stringify(state.cartGames));
         localStorage.setItem("wishlistGames", JSON.stringify(state.wishlistGames));
-        localStorage.setItem("lists", JSON.stringify(state.lists));
-        // localStorage.setItem("sortedGames", JSON.stringify(state.sortedGames));
+        localStorage.setItem("lists", JSON.stringify(state.customLists));
+        localStorage.setItem("topList", JSON.stringify(state.topList));
     });
 
 
@@ -103,23 +107,34 @@ const StoreContextProvider = ({ children }) => {
     }
 
 
-    function addToList (game, listId) {
-        // console.log(game);
-        console.log(listId);
-
+    function clearWishlist () {
         dispatch({
-            type: 'ADD_TO_LIST',
-            payload: {game, listId}
+            type: 'CLEAR_WISHLIST',
+            payload: []
         });
     }
 
-    function removeFromList (id, listId) {
+
+    function addToTopList (game) {
         dispatch({
-            type: 'REMOVE_FROM_LIST',
-            payload: {id, listId}
+            type: 'ADD_TO_TOP_LIST',
+            payload: game
         });
     }
 
+    function removeFromTopList (id) {
+        dispatch({
+            type: 'REMOVE_FROM_TOP_LIST',
+            payload: id
+        });
+    }
+
+    function updateTopList (games) {
+        dispatch({
+            type: 'UPDATE_TOP_LIST',
+            payload: games
+        })
+    }
 
     function addToSelectedGames (game) {
         // console.log(game);
@@ -153,23 +168,40 @@ const StoreContextProvider = ({ children }) => {
     function findList (gameId, listId) {
         const game = state.storeGames.find((storeGame) => storeGame.id === gameId);
         // const list = state.lists.find((list) => list.id === id);
-        addToList (game, listId);
+        addToCustomList(game, listId);
         // console.log(game);
     }
 
 
-    function addList (title) {
+
+
+
+    function addCustomList (title) {
         dispatch({
-            type: 'ADD_LIST',
+            type: 'ADD_CUSTOM_LIST',
             payload: title
         });
     }
 
     
-    function removeList (id) {
+    function removeCustomList (id) {
         dispatch({
-            type: 'REMOVE_LIST',
+            type: 'REMOVE_CUSTOM_LIST',
             payload: id
+        });
+    }
+
+    function addToCustomList (game, listId) {
+        dispatch({
+            type: 'ADD_TO_CUSTOM_LIST',
+            payload: {game, listId}
+        });
+    }
+
+    function removeFromCustomList (id, listId) {
+        dispatch({
+            type: 'REMOVE_FROM_CUSTOM_LIST',
+            payload: {id, listId}
         });
     }
 
@@ -204,7 +236,8 @@ const StoreContextProvider = ({ children }) => {
         value = {{
             storeGames: state.storeGames, 
             cartGames: state.cartGames,
-            lists: state.lists,
+            customLists: state.customLists,
+            topList: state.topList,
             selectedGames: state.selectedGames,
             wishlistGames: state.wishlistGames, 
             heading: state.heading,
@@ -212,17 +245,25 @@ const StoreContextProvider = ({ children }) => {
             findGame, 
             removeFromCart,
             removeFromWishlist,
+            clearWishlist,
             showGames,
             updateHeading,
 
-            addList,
-            removeList,
+            addCustomList,
+            removeCustomList,
+            addToCustomList,
+            removeFromCustomList,
+            updateOrderGames,
+
+            addToTopList,
+            removeFromTopList,
+            updateTopList,
+
+
             addToSelectedGames,
             clearSelectedGames,
             findList,
-            addToList,
-            updateOrderGames,
-            removeFromList,
+
             }}>
         {children}
     </StoreContext.Provider>

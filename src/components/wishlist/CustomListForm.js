@@ -3,15 +3,15 @@ import { StoreContext }  from '../../context/StoreContext';
 
 
 
-const ListForm = () => {
-    const { addList, removeList, editList, setEditList, editTitle } = useContext(StoreContext);
+const CustomListForm = () => {
+    const { addCustomList, removeList, editList, setEditList, editTitle } = useContext(StoreContext);
     const [title, setTitle] = useState('');
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
         // if(editList === ''){
-        addList(title);
+        addCustomList(title);
         // } else {
         //     editTitle (title, editList.id);
         // }
@@ -50,4 +50,4 @@ const ListForm = () => {
     )
 }
 
-export default ListForm;
+export default CustomListForm;

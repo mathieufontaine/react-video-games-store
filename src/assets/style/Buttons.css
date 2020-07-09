@@ -99,8 +99,24 @@
     text-align: start;
     flex-flow: row wrap;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
   .btn-list {
     width: 214px;
+  }
+
+  .btn:disabled, .disabled{ 
+    background-color: black;
+    color: white;
+    cursor: default;
+  }
+
+  .remove-btn{
+    background-color:black;
+    color: white;
+  }
+
+  .remove-btn:hover{
+    background-color: rgb(235, 57, 26);
   }

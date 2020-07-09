@@ -32,21 +32,40 @@ export const AppReducer = (state, action) => {
                 ...state,
                 wishlistGames: state.wishlistGames.filter(game => game.id !== action.payload)
             }
+        case 'CLEAR_WISHLIST':
+            return {...state,
+                wishlistGames: action.payload
+            }
         case 'FILTER_GAMES':
             return {
                 ...state,
                 storeGames: state.storeGames.filter(game => Object.keys(game).some
                 (title => game.title.toLowerCase().includes(action.payload.toLowerCase())))
             }
-        case 'ADD_LIST':
+        case 'ADD_CUSTOM_LIST':
             return {
                 ...state,
-                lists: [...state.lists, {title: action.payload, id: uuid(), games: []}]
+                customLists: [...state.customLists, {title: action.payload, id: uuid(), games: []}]
             }
-        case 'REMOVE_LIST':
+        case 'REMOVE_CUSTOM_LIST':
             return {
                 ...state,
-                lists: state.lists.filter(list => list.id !== action.payload)
+                customLists: state.customLists.filter(list => list.id !== action.payload)
+            }
+        case 'ADD_TO_TOP_LIST':
+            return {
+                ...state,
+                topList: action.payload.length > 0 ? [...state.topList, ...action.payload] : [...state.topList, action.payload]
+            }
+        case 'REMOVE_FROM_TOP_LIST':
+            return {
+                ...state,
+                topList: state.topList.filter(game => game.id !== action.payload)
+            } 
+        case  'UPDATE_TOP_LIST':
+            return {
+                ...state,
+                topList: [...action.payload]
             }
         case 'ADD_TO_SELECTED_GAMES':
             return {
@@ -57,10 +76,10 @@ export const AppReducer = (state, action) => {
                 return {...state,
                     selectedGames: action.payload
                 }
-        case 'ADD_TO_LIST':
+        case 'ADD_TO_CUSTOM_LIST':
             return {
                 ...state,
-                lists: state.lists.map(list => 
+                customLists: state.customLists.map(list => 
                     (list.id === action.payload.listId ? 
                         list.games && list.games.length > 0 ?
                         {...list, games: [...list.games, ...action.payload.game]} : {...list, games: action.payload.game}
@@ -70,14 +89,14 @@ export const AppReducer = (state, action) => {
         case  'UPDATE_ORDER_GAMES':
                 return {
                     ...state,
-                    lists: state.lists.map(list => 
+                    customLists: state.customLists.map(list => 
                         (list.id === action.payload.id ? {...list, games: action.payload.games} : list
                     ))
                 }
-        case 'REMOVE_FROM_LIST':
+        case 'REMOVE_FROM_CUSTOM_LIST':
             return {
                 ...state,
-                lists: state.lists.map(list => 
+                customLists: state.customLists.map(list => 
                     (list.id === action.payload.listId) ? {...list, games: list.games.filter(game => game.id !== action.payload.id)} 
                     : list)
             }

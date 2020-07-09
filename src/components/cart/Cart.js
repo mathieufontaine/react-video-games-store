@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import { StoreContext }  from '../../context/StoreContext'
-import VideoGameCart from './VideoGameCart'
+import CartGame from './CartGame'
 import CartTotal from './CartTotal';
 
 const Cart = () => {
@@ -14,7 +14,7 @@ const Cart = () => {
             <>
                 <ul className="cart-list">
                     {cartGames.map((game) => (
-                        <VideoGameCart game={game} key={game.id}/>
+                        <CartGame game={game} key={game.id}/>
                     ))}
                 </ul>
                 <CartTotal cartGames={cartGames}/>

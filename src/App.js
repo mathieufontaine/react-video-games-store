@@ -22,7 +22,9 @@ import './assets/style/Wishlist.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './assets/style/List.css';
-import './assets/style/Leaderboard.css'
+import './assets/style/Leaderboard.css';
+import './assets/style/TopList.css';
+
 
 
 function App() {

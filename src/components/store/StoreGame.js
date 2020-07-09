@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useRef } from 'react';
 import {StoreContext} from '../../context/StoreContext';
 import { Link } from 'react-router-dom';
 import Slider from "react-slick";
 import Rating from '@material-ui/lab/Rating';
 
-const VideoGameStore = ({game}) => {
+const StoreGame = ({game}) => {
 
-    const { findGame } = useContext(StoreContext)
+    const { findGame, wishlistGames } = useContext(StoreContext);
     
     const settings = {
         // dots: true,
@@ -15,6 +15,23 @@ const VideoGameStore = ({game}) => {
         slidesToShow: 1,
         slidesToScroll: 1
       };
+
+    let listBtnRef = useRef();
+    let cartBtnRef = useRef();
+
+    const onListBtnClick = e => {
+        if(listBtnRef.current){
+        listBtnRef.current.setAttribute("disabled", "disabled");
+        }
+        findGame(game.id, "wishlist");
+    }
+
+    const onCartBtnClick = e => {
+        if(cartBtnRef.current){
+        cartBtnRef.current.setAttribute("disabled", "disabled");
+        }
+        findGame(game.id, "cart");
+    }
 
     return (
         <li className="game-card">
@@ -45,12 +62,21 @@ const VideoGameStore = ({game}) => {
             </div>
             </Link>
             <div className="actions">
+                { wishlistGames.some(listGame => listGame.id === game.id) ? 
+                <button className="btn disabled">
+                Added
+                </button>
+                :
                 <button className="btn purple"
-                        onClick={() => findGame(game.id, "wishlist")}>
+                        ref={listBtnRef} 
+                        onClick={onListBtnClick}>
+                            Add to My Games
                         {/* <Link to={'/wishlist'}>Add to Wishlist</Link> */}
                 </button>
+                }
                 <button className="btn add-btn"
-                        onClick={() => findGame(game.id, "cart")}>
+                        ref={cartBtnRef} 
+                        onClick={onCartBtnClick}>
                         <Link to={'/cart'}>Add to Cart</Link>
                 </button>
             </div>
@@ -58,4 +84,4 @@ const VideoGameStore = ({game}) => {
     )
 }
 
-export default VideoGameStore
+export default StoreGame;

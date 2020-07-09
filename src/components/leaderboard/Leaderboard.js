@@ -5,84 +5,103 @@ import { StoreContext }  from '../../context/StoreContext';
 
 const LeaderBoard = () => {
 
-const { lists} = useContext(StoreContext);
-
-    // wishlistGames.length > 0 ? 
-
-    const topLists = lists.filter(list => list.title.toLowerCase().includes('top list'.toLowerCase()));
-
-  //   useEffect(() => {
-  //     console.log(topLists);
-  // }, [topLists.length]);
+const { topList } = useContext(StoreContext);
 
 
   const getScore = (rank) => {
     switch(rank) {
-      case 1:
-        return 50;
-      case 2:
-          return 30;
-      case 3:
-          return 15;
-      case 4:
-          return 5;
-      case 5:
-          return 3;
-      case 6:
-          return 2;
-      case 7||8||9||10:
-          return 1;
-      default: 
-        return 0;
+      case 1: return 50;
+      case 2: return 30;
+      case 3: return 15;
+      case 4: return 5;
+      case 5: return 3;
+      case 6: return 2;
+      case 7||8||9||10: return 1;
+      default: return 0;
     }
   }
 
-      // console.log(topLists);
-  
+  // console.log(topList);
 
-  const gamesArray = [];
-  topLists.forEach(list => {
-    list.games.forEach((game, index) => {
+    // if (topList !== null && topList.forEach(game=> game !== undefined)){
+     const leaderboardGames = topList.map((game, index) => {
       const item = {name: game.name, score: getScore(index+1), cover: <img className= "leaderboard cover" src={`${game.background_image}`}/>, key: game.id};
-    gamesArray.push(item);
+      // console.log(item);
+      return item;
     });
-  });
 
 
-let scores = gamesArray.reduce((prev, curr) => {
-  let count = prev.get(curr.key) || 0;
-  prev.set(curr.key, curr.score + count);
-  return prev;
-}, new Map());
-
-let rankedGames = [...scores].map(([key, score]) => {
-  return {key, score}
-})
-
-      rankedGames.forEach(game =>{ 
-        const name = gamesArray.find(item => item.key === game.key).name;
-        const cover = gamesArray.find(item => item.key === game.key).cover;
-          game.name = name;
-          game.cover = cover;
-        });
- 
-      console.log(rankedGames);
-
-
-    const [users, setUsers] = useState(rankedGames);
-    const [paginate, setPaginate] = useState(40)
-
-
-    useEffect(() => {
-      setUsers(rankedGames);
-  }, [topLists.length]);
+    const [users, setUsers] = useState(leaderboardGames);
+    const [paginate, setPaginate] = useState(10);
+    console.log(leaderboardGames);
   
+    useEffect(() => {
+        setUsers(leaderboardGames);
+    },[topList.length]);
+
+    
+  //*// IF MANY TOP LISTS CALCULATION LOGIC //*//
+
+  // const topLists = lists.filter(list => list.title.toLowerCase().includes('top list'.toLowerCase()));
+  // console.log(topLists);
+
+  // const gamesArray = [];
+  // let rankedGames = [];
+
+  // if (topLists !== null && topLists !== undefined ){
+    // if(topLists.length > 1 && topLists.forEach(list => list.games.length >0)){
+    // topList.forEach(list => {
+      // topList.games.forEach((game, index) => {
+      //   const item = {name: game.name, score: getScore(index+1), cover: <img className= "leaderboard cover" src={`${game.background_image}`}/>, key: game.id};
+      //   gamesArray.push(item);
+      // });
+    // });
+
+  // }
+    // else if (lists.length === 0 && lists[0].games) {
+    // lists[0].games.forEach((game, index) => {
+    //   const item = {name: game.name, score: getScore(index+1), cover: <img className= "leaderboard cover" src={`${game.background_image}`}/>, key: game.id};
+    //   gamesArray.push(item);
+    // });} 
+
+
+    // let scores = gamesArray.reduce((prev, curr) => {
+    //   let count = prev.get(curr.key) || 0;
+    //   prev.set(curr.key, curr.score + count);
+    //   return prev;
+    // }, new Map());
+
+    // rankedGames = [...scores].map(([key, score]) => {
+    //   return {key, score}
+    // })
+
+    // rankedGames.forEach(game =>{ 
+    //   const name = gamesArray.find(item => item.key === game.key).name;
+    //   const cover = gamesArray.find(item => item.key === game.key).cover;
+    //     game.name = name;
+    //     game.cover = cover;
+    //   return game;
+    //   });
+
+//  console.log(rankedGames); 
+  
+
+
+  //*// END IF MANY TOP LISTS CALCULATION LOGIC //*//
+
+
 
 
     return (
+
+      // topList !== null || topList !== undefined && topList.length > 0 ? 
+
       <div className="leaderboard">
         <Leaderboard users={users} paginate={paginate}/>
       </div>
+
+    //  : (<div className="empty-wishlist">No games in the Leaderboard yet.. Come back here after creating your first lists 😉</div>)
+
     );
 }
 

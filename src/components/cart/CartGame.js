@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
-const VideoGameCart = ({game}) => {
+const CartGame = ({game}) => {
 
     const { removeFromCart } = useContext(StoreContext)
 
@@ -28,4 +28,4 @@ const VideoGameCart = ({game}) => {
     )
 }
 
-export default VideoGameCart
+export default CartGame;

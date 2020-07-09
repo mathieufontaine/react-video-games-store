@@ -20,7 +20,7 @@ const Navbar = () => {
             <div className="btn nav-tab purple"
                     // onClick ={() => setStorePage(false)}
             >
-                <span>WISHLIST({wishlistGames.length})</span>
+                <span>MY GAMES</span>
             </div>
             </Link>
             <Link to="/leaderboard">

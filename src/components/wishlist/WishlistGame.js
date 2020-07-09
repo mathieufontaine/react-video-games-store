@@ -3,42 +3,47 @@ import {StoreContext} from '../../context/StoreContext';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import { color } from '@material-ui/system';
 
-const VideoGameWishlist = ({game, selectListSection, setSelectListSection}) => {
+const WishlistGame = ({game, selectListSection, setSelectListSection}) => {
 
-    const { lists, addToSelectedGames, removeFromWishlist } = useContext(StoreContext)
-    const [bgColor, setBgColor] = useState('');
+    const { customLists, topList, addToSelectedGames, removeFromWishlist, addToTopList, selectedGames} = useContext(StoreContext)
+    // const [bgColor, setBgColor] = useState('');
+    // const [color, setColor] = useState('');
 
     // const [selectedGames, setSelectedGames] = useState([]);
 
     const handleClick = (game) => {
-        // console.log(game);
         setSelectListSection(true);
-        setBgColor('cadetblue');
         addToSelectedGames(game);
     }
+    
+    const styleCart =
+    selectedGames.some(selectedGame => selectedGame.id === game.id) ?
+    { bgColor: 'black', color: 'white'} : { bgColor: '', color: ''};
 
-    useEffect(() => {
-        setBgColor('');
-    }, [lists]);
-
-
-    // useEffect(() => {
-    //     setBgColor('blue');
-    // }, [selectListSection === true]);
 
     return (
  
-        <li className="video-game-wishlist" style={{backgroundColor: bgColor}}>
+        <li className="video-game-wishlist"
+             
+            style= {{backgroundColor: styleCart.bgColor, color: styleCart.color}}>
             <Link to={`game/${game.id}`}>
                 <img src={game.background_image} alt={game.background_image} className="cover"/> 
                 <h3>{game.name}</h3>
             </Link>  
             <div className="actions">
-                {lists.length ? 
+            
+            { topList.some(listGame => listGame.id === game.id) ? '' :
+                    <button className="btn add-btn"
+                    onClick={() => addToTopList(game)}>
+                        Add to Top List
+                    </button>
+            }
+                    {customLists.length ? 
                     <button className="btn add-btn"
                         onClick={() => handleClick(game)}>
-                        Add to List
+                        Add to Custom List
                     </button>
                 : ''}
                 <div className="cross-btn"
@@ -50,4 +55,4 @@ const VideoGameWishlist = ({game, selectListSection, setSelectListSection}) => {
     )
 }
 
-export default VideoGameWishlist;
+export default WishlistGame;

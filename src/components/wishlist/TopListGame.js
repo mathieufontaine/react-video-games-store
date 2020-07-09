@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
-const GameList = ({game, sortIndex, id}) => {
+
+const TopListGame = ({game, sortIndex}) => {
     // console.log(game);/
-    const { lists, removeFromList} = useContext(StoreContext)
+    const { topList, removeFromTopList} = useContext(StoreContext)
 
     return (
  
@@ -16,14 +17,16 @@ const GameList = ({game, sortIndex, id}) => {
                 <img src={game.background_image} alt={game.background_image} className="cover"/> 
             </Link>  
             <div className="actions">
-            <Link to={`game/${game.id}`}><h3>{game.name}</h3></Link>  
+            <Link to={`game/${game.id}`}><h3>{game.name}</h3></Link> 
+            {topList.length > 3 ? 
                 <div className="cross-btn"
-                    onClick={() => removeFromList(game.id, id)}
+                    onClick={() => removeFromTopList(game.id)}
                 ><FontAwesomeIcon  icon={faTimes} />
                 </div>
+            : ''} 
             </div>
         </li>
     )
 }
 
-export default GameList;
+export default TopListGame;

@@ -62,7 +62,7 @@
     .lists {
       display: flex;
       flex-wrap: wrap;
-      justify-content: flex-start;
+      justify-content: center;
       /* align-items: center; */
     }
 
@@ -128,8 +128,8 @@
       font-size: 14px;
     }
 
-    .list .empty-list p{
-      margin: 0 20px;
-      font-size: 14px;
+    .empty-list p{
+      margin: 20px;
+      font-size: 16px;
       font-style:italic
     }

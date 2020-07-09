@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import { StoreContext }  from '../../context/StoreContext'
-import VideoGameStore from './VideoGameStore'
+import StoreGame from './StoreGame'
 import Spinner from '../layout/Spinner';
 
 const Store = () => {
@@ -17,7 +17,7 @@ const Store = () => {
                 <ul className="video-game-list">
                     {storeGames && storeGames.map((game) => (
                         game.background_image !== null || game.name !== null ?
-                        <VideoGameStore game={game} key={game.id}/>: ''
+                        <StoreGame game={game} key={game.id}/>: ''
                     ))}
                 </ul>
                 </>
