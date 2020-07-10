@@ -34,14 +34,15 @@ const WishlistGame = ({game, selectListSection, setSelectListSection}) => {
             </Link>  
             <div className="actions">
             
-            { topList.some(listGame => listGame.id === game.id) ? '' :
+            { topList.some(listGame => listGame.id === game.id) || selectListSection === true ? '' :
                     <button className="btn add-btn"
                     onClick={() => addToTopList(game)}>
                         Add to Top List
                     </button>
             }
-                    {customLists.length ? 
-                    <button className="btn add-btn"
+                    {customLists.length ?
+                     selectedGames.some(listGame => listGame.id === game.id) ? '':
+                    <button className="btn gray-btn"
                         onClick={() => handleClick(game)}>
                         Add to Custom List
                     </button>

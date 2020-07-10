@@ -6,6 +6,7 @@ import CustomListForm from './CustomListForm';
 import CustomListSelect from './CustomListSelect';
 import TopList from './TopList';
 import { Link } from 'react-router-dom';
+import ScrollArrow from '../layout/ScrollArrow';
 
 
 // import {SortableContainer, SortableElement} from 'react-sortable-hoc';
@@ -67,7 +68,8 @@ const Wishlist = () => {
                             <WishlistGame game={game} key={game.id} setSelectListSection={setSelectListSection} selectListSection={selectListSection}/>
                           ))}
                         </ul>
-                        <button className="btn remove-btn abs-right" onClick={() => clearWishlist()}>Remove all games</button>
+                        {selectListSection === false ?
+                        <button className="btn remove-btn" onClick={() => clearWishlist()}>Remove all games</button> : ''}
                         {customLists.length > 0 ?
                           (<CustomListSelect customLists={customLists} gamesToAdd={gamesToAdd} setSelectListSection={setSelectListSection} selectListSection={selectListSection}/>) 
                           : ''
@@ -88,10 +90,14 @@ const Wishlist = () => {
                               <CustomList list={list} key={list.id}/>
                             ))}
                         </ul>
-                      : (<div className="empty-wishlist">No custom list. Use the form above to create your first custom list.</div>)}
+                      : (<div className="empty-list empty-wishlist">No custom list. 
+                          <p>Use the form above to create your first custom list.</p>
+                        </div>)
+                      }
                     </div>
                   </div>
             </div>
+            <ScrollArrow />
         </div>
 
 

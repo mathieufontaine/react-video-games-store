@@ -12,7 +12,7 @@
   
   .video-game-cart {
     /* padding: 0 10px; */
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255, 0.7);
     margin: 10px 60px;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr 1fr;

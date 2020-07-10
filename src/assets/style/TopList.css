@@ -1,10 +1,15 @@
 .top-list-section{
     background-color: lightgreen;
     margin: 0 auto;
-    padding: 20px;
+    padding: 20px 0;
     width: 25%;
 }
 
 .top-list{
     background-color: lightgreen;
+
+}
+
+.top-list .video-game-wishlist{
+    margin: 20px auto;
 }

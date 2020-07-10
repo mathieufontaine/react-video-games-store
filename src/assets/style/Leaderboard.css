@@ -3,6 +3,10 @@
     /* padding: 20px; */
   }
   
+  .leaderboard p {
+    display: none;
+  }
+
   #lBoard {
     margin: 0 auto;
     width: 90%;
@@ -69,13 +73,13 @@
     background-color: black;
     color: white;
     border-radius:20px ;
-    height: 100px;
+    height: 80px;
 
   }
 
 
   #lBoard .name-header{
-    text-align: center;
+    text-align: left;
     /* margin-left: 15px; */
   }
  
@@ -90,7 +94,7 @@
     align-items: center;
     font-weight: 800;
     height: 180px;
-    font-size: 24px;
+    font-size: 28px;
     border-radius:20px ;
     border: 1px solid white;
 
@@ -127,8 +131,6 @@
   }
   
 
-
-
   #lBoard .gold .rank , #lBoard .silver .rank , #lBoard .bronze .rank  {
     font-size: 50px !important;
   }
@@ -146,8 +148,6 @@
   }
 
 
-  
-
   .leaderboard .empty {
     font-size: 32px;
     color: black;
@@ -155,6 +155,13 @@
     padding-top: 64px;
   }
  
+
+  @media  (max-width: 1250px) {
+    #lBoard tr {
+      font-size: 23px;
+    }
+  }
+
 
   @media  (max-width: 1150px) {
     #lBoard {
@@ -185,7 +192,7 @@
   }
   }
 
-  @media  (max-width: 700px) {
+  @media  (max-width: 750px) {
     #lBoard tr , #lBoard .rank, #lBoard .score {
       font-size: 18px;
       margin: 0 10px;

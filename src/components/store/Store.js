@@ -2,6 +2,7 @@ import React, {useContext} from 'react';
 import { StoreContext }  from '../../context/StoreContext'
 import StoreGame from './StoreGame'
 import Spinner from '../layout/Spinner';
+import ScrollArrow from '../layout/ScrollArrow';
 
 const Store = () => {
 
@@ -20,6 +21,7 @@ const Store = () => {
                         <StoreGame game={game} key={game.id}/>: ''
                     ))}
                 </ul>
+                <ScrollArrow />
                 </>
             }
         </div>

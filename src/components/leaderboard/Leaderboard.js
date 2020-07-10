@@ -1,6 +1,7 @@
 import Leaderboard from 'react-leaderboard';
 import React, {useState, useContext, useEffect} from 'react';
 import { StoreContext }  from '../../context/StoreContext';
+import ScrollArrow from '../layout/ScrollArrow';
 
 
 const LeaderBoard = () => {
@@ -32,7 +33,7 @@ const { topList } = useContext(StoreContext);
 
 
     const [users, setUsers] = useState(leaderboardGames);
-    const [paginate, setPaginate] = useState(10);
+    const [paginate, setPaginate] = useState(30);
     console.log(leaderboardGames);
   
     useEffect(() => {
@@ -98,6 +99,7 @@ const { topList } = useContext(StoreContext);
 
       <div className="leaderboard">
         <Leaderboard users={users} paginate={paginate}/>
+        <ScrollArrow />
       </div>
 
     //  : (<div className="empty-wishlist">No games in the Leaderboard yet.. Come back here after creating your first lists 😉</div>)

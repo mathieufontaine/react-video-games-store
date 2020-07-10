@@ -16,7 +16,7 @@ const initialState = {
     cartGames: JSON.parse(localStorage.getItem("cartGames")) || [],
     wishlistGames: JSON.parse(localStorage.getItem("wishlistGames")) || [],
     selectedGames: [],
-    customLists: JSON.parse(localStorage.getItem("customLists")) || [{title: 'my first list'}],
+    customLists: JSON.parse(localStorage.getItem("customLists")) || [],
     topList: JSON.parse(localStorage.getItem("topList")) || leaderboardGames,
     heading: "Popular Games"
 };

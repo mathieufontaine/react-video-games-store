@@ -1,6 +1,7 @@
 
 .store {
     margin: 15px;
+    position: relative;
   }
   
   .store .heading{
@@ -84,6 +85,9 @@
   @media  (max-width: 1570px) {
     .game-card {
       margin: 30px 10px;
+    }
+    .scrollTop {
+      right: 12px;
     }
   }
 

@@ -6,7 +6,7 @@ import Rating from '@material-ui/lab/Rating';
 
 const StoreGame = ({game}) => {
 
-    const { findGame, wishlistGames } = useContext(StoreContext);
+    const { findGame, wishlistGames, cartGames } = useContext(StoreContext);
     
     const settings = {
         // dots: true,
@@ -64,7 +64,7 @@ const StoreGame = ({game}) => {
             <div className="actions">
                 { wishlistGames.some(listGame => listGame.id === game.id) ? 
                 <button className="btn disabled">
-                Added
+                        In your library
                 </button>
                 :
                 <button className="btn purple"
@@ -74,11 +74,17 @@ const StoreGame = ({game}) => {
                         {/* <Link to={'/wishlist'}>Add to Wishlist</Link> */}
                 </button>
                 }
+                { cartGames.some(listGame => listGame.id === game.id) ? 
+                <button className="btn disabled">
+                        In your Cart
+                </button>
+                :
                 <button className="btn add-btn"
                         ref={cartBtnRef} 
                         onClick={onCartBtnClick}>
                         <Link to={'/cart'}>Add to Cart</Link>
                 </button>
+                }
             </div>
         </li>
     )

@@ -9,7 +9,6 @@
     padding: 20px;
   }
 
-  
   .top-list-added-list-custom-list{
     display: flex;
   }
@@ -22,11 +21,12 @@
     background-color: rgb(153, 128, 177);
     position: relative;
     padding-bottom: 50px;
+    padding: 20px;
   }
 
   .wishlist-list{
     margin: 0 ;
-    padding: 20px;
+    /* padding: 20px; */
     /* min-height: 600px; */
     /* display: grid; */
     /* grid-template-columns: 1fr 1fr 1fr 1fr; */
@@ -95,6 +95,22 @@
     text-align: center;
   }
   
+  .video-game-wishlist .btn{
+    font-size: 10px;
+  }
+
+  .custom-btn {
+    background-color:white;
+    color: black;
+    font-size: 16px;
+    padding: 20px;
+  }
+
+  .custom-btn:hover{
+    background-color: rgb(100, 182, 227);
+    color: white;
+  }
+ 
   .empty-wishlist {
     font-size: 28px;
     color: black;
@@ -113,7 +129,6 @@
 
 
 
-
   @media  (max-width: 1470px) {
     .added-list-custom-list {
       width: 65%;
@@ -125,15 +140,16 @@
 
   @media  (max-width:1190px) {
     .added-list-custom-list {
-      width: 55%;
+      width: 50%;
     }
     .top-list-section {
-      width: 45% !important;
+      width: 50% !important;
     } 
-    .wishlist-list {
-      justify-content: center;
+    .lists-section input {
+      width: 270px !important;
     }
   }
+
 
   @media  (max-width:840px) {
     .top-list-added-list-custom-list {
@@ -148,9 +164,25 @@
   }
   .top-list-section .video-game-wishlist {
     margin: 0 auto;
-    width: 60%;
+    width: 50%;
   }
   .top-list-section .video-game-wishlist .cover {
-    height: auto;
+    height: 200px;
   }
   }
+
+  @media  (max-width:780px) {
+  .wishlist-list {
+    justify-content: center;
+  }
+}
+
+@media  (max-width:680px) {
+  .top-list-section .video-game-wishlist {
+    margin: 0 auto;
+    width: 70%;
+  }
+  .top-list-section .video-game-wishlist .cover {
+    height: 200px;
+  }
+}

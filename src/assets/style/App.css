@@ -75,7 +75,56 @@ h1 {
     background-color: rgb(32, 127, 155);
     }
 
-  .abs-right{
-  position: absolute;
-  right: 20px;
-}
+
+    .scrollTop {
+      position: fixed; 
+      width: 100px;
+      bottom: 20px;
+      align-items: center;
+      height: 60px;
+      justify-content: center;
+      z-index: 1000;
+      cursor: pointer;
+      animation: fadeIn 0.3s;
+      transition: opacity 0.4s;
+      opacity: 0.7;
+    }
+    
+    .scrollTop:hover{
+      opacity: 1;
+    }
+    
+    .svg-inline--fa.fa-w-16 {
+      width: 100px;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0.5;
+      }
+    }
+
+
+
+    @media  (max-width: 1500px) {
+      .container {
+        border-right: 15px solid black;
+        border-left: 15px solid black;
+      }
+    }
+
+    @media  (max-width: 900px) {
+      .header {
+        font-size: 16px;
+      }
+    }
+
+    @media  (max-width: 700px) {
+      .header {
+        font-size: 14px;
+        padding: 10px;
+      }
+    }

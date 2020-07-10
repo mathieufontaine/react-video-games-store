@@ -22,10 +22,10 @@ const { customLists, clearSelectedGames, addToCustomList } = useContext(StoreCon
 
     return (
         <div className= { selectListSection === false ? "hide": "show"}> 
-        <h3>Which list do you want to add the game to:</h3>
+        <h2>Select the list do you want to add the game to:</h2>
         <div className="actions-lists">
           {customLists.map(list => (
-          <button className='btn btn-list' 
+          <button className='btn custom-btn' 
                   key={list.id} 
                   onClick={()=>handleClick(list.id)}>
                   {list.title}
