@@ -1,12 +1,13 @@
 .search-box{
-    width: 100%;
+    width: 80%;
     text-align: center;
-    margin: 40px 20px 20px 20px ;
+    margin: 40px auto ;
+    height: 70px;
   }
   
   .search-bar {
     min-width: 60%;
-    height: 40px;
+    /* height: 40px; */
     padding: 15px;
     border-radius: 10px 0 0 10px;
     outline: none;
@@ -23,7 +24,7 @@
   }
   
   .search-box .btn{
-    height: 72px;
+    height: 56px;
     width: 100px;
     margin: 0;
     padding: 15px;
@@ -31,3 +32,21 @@
   
   }
   
+
+  @media (max-width: 1350px){
+    .search-bar {
+      min-width: 60%;
+      height: 100%;
+      padding: 15px;
+      font-size: 12px;
+    }
+    .search-box .btn{
+      height: 100%;
+      width: auto;
+      margin: 0;
+      padding: 15px;
+      padding-bottom: 19px;
+      border-radius: 0 10px 10px 0;
+    
+    }
+  }

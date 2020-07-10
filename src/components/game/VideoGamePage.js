@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import axios from "axios";
 import Spinner from '../layout/Spinner';
 import Slider from "react-slick";
-
+import Rating from '@material-ui/lab/Rating';
 
 const API_URL = 'https://api.rawg.io/api/games/';
 
@@ -29,7 +29,8 @@ const VideoGamePage = props => {
         infinite: true,
         speed: 500,
         slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        autoPlay: true
       };
 
     // const divStyle = { 'background-color': `#${game.dominant_color}`};
@@ -61,11 +62,12 @@ const VideoGamePage = props => {
                 : <img src={game.background_image} alt={game.background_image} className="cover"/>
                 }
 
+
             <div className="game-details">
-   
+
                 <div className="game-information">
                 {/* <p className="price">Price: ${game.price}</p> */}
-                <p className="rating"><strong>Rating: </strong>{game.rating === 0 ? "N/A" : game.rating}</p>
+                <p className="rating"><strong>Rating: </strong>{game.rating === 0 ? "N/A" : <Rating name="half-rating-read" defaultValue={game.rating} precision={0.2} readOnly />}</p>
                 {game.genres[0] !== undefined ? 
                 <p className="genre"><strong>Genre: </strong>{game.genres[0].name}</p>
                 : ''
@@ -73,9 +75,12 @@ const VideoGamePage = props => {
                 <p className="released"><strong>Released Date: </strong> {game.released}</p>
                 <p className="description"><strong>Description: </strong> {game.description_raw}</p>
                 {game.website !== '' ?
-                <p className="website"><strong>Website: </strong>{game.website}</p>
+                <p className="website"><strong>More info: </strong>
+                <a target="_blank" href={game.website}>{game.website}</a>
+                </p>
                 : ''}
                 </div>
+
 
                 <div className="actions">
                     <button className="btn black-btn">
@@ -98,7 +103,7 @@ const VideoGamePage = props => {
                 {game.clip !== null ?
                 <div className="clip">
                     <h3>Game Video Clip</h3>
-                    <video width="800" height="500" controls>
+                    <video controls>
                         <source src={game.clip.clip} type="video/mp4"/>
                     </video>
                 </div>

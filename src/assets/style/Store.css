@@ -113,7 +113,7 @@
 
   @media  (max-width: 950px) {
     .video-game-list{
-      margin: 30px auto;
+      margin: 10px auto;
       /* width: 90%; */
       display: inline-block;
     }

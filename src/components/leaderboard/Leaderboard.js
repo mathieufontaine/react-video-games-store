@@ -98,6 +98,7 @@ const { topList } = useContext(StoreContext);
       // topList !== null || topList !== undefined && topList.length > 0 ? 
 
       <div className="leaderboard">
+        <h1 className="page-title">LEADERBOARD</h1>
         <Leaderboard users={users} paginate={paginate}/>
         <ScrollArrow />
       </div>

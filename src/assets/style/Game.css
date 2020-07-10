@@ -2,12 +2,12 @@
 .video-game-page{
     padding: 15px 60px;
     align-items: center;
-    background-color: ghostwhite;
+
   }
 
-  .video-game-page .caroussel {
+  /* .video-game-page .caroussel {
     height: 600px;
-  }
+  } */
 
   .video-game-page .caroussel img {
     min-height: 300px;
@@ -22,10 +22,11 @@
     color: black;
   }
 
-.video-game-details{
+.video-game-page .game-details{
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 20px;
 }
 
   .video-game-page .game-title {
@@ -49,3 +50,45 @@
     text-align: left;
   }
   
+  .video-game-page .clip video{
+    width: 65%;
+  }
+
+  @media  (max-width: 1000px) {
+
+    .video-game-page .game-title {
+      font-size: 30px;
+    }
+    .video-game-page .caroussel img {
+      min-height: unset;
+      height: 350px;
+      min-width:unset;
+      width: 600px ;
+    }
+  }
+
+  @media  (max-width: 800px) {
+  .video-game-page{
+    padding: 0;
+  }
+  .video-game-page .game-title {
+    font-size: 25px;
+  }
+  .video-game-page .caroussel img {
+    min-height: unset;
+    height: 250px;
+    min-width:unset;
+    width: 400px ;
+    border-radius: 0;
+  }
+  .video-game-page .clip video{
+    width: 95%;
+  }
+  .video-game-page .caroussel .slick-prev:before, .video-game-page .caroussel .slick-next:before{
+    display: none;
+  }
+  .video-game-page .actions .btn {
+    font-size: 12px !important;
+    padding: 8px !important;
+  }
+}

@@ -50,9 +50,10 @@ const SortableList = SortableContainer(({sortedGames}) => {
     }, [sortedGames]);
 
     return (
-        <li className = "list top-list">
+        <li className = "top-list">
             <div className="list-information">  
-            <h2 >TOP LIST</h2>
+            <h2 >My TOP List</h2>
+            <p>Rank your favorite games below.</p>
             </div>
 
             {sortedGames.length === 3 ? 

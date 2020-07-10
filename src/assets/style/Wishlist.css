@@ -4,7 +4,7 @@
   }
   
   .wishlist h2 {
-    font-size: 30px;
+    /* font-size: 30px; */
     margin: 0 auto;
     padding: 20px;
   }
@@ -118,6 +118,9 @@
     padding-top: 64px;
   }
 
+  .empty-wishlist p{
+    text-align: left;
+  }
 
   .hide {
     display: none;
@@ -148,10 +151,74 @@
     .lists-section input {
       width: 270px !important;
     }
+    /* .top-list, .list {
+      margin: 10px 70px !important;
+    } */
   }
 
 
   @media  (max-width:840px) {
+    .top-list-added-list-custom-list{
+      display: block;
+    }
+    .added-list-custom-list {
+      width:100%;
+    }
+    .top-list-section {
+      width:100% !important;
+    } 
+    .top-list, .list {
+      margin: 10px;
+    }
+    /* .top-list .video-game-wishlist, .list .video-game-wishlist{
+      width: auto;
+    } */
+    /* .top-list .video-game-wishlist{
+      margin: 15px 50px !important;
+    } */
+    /* .top-list .video-game-wishlist .cover, .list .video-game-wishlist .cover{
+      height: auto;
+    } */
+    .desktop{
+      display: none;
+    }
+    .added-list .mobile{
+      display: block;
+    }
+    .mobile .video-game-wishlist {
+      width: 45%;
+      margin: 8px;
+      height: 225px;
+    }
+    .mobile .video-game-wishlist .cover {
+      height: 130px;
+      width: 100%;
+    }
+    .mobile .video-game-wishlist h3 {
+      font-size: 10px;
+    }
+    .mobile .video-game-wishlist .actions {
+      margin: 0;
+      display: block;
+    }
+    .mobile .video-game-wishlist .actions .btn {
+      margin: 0 10px;
+      font-size: 8px;
+    }
+    .lists-section .form{
+      margin: auto;
+    }
+    .lists-section input {
+      /* width: 105px !important; */
+    }
+      .empty-wishlist {
+        font-size: 18px;
+        padding: 20px;
+    }
+    } 
+
+
+  /* @media  (max-width:840px) {
     .top-list-added-list-custom-list {
       display: inline-block;
   }
@@ -162,22 +229,27 @@
     width: 100% !important;
     padding-bottom: 20px
   }
-  .top-list-section .video-game-wishlist {
+  .top-list-section {
+    height: 100% !important;
+  }  */
+  /* .top-list-section .video-game-wishlist {
     margin: 0 auto;
     width: 50%;
   }
   .top-list-section .video-game-wishlist .cover {
     height: 200px;
-  }
-  }
+  } */
+  /* } */
 
-  @media  (max-width:780px) {
+
+
+  /* @media  (max-width:780px) {
   .wishlist-list {
     justify-content: center;
   }
-}
+} */
 
-@media  (max-width:680px) {
+/* @media  (max-width:680px) {
   .top-list-section .video-game-wishlist {
     margin: 0 auto;
     width: 70%;
@@ -185,4 +257,4 @@
   .top-list-section .video-game-wishlist .cover {
     height: 200px;
   }
-}
+} */

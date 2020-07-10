@@ -10,7 +10,6 @@ import Wishlist from './components/wishlist/Wishlist';
 import VideoGamePage from './components/game/VideoGamePage';
 import LeaderBoard from './components/leaderboard/Leaderboard';
 
-
 import './assets/style/App.css';
 import './assets/style/Store.css';
 import './assets/style/Cart.css';

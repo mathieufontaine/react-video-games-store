@@ -53,15 +53,10 @@ const Wishlist = () => {
 
     <>
        <div className="wishlist">
-            <div className="top-list-added-list-custom-list">
-                <div className="top-list-section">
-                  <TopList />
-                </div>
-                <div className="added-list-custom-list">
-                  <div className= 'added-list'>
+       <div className= 'added-list mobile'>
                       {wishlistGames.length > 0 ?   
                       <div>
-                      <h2>Games</h2>
+                      <h1 className="page-title">LIBRARY</h1>
                         <ul className="wishlist-list">
                             {/* <SortableList sortedGames={sortedGames} onSortEnd={onSortEnd}  distance={10}/> */}
                           {wishlistGames.map((game) => (
@@ -81,8 +76,14 @@ const Wishlist = () => {
                         </div>}
                   </div>
 
+            <div className="top-list-added-list-custom-list">
+                <div className="top-list-section">
+                  <TopList />
+                </div>
+                <div className="added-list-custom-list">
+
                   <div className="lists-section">
-                    <h2>Custom Lists</h2>
+                    <h2>Your Custom Lists</h2>
                       <CustomListForm />
                       {customLists.length ?
                         <ul className="lists">
@@ -90,8 +91,12 @@ const Wishlist = () => {
                               <CustomList list={list} key={list.id}/>
                             ))}
                         </ul>
-                      : (<div className="empty-list empty-wishlist">No custom list. 
-                          <p>Use the form above to create your first custom list.</p>
+                      : (<div className="empty-list empty-wishlist">
+                          To create a custom list your need to:
+                          <p><strong>1. </strong>Use the form above to give a name to your list.</p>
+                          <p><strong>2. </strong>Add some games from the Store to your Library.</p> 
+                          <p><strong>3. </strong>Select the games you want to add by clicking on "add to custom list".</p>
+                          <p><strong>4. </strong>Choose your list among all your custom lists.</p>
                         </div>)
                       }
                     </div>

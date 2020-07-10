@@ -51,7 +51,6 @@ const StoreGame = ({game}) => {
                 : <img src={game.background_image} alt={game.background_image} className="cover"/>
                 } 
 
-
             <div className="rating-price">
                 <span className="rating">{game.rating === 0 ? "N/A" : 
                 // `${parseFloat(game.rating).toFixed(1)}/5`}

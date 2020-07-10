@@ -10,6 +10,7 @@ const Cart = () => {
     
     return (
         <div className="cart">
+           <h1 className="page-title">CART</h1>
             {cartGames.length >0 ? (
             <>
                 <ul className="cart-list">

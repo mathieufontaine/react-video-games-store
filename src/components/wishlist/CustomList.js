@@ -67,7 +67,7 @@ const SortableList = SortableContainer(({sortedGames}) => {
                 : (
                 <div className="empty-list">
                     <h3>No game yet. </h3>
-                    <p>Add some games from your added games list.</p>
+                    {/* <p>Add some games from your added games list.</p> */}
                 </div>
             )}   
 
