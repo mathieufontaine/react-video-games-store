@@ -34,7 +34,7 @@ const Header = () => {
 
   return (
     <div className="header sticky">
-      <div className="mobile-nav-btn" onClick={handleShowNav}>
+      <div className="hamburger" onClick={handleShowNav}>
         <FontAwesomeIcon icon={faBars} className="nav-icon" />
       </div>
 

@@ -8,18 +8,18 @@ const Cart = () => {
 
   return (
     <>
-      <h2 className="page-title green">CART</h2>
-      <div className="cart">
-        {cartGames.length > 0 ? (
+      {/* <h2 className="page-title green">CART</h2> */}
+      {cartGames.length > 0 ? (
+        <div className="cart">
           <ul className="cart-list">
             {cartGames.map(game => (
               <CartGame game={game} key={game.id} />
             ))}
           </ul>
-        ) : (
-          <div className="empty-cart">{"Your cart is empty"}</div>
-        )}
-      </div>
+        </div>
+      ) : (
+        <div className="empty-cart">{"Your cart is empty"}</div>
+      )}
       <CartTotal cartGames={cartGames} />
     </>
   );

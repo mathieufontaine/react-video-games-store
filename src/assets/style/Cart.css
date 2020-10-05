@@ -2,19 +2,15 @@
   height: 100%;
 }
 
-.cart h1 {
-  margin: 0;
-  padding-top: 20px;
-}
 .cart-list {
   margin: 0;
-  padding: 40px 20px;
+  padding: 3rem;
   /* min-height: 700px; */
 }
 
-.video-game-cart {
+.cart-item {
   /* padding: 0 10px; */
-  background-color: var(--background-color);
+  background-color: var(--primary);
   margin: 10px 60px;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr 1fr;
@@ -29,106 +25,68 @@
   /* border-bottom: 1px solid black; */
 }
 
-.video-game-cart .cover {
-  height: 150px;
-  width: 250px;
+.cart-item .cover {
+  /* height: 150px; */
+  /* width: 250px; */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.video-game-cart h3 {
+.cart-item h3 {
   text-align: left;
-  padding-left: 40px;
+  padding-left: 3rem;
 }
 
-.video-game-cart .price {
-  font-size: 24px;
+.cart-item .price {
+  font-size: 2rem;
   text-align: center;
   color: white;
 }
 
-.cart .empty-cart {
-  font-size: 32px;
+.empty-cart {
+  font-size: 2rem;
   color: white;
-  margin: auto;
 }
 
 .cart-total {
   position: absolute;
   bottom: 0;
-  width: 100%;
+  width: 90%;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr 1fr;
-  background-color: black;
-  padding: 32px 100px;
-  /* display: flex; */
+  background-color: var(--secondary);
+  padding: 3rem 0;
+  display: flex;
   align-items: center;
-  /* justify-content: space-between; */
+  justify-content: space-around;
   color: white;
-  font-size: 24px;
-  font-weight: 900;
-  border-bottom: 5px solid black;
-  border-top: 5px solid black;
-}
-
-.cart-total .nb-articles {
-  grid-column: 2/4;
-  grid-row: 1;
+  font-size: 2rem;
+  font-weight: 600;
   text-align: left;
-}
-
-.cart-total .total-price {
-  grid-column: 3/4;
-  grid-row: 1;
+  border-radius: 10px;
+  margin: auto;
+  margin-bottom: 10px;
 }
 
 @media (max-width: 1250px) {
-  .video-game-cart {
-    font-size: 16px;
+  .cart-item {
     height: 120px;
-  }
-  .video-game-cart .cover {
-    height: 120px;
-  }
-  .video-game-cart .price {
-    font-size: 18px;
-  }
-  .cart-total {
-    display: flex;
-    justify-content: space-around;
-    font-size: 22px;
   }
 }
 
 @media (max-width: 900px) {
-  .video-game-cart {
-    font-size: 12px;
+  .cart-item {
     margin: 10px 0 !important;
     grid-template-columns: 2fr 3fr 1fr 1fr;
     height: 100px;
   }
-  .video-game-cart .cover {
-    width: 150px;
-    height: 100px;
-  }
-  .cart-total,
-  .trash-btn {
-    font-size: 18px !important;
-  }
-  .cart-total {
-    padding: 20px 10px;
-  }
 }
 
-@media (max-width: 663px) {
-  .video-game-cart {
-    font-size: 10px;
-    /* margin: 10px; */
+@media (max-width: 500px) {
+  .cart-item {
+    height: 70px;
   }
-  .video-game-cart .price,
-  .cart-total,
-  .trash-btn {
-    font-size: 14px !important;
-  }
-  .video-game-cart h3 {
+  .cart-item h3 {
     padding-left: 10px;
   }
 }

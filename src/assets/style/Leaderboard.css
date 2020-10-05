@@ -1,87 +1,29 @@
 .leaderboard {
   height: 100%;
-  /* padding: 20px; */
-}
-
-.leaderboard p {
-  display: none;
-}
-
-#lBoard {
   margin: 0 auto;
   width: 90%;
-  /* padding: 40px 20px; */
-  /* background-color:transparent;
-    color: black;
-    border: none; */
-  /* border-collapse:separate;  */
-  /* border-spacing: 0 12px;
-    border-collapse: collapse;
-    border-style: hidden; */
 }
 
-#lBoard .title {
+.leaderboard p,
+.leaderboard .title,
+.leaderboard .search {
   display: none;
 }
 
-#lBoard .search {
-  background-color: transparent;
-  height: 100px;
-  display: none;
-}
-
-/* #lBoard .search td {
-  text-align: left;
-  grid-column: 1/3;
-  grid-row: 1;
-  width: 100%;
-  height: 50px;
-}  */
-
-/* #lBoard .search input{
-    padding: 20px;
-    width: 300px;
-  } */
-
-/* #lBoard .search input {
-  min-width: 80%;
-  height: 40px;
-  padding: 15px;
-  border-radius: 10px;
-  outline: none;
-  border: none;
-  font-size: 14px;
-  font-weight: 500;
-  background-color: rgba(232, 232, 232, 0.9);
-  box-shadow: 0 4px rgba(0, 0, 0, 0.2);
-  transition: 0.4s ease;
-} */
-
-/* #lBoard .search input:focus {
-  background-color: rgb(205, 205, 205);
-} */
-
-table td {
-  border: none;
-  text-align: center;
-  vertical-align: middle;
-  font-size: 2rem;
-  /* border-radius: 15px; */
-}
-
-#lBoard .table-headers {
+table .table-headers {
   background-color: black;
   color: white;
   border-radius: 20px;
   height: 50px;
 }
 
-#lBoard .name-header {
+table .name,
+table .name-header {
   text-align: left;
-  /* margin-left: 15px; */
+  margin-left: 15px;
 }
 
-#lBoard tr {
+table tr {
   /* padding: 10px; */
   color: black;
   background-color: rgb(223, 222, 222);
@@ -93,31 +35,28 @@ table td {
   height: 100px;
   font-size: 2rem;
   border-radius: 20px;
-  /* border: 1px solid white; */
-
-  /* text-align: left; */
-  /* border-top-right-radius:20px ; */
-  /* border-bottom-right-radius:20px ; */
-  /* border: 1px solid black; */
 }
 
-#lBoard .rank,
-#lBoard .cover,
-#lBoard .score {
+table td {
+  border: none;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 2rem;
+}
+
+table .rank,
+table .cover,
+table .score {
   text-align: center;
 }
 
-#lBoard .name {
-  text-align: left;
-  margin-left: 15px;
-}
-#lBoard .rank,
+table .rank,
 .score {
   margin: 0 auto;
   font-size: 2rem;
 }
 
-#lBoard .cover {
+table .cover {
   height: 100px;
   width: 100%;
   margin: 0 auto;
@@ -125,15 +64,12 @@ table td {
   margin-top: -0.5px;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
-}
-
-.leaderboard .cover {
   object-fit: cover;
 }
 
-#lBoard .gold .rank,
-#lBoard .silver .rank,
-#lBoard .bronze .rank {
+table .gold .rank,
+table .silver .rank,
+table .bronze .rank {
   font-size: 2rem !important;
 }
 
@@ -157,56 +93,38 @@ table td {
 }
 
 @media (max-width: 1250px) {
-  #lBoard tr {
-    font-size: 23px;
+  table tr {
+    font-size: 2rem;
   }
 }
 
 @media (max-width: 1150px) {
-  #lBoard {
+  table {
     width: 100%;
   }
-  #lBoard tr {
+  table tr {
     grid-template-columns: 3fr 2fr 3fr 2fr;
   }
 }
 
 @media (max-width: 940px) {
-  #lBoard {
+  .leaderboard {
     width: 100%;
   }
-  #lBoard tr {
+  table tr {
     grid-template-columns: 2fr 1fr 2fr 1fr;
-    font-size: 18px;
     height: 80px;
   }
-  #lBoard .rank,
-  #lBoard .score {
-    font-size: 25px;
-  }
-  #lBoard .cover {
+
+  table .cover {
     height: 80px;
-  }
-  #lBoard .name {
-    margin-left: 5px;
-  }
-  #lBoard .gold .rank,
-  #lBoard .silver .rank,
-  #lBoard .bronze .rank {
-    font-size: 30px !important;
   }
 }
 
 @media (max-width: 750px) {
-  #lBoard tr,
-  #lBoard .rank,
-  #lBoard .score {
-    font-size: 16px;
+  table tr,
+  table .rank,
+  table .score {
     margin: 0 10px;
-  }
-  #lBoard .gold .rank,
-  #lBoard .silver .rank,
-  #lBoard .bronze .rank {
-    font-size: 25px !important;
   }
 }

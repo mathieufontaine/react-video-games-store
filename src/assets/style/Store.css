@@ -1,50 +1,50 @@
 .store {
   margin: auto;
-  width: 80%;
+  /* width: 80%; */
   position: relative;
 }
 
 .store .heading {
   margin: auto;
-  padding: 20px;
-  font-size: 30px;
+  padding: 2rem;
+  font-size: 3rem;
 }
 
-.video-game-list {
+.store-list {
   margin: 0 auto;
   padding: 10px 50px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
   justify-content: center;
   align-items: center;
 }
 
 .game-card {
   margin: 30px;
-  /* padding-top: 10px; */
-  /* display: flex; */
-  /* flex-direction: column; */
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-weight: 800;
-  height: 350px;
   width: 400px;
-  background-color: rgb(254, 254, 254);
+  font-weight: 500;
+  background-color: var(--primary);
   border-radius: 10px;
 }
+
 .game-card h3 {
-  color: black;
+  color: var(--light);
+}
+
+.game-card .price {
+  font-size: 16px;
+  padding: 15px;
+  color: var(--light);
 }
 
 .game-card:hover {
   background-color: rgb(12, 12, 12);
-  border-radius: 20px;
 }
 
 .game-card:hover h3,
 .game-card:hover .price {
-  color: white;
+  color: var(--light);
 }
 
 .game-card .caroussel {
@@ -55,6 +55,7 @@
   height: 200px;
   width: 100%;
   margin: 0 auto;
+  object-fit: cover;
   /* border-radius: 10px; */
 }
 .game-card .caroussel .slick-prev:before,
@@ -71,24 +72,15 @@
 }
 
 .game-card .title {
-  font-size: 18px;
+  font-size: 1.5rem;
 }
 
-.game-card .cover {
-  max-height: 300px;
-  width: 100%;
-}
 .rating-price {
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
-}
-
-.price {
-  font-size: 16px;
-  padding: 15px;
-  color: black;
 }
 
 @media (max-width: 1570px) {
@@ -101,7 +93,7 @@
 }
 
 @media (max-width: 1470px) {
-  .video-game-list {
+  .store-list {
     margin: 30px auto;
     width: 70%;
     gap: 30px;
@@ -113,14 +105,14 @@
 }
 
 @media (max-width: 1170px) {
-  .video-game-list {
+  .store-list {
     width: auto;
     gap: 20px;
   }
 }
 
 @media (max-width: 950px) {
-  .video-game-list {
+  .store-list {
     margin: 10px auto;
     /* width: 90%; */
     display: inline-block;
@@ -140,16 +132,16 @@
 }
 
 @media (max-width: 700px) {
-  .video-game-list {
+  .store-list {
     padding: 10px 0;
   }
 }
 
 @media (max-width: 580px) {
   .game-card {
-    width: 350px;
+    width: 300px;
   }
   .game-card .caroussel img {
-    height: 200px;
+    height: 150px;
   }
 }
