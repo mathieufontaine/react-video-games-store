@@ -1,74 +1,73 @@
+.video-game-page {
+  padding: 15px 60px;
+  align-items: center;
+}
 
-.video-game-page{
-    padding: 15px 60px;
-    align-items: center;
-
-  }
-
-  /* .video-game-page .caroussel {
+/* .video-game-page .caroussel {
     height: 600px;
   } */
 
-  .video-game-page .caroussel img {
-    min-height: 300px;
-    max-height: 600px;
-    min-width: 1000px;
-    max-width: 1400px;
-    /* width: auto; */
-    margin: 0 auto;
-    border-radius: 10px;
-  }
-  .video-game-page .caroussel .slick-prev:before, .video-game-page .caroussel .slick-next:before{
-    color: black;
-  }
+.video-game-page .caroussel img {
+  min-height: 300px;
+  max-height: 600px;
+  min-width: 1000px;
+  max-width: 1400px;
+  /* width: auto; */
+  margin: 0 auto;
+  border-radius: 10px;
+}
+.video-game-page .caroussel .slick-prev:before,
+.video-game-page .caroussel .slick-next:before {
+  color: black;
+}
 
-.video-game-page .game-details{
+.video-game-page .game-details {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
 }
 
+.video-game-page .game-title {
+  font-size: 40px;
+  padding: 0 20px;
+  align-self: start;
+}
+
+.video-game-page .cover {
+  height: auto;
+  padding: 20px;
+  width: 96%;
+  max-height: 600px;
+  border-radius: 30px;
+}
+
+.video-game-page .game-information {
+  /* display: grid; */
+  /* grid-template-columns: 1fr 6fr; */
+  padding: 20px;
+  text-align: left;
+  font-size: 2rem;
+}
+
+.video-game-page .clip video {
+  /* width: 65%; */
+}
+
+@media (max-width: 1000px) {
   .video-game-page .game-title {
-    font-size: 40px;
-    padding: 0 20px;
-    align-self: start;
+    font-size: 30px;
   }
-  
-  .video-game-page .cover {
-    height: auto;
-    padding: 20px;
-    width: 96%;
-    max-height: 600px;
-    border-radius: 30px;
+  .video-game-page .caroussel img {
+    min-height: unset;
+    height: 350px;
+    min-width: unset;
+    width: 600px;
   }
-  
-  .video-game-page .game-information{
-    /* display: grid; */
-    /* grid-template-columns: 1fr 6fr; */
-    padding: 20px;
-    text-align: left;
-  }
-  
-  .video-game-page .clip video{
-    width: 65%;
-  }
+}
 
-  @media  (max-width: 1000px) {
-
-    .video-game-page .game-title {
-      font-size: 30px;
-    }
-    .video-game-page .caroussel img {
-      min-height: unset;
-      height: 350px;
-      min-width:unset;
-      width: 600px ;
-    }
-  }
-
-  @media  (max-width: 800px) {
-  .video-game-page{
+@media (max-width: 800px) {
+  .video-game-page {
     padding: 0;
   }
   .video-game-page .game-title {
@@ -77,14 +76,15 @@
   .video-game-page .caroussel img {
     min-height: unset;
     height: 250px;
-    min-width:unset;
-    width: 400px ;
+    min-width: unset;
+    width: 400px;
     border-radius: 0;
   }
-  .video-game-page .clip video{
+  .video-game-page .clip video {
     width: 95%;
   }
-  .video-game-page .caroussel .slick-prev:before, .video-game-page .caroussel .slick-next:before{
+  .video-game-page .caroussel .slick-prev:before,
+  .video-game-page .caroussel .slick-next:before {
     display: none;
   }
   .video-game-page .actions .btn {

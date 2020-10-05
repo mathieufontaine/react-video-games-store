@@ -1,14 +1,33 @@
-#root{
+:root {
+  --purple: #590735;
+  --green: #2acb97;
+  --background-color: rgba(1, 1, 1, 0.7);
+}
+
+html {
+  font-size: 10px;
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 40%;
+  }
+}
+
+#root {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background: linear-gradient( rgba(31, 85, 66, 0.8), rgba(18, 18, 18, 0.3)), url(https://www.pdvg.it/wp-content/uploads/2020/05/videogames-controller-1920x1080-1.jpg);
+}
+
+body {
+  margin: 0;
+  background: url("../games-store.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-blend-mode: multiply;
-}
-
-
-body{
-  margin: 0;
+  min-height: 100vh;
+  position: relative;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 a {
@@ -18,121 +37,148 @@ a {
   color: inherit;
 }
 
-ul{
+ul {
   list-style: none;
   padding: 0;
 }
 
-li{
+li {
   list-style: none;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
-
 }
 
 .container {
   text-align: center;
-  background-color: white;
-  color: black;
-  min-height: 100vh;
-  max-width: 1500px;
-  margin: 0 auto
+  color: white;
+  background-color: rgba(1, 1, 1, 0.7);
+  width: 100%;
+  margin: auto;
+  height: 100%;
+  min-height: 80vh;
+  padding-top: 40px;
 }
 
 .header {
-  font-size: 20px;
   margin: 0 auto;
-  padding: 14px;
-  padding-bottom: 20px;
+  /* padding: 24px; */
+  height: 80px;
+  /* padding-bottom: 20px; */
   background-color: black;
   color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
 }
 
-.header h1 {
+.mobile-nav-btn {
+  margin-right: auto;
+  display: inline-block;
+}
+
+h1 {
   color: white;
-  margin-bottom: 0;
-
+  margin: 0;
+  font-size: 3rem;
+  width: 100%;
 }
 
-.white{
+.hide {
+  display: none;
+}
+.white {
   background-color: white;
   color: black;
   /* border-bottom: 1px solid black; */
 }
 
 .green {
-  background-color:cadetblue;
+  background-color: var(--green);
+  color: white;
+}
+
+.black {
+  background-color: black;
   color: white;
 }
 
 .purple {
-  background-color: rgb(153, 128, 177);
+  background-color: var(--purple);
   color: white;
 }
 
 .nav-tab .purple:hover {
   background-color: rgb(89, 43, 89);
+}
+
+.blue {
+  background-color: rgb(76, 157, 208);
+  color: white;
+}
+
+.nav-tab .blue:hover {
+  background-color: rgb(32, 127, 155);
+}
+
+.section-title {
+  height: 60px;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  line-height: 60px;
+}
+
+.page-title {
+  display: none;
+}
+
+.scrollTop {
+  position: fixed;
+  width: 100px;
+  bottom: 20px;
+  align-items: center;
+  height: 60px;
+  justify-content: center;
+  z-index: 1000;
+  cursor: pointer;
+  animation: fadeIn 0.3s;
+  transition: opacity 0.4s;
+  opacity: 0.7;
+}
+
+.scrollTop:hover {
+  opacity: 1;
+}
+
+.svg-inline--fa.fa-w-16 {
+  width: 100px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
-
-  .blue {
-    background-color: rgb(76, 157, 208);
-    color: white;
+  100% {
+    opacity: 0.5;
   }
-  
-  .nav-tab .blue:hover {
-    background-color: rgb(32, 127, 155);
-    }
+}
 
+@media (max-width: 1500px) {
+  .container {
+    /* border-right: 15px solid black; */
+    /* border-left: 15px solid black; */
+  }
+}
 
-    .scrollTop {
-      position: fixed; 
-      width: 100px;
-      bottom: 20px;
-      align-items: center;
-      height: 60px;
-      justify-content: center;
-      z-index: 1000;
-      cursor: pointer;
-      animation: fadeIn 0.3s;
-      transition: opacity 0.4s;
-      opacity: 0.7;
-    }
-    
-    .scrollTop:hover{
-      opacity: 1;
-    }
-    
-    .svg-inline--fa.fa-w-16 {
-      width: 100px;
-    }
+@media (max-width: 900px) {
+  .header {
+    font-size: 16px;
+  }
+}
 
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 0.5;
-      }
-    }
-
-
-
-    @media  (max-width: 1500px) {
-      .container {
-        /* border-right: 15px solid black; */
-        /* border-left: 15px solid black; */
-      }
-    }
-
-    @media  (max-width: 900px) {
-      .header {
-        font-size: 16px;
-      }
-    }
-
-    @media  (max-width: 700px) {
-      .header {
-        font-size: 14px;
-        padding: 10px;
-      }
-    }
+@media (max-width: 700px) {
+  .header {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

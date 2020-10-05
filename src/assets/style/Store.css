@@ -1,147 +1,155 @@
-
 .store {
-    margin: 15px;
-    position: relative;
-  }
-  
-  .store .heading{
-    margin: 40px 0 0 0;
-    font-size: 30px;
-  }
-  
-  .video-game-list{
-    margin: 0 auto;
-    padding: 10px 50px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  
+  margin: auto;
+  width: 80%;
+  position: relative;
+}
 
+.store .heading {
+  margin: auto;
+  padding: 20px;
+  font-size: 30px;
+}
+
+.video-game-list {
+  margin: 0 auto;
+  padding: 10px 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-card {
+  margin: 30px;
+  /* padding-top: 10px; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: 800;
+  height: 350px;
+  width: 400px;
+  background-color: rgb(254, 254, 254);
+  border-radius: 10px;
+}
+.game-card h3 {
+  color: black;
+}
+
+.game-card:hover {
+  background-color: rgb(12, 12, 12);
+  border-radius: 20px;
+}
+
+.game-card:hover h3,
+.game-card:hover .price {
+  color: white;
+}
+
+.game-card .caroussel {
+  height: 200px;
+}
+
+.game-card .caroussel img {
+  height: 200px;
+  width: 100%;
+  margin: 0 auto;
+  /* border-radius: 10px; */
+}
+.game-card .caroussel .slick-prev:before,
+.game-card .caroussel .slick-next:before {
+  color: rgb(255, 255, 255);
+}
+
+.game-card .slick-next {
+  right: 8px;
+}
+.game-card .slick-prev {
+  left: 8px;
+  z-index: 1;
+}
+
+.game-card .title {
+  font-size: 18px;
+}
+
+.game-card .cover {
+  max-height: 300px;
+  width: 100%;
+}
+.rating-price {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.price {
+  font-size: 16px;
+  padding: 15px;
+  color: black;
+}
+
+@media (max-width: 1570px) {
   .game-card {
-    margin: 30px;
-    /* padding-top: 10px; */
-    /* display: flex; */
-    /* flex-direction: column; */
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-weight: 800;
-    height: 350px;
-    width: 400px;
-    background-color:rgb(222, 222, 222);
-    border-radius: 10px;
-  
+    margin: 30px 10px;
   }
-  
-  .game-card:hover {
-    background-color: rgb(12, 12, 12);
-    color: white;
-    border-radius: 20px;
-  
+  .scrollTop {
+    right: 12px;
   }
-  
-  .game-card .caroussel {
-    height: 200px;
-  }
+}
 
+@media (max-width: 1470px) {
+  .video-game-list {
+    margin: 30px auto;
+    width: 70%;
+    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .game-card {
+    margin: 30px auto;
+  }
+}
+
+@media (max-width: 1170px) {
+  .video-game-list {
+    width: auto;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 950px) {
+  .video-game-list {
+    margin: 10px auto;
+    /* width: 90%; */
+    display: inline-block;
+  }
+  .game-card {
+    padding-top: 10px;
+    margin: 50px auto;
+    width: 500px;
+    height: auto;
+  }
+  .game-card .caroussel {
+    height: auto;
+  }
+  .game-card .caroussel img {
+    height: 300px;
+  }
+}
+
+@media (max-width: 700px) {
+  .video-game-list {
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 580px) {
+  .game-card {
+    width: 350px;
+  }
   .game-card .caroussel img {
     height: 200px;
-    width: 100%;
-    margin: 0 auto;
-    /* border-radius: 10px; */
   }
-  .game-card .caroussel .slick-prev:before, .game-card .caroussel .slick-next:before{
-    color: rgb(255, 255, 255);
-  }
-
-  .game-card .slick-next{
-    right: 8px;
-  }
-  .game-card .slick-prev{
-    left: 8px;
-    z-index: 1;
-  }
-
-  .game-card .title{
-    font-size: 18px;
-  }
-  
-  .game-card .cover{
-    max-height: 300px;
-    width: 100%;
-  } 
-  .rating-price{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  
-  .price {
-    font-size: 16px;
-    padding: 15px;
-  }
-
-  @media  (max-width: 1570px) {
-    .game-card {
-      margin: 30px 10px;
-    }
-    .scrollTop {
-      right: 12px;
-    }
-  }
-
-  @media  (max-width: 1370px) {
-    .video-game-list{
-      margin: 30px auto;
-      width: 70%;
-      gap: 30px;
-      grid-template-columns: 1fr 1fr;
-    }
-    .game-card {
-      margin: 30px auto;
-    }
-  }
-
-  @media  (max-width: 1170px) {
-    .video-game-list{
-      width:auto;
-      gap: 20px;
-    }
-  }
-
-
-  @media  (max-width: 950px) {
-    .video-game-list{
-      margin: 10px auto;
-      /* width: 90%; */
-      display: inline-block;
-    }
-    .game-card {
-      padding-top: 10px;
-      margin: 50px auto;
-      width: 500px;
-      height: auto;
-    }
-    .game-card .caroussel {
-      height: auto;
-    }
-    .game-card .caroussel img {
-      height: 300px;
-    }
-  }
-
-  @media  (max-width: 700px) {
-    .video-game-list{
-      padding: 10px 0;
-    }
-  }
-
-  @media  (max-width: 580px) {
-    .game-card {
-      width: 350px;
-    }
-    .game-card .caroussel img {
-      height: 200px;
-    }
-  }
+}
