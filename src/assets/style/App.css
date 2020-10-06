@@ -59,26 +59,28 @@ li {
   padding-top: 3rem;
 }
 
+.overlay {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(1, 1, 1, 0.7);
+  z-index: 15;
+}
+
 .sticky {
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
-.header {
-  margin: 0 auto;
-  height: 80px;
-  background-color: var(--primary);
-  color: white;
-  text-align: center;
-  display: flex;
-  align-items: center;
-}
-
 h1 {
   color: white;
   margin: 0;
-  font-size: 3rem;
+  font-size: 2.5rem;
+  line-height: 8rem;
   width: 100%;
 }
 
@@ -87,11 +89,24 @@ h2 {
 }
 
 h3 {
+  font-size: 1.7rem;
+}
+
+h4 {
   font-size: 1.5rem;
 }
 
+p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
 .hide {
-  display: none;
+  display: none !important;
+}
+
+.show {
+  display: inline-block;
 }
 
 .primary {
@@ -151,7 +166,13 @@ h3 {
     opacity: 0;
   }
   100% {
-    opacity: 0.5;
+    opacity: 1;
+  }
+}
+
+@media (min-width: 900px) {
+  .overlay {
+    display: none !important;
   }
 }
 
@@ -173,5 +194,9 @@ h3 {
 @media (max-width: 500px) {
   html {
     font-size: 40%;
+  }
+  .container {
+    padding-top: 0rem;
+    width: 100%;
   }
 }

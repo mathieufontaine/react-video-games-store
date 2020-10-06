@@ -9,7 +9,7 @@ import Rating from "@material-ui/lab/Rating";
 const API_URL = "https://api.rawg.io/api/games/";
 
 const VideoGamePage = props => {
-  const { findGame, cartGames, wishlistGames } = useContext(StoreContext);
+  const { findGame, cartGames, libraryGames } = useContext(StoreContext);
   const [game, setGame] = useState("");
 
   console.log(props.match.params.id);
@@ -117,14 +117,14 @@ const VideoGamePage = props => {
             <button className="btn primary">
               <Link to="/">Go to Store</Link>
             </button>
-            {wishlistGames.some(listGame => listGame.id === game.id) ? (
+            {libraryGames.some(listGame => listGame.id === game.id) ? (
               ""
             ) : (
               <button
                 className="btn secondary"
-                onClick={() => findGame(game.id, "wishlist")}
+                onClick={() => findGame(game.id, "library")}
               >
-                <Link to={"/wishlist"}>Add to My Games</Link>
+                <Link to={"/library"}>Add to My Games</Link>
               </button>
             )}
             {cartGames.some(listGame => listGame.id === game.id) ? (

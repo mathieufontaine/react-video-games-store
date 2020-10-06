@@ -11,69 +11,48 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
-  const { cartGames, wishlistGames, showNav } = useContext(StoreContext);
-
-  // const [mobileNavOn, setMobileNavOn] = useState(false);
-
-  // useEffect(() => {
-  //     const width  = window.innerWidth || document.documentElement.clientWidth ||
-  //     document.body.clientWidth;
-  //     if(width > 1200){setMobileNavOn(true)} else {setMobileNavOn(false)};
-  //     // {setMobileNavOn(true)};
-  // }, [width]);
+  const { cartGames, showNav } = useContext(StoreContext);
 
   return (
-    <div className="navbar">
-      {/* <div className={showNav === false ? "hide" : "mobile-nav full-width"}> */}
-      {/* <div
-          className="mobile-nav-btn"
-          onClick={() => setMobileNavOn(!mobileNavOn)}
+    <div
+      className={showNav === true ? "navbar show-navbar" : "navbar hide-navbar"}
+    >
+      <Link to="/">
+        <div
+          className="btn nav-tab"
+          // onClick={handleClick}
         >
-          <FontAwesomeIcon icon={faBars} className="nav-icon" />
-        </div> */}
-      {/* </div> */}
-      {showNav === true ? (
-        <>
-          <Link to="/">
-            <div
-              className="btn nav-tab"
-              // onClick={handleClick}
-            >
-              <FontAwesomeIcon icon={faStore} className="nav-icon" />
-              <span>STORE</span>
-            </div>
-          </Link>
-          <Link to="/wishlist">
-            <div
-              className="btn nav-tab"
-              // onClick={handleClick}
-            >
-              <FontAwesomeIcon icon={faGamepad} className="nav-icon" />
-              <span>MY LIBRARY</span>
-            </div>
-          </Link>
-          <Link to="/leaderboard">
-            <div
-              className="btn nav-tab"
-              // onClick={handleClick}
-            >
-              <FontAwesomeIcon icon={faListOl} className="nav-icon" />
-              <span>LEADERBOARD</span>
-            </div>
-          </Link>
-          <Link to="/cart">
-            <div
-              className="btn nav-tab cart"
-              // onClick={handleClick}
-            >
-              <FontAwesomeIcon icon={faShoppingCart} className="nav-icon" />
-              <span>CART({cartGames.length})</span>
-            </div>
-          </Link>
-        </>
-      ) : (
-        ""
-      )}
+          <FontAwesomeIcon icon={faStore} className="nav-icon" />
+          <span>STORE</span>
+        </div>
+      </Link>
+      <Link to="/library">
+        <div
+          className="btn nav-tab"
+          // onClick={handleClick}
+        >
+          <FontAwesomeIcon icon={faGamepad} className="nav-icon" />
+          <span>MY LIBRARY</span>
+        </div>
+      </Link>
+      <Link to="/leaderboard">
+        <div
+          className="btn nav-tab"
+          // onClick={handleClick}
+        >
+          <FontAwesomeIcon icon={faListOl} className="nav-icon" />
+          <span>LEADERBOARD</span>
+        </div>
+      </Link>
+      <Link to="/cart">
+        <div
+          className="btn nav-tab cart"
+          // onClick={handleClick}
+        >
+          <FontAwesomeIcon icon={faShoppingCart} className="nav-icon" />
+          <span>CART({cartGames.length})</span>
+        </div>
+      </Link>
     </div>
   );
 };

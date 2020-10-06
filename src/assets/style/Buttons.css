@@ -18,7 +18,7 @@
 .actions {
   display: flex;
   justify-content: center;
-  padding: 2rem 0;
+  /* padding: 2rem 0; */
   /* width: 100%; */
 }
 
@@ -50,18 +50,6 @@
 
 .trash-btn:hover {
   color: rgb(143, 3, 3);
-}
-
-.cross-btn {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  font-size: 24px;
-  color: red;
-  width: 15px;
-  margin: 0 auto;
-  cursor: pointer;
-  align-self: center;
 }
 
 /* .cross-btn:hover{
@@ -99,10 +87,10 @@
 
 .scrollTop {
   position: fixed;
-  width: 100px;
+  width: 8rem;
+  height: 6rem;
   bottom: 20px;
   align-items: center;
-  height: 60px;
   justify-content: center;
   z-index: 1000;
   cursor: pointer;

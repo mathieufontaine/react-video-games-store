@@ -30,17 +30,17 @@ export const AppReducer = (state, action) => {
     case "ADD_TO_WISHLIST":
       return {
         ...state,
-        wishlistGames: [...state.wishlistGames, { ...action.payload }]
+        libraryGames: [...state.libraryGames, { ...action.payload }]
       };
     case "REMOVE_FROM_WISHLIST":
       return {
         ...state,
-        wishlistGames: state.wishlistGames.filter(
+        libraryGames: state.libraryGames.filter(
           game => game.id !== action.payload
         )
       };
     case "CLEAR_WISHLIST":
-      return { ...state, wishlistGames: action.payload };
+      return { ...state, libraryGames: action.payload };
     case "FILTER_GAMES":
       return {
         ...state,

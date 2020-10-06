@@ -1,11 +1,29 @@
+.header {
+  margin: 0 auto;
+  height: 8rem;
+  background-color: var(--primary);
+  color: white;
+  text-align: center;
+  position: sticky;
+}
+
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-around;
   color: white;
   position: sticky;
-  top: 80px;
+  top: 8rem;
   z-index: 20;
+}
+
+.show-navbar {
+  animation: inFromTop 0.7s ease normal;
+}
+
+.hide-navbar {
+  animation: outToTop 0.7s ease forwards;
+  position: absolute;
 }
 
 .navbar a {
@@ -31,7 +49,7 @@
 }
 
 .nav-tab span {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 600;
   line-height: 100%;
 }
@@ -41,7 +59,6 @@
 }
 
 .nav-icon {
-  font-size: 2rem;
   margin-right: 2rem;
   line-height: 100%;
 }
@@ -54,10 +71,29 @@
   margin-right: auto;
   display: inline-block;
   color: white;
-  font-size: 30px;
-  width: 50px;
-  padding: 10px;
+  font-size: 4rem;
   cursor: pointer;
+  position: absolute;
+  left: 2rem;
+  top: 1.5rem;
+}
+
+@keyframes inFromTop {
+  from {
+    transform: translateY(-250px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes outToTop {
+  from {
+    top: 8rem;
+  }
+  to {
+    top: -250px;
+  }
 }
 
 @media (max-width: 900px) {
@@ -65,7 +101,13 @@
     display: inline-block;
     width: 100%;
   }
+
   .nav-tab {
-    height: 40px;
+    /* border-bottom: 1px solid white; */
+    justify-content: flex-start;
+    padding-left: 5rem !important;
+  }
+  .navbar a:last-child .nav-tab {
+    border: none;
   }
 }

@@ -53,7 +53,7 @@ const leaderboardGames = [
 const initialState = {
   storeGames: [],
   cartGames: JSON.parse(localStorage.getItem("cartGames")) || [],
-  wishlistGames: JSON.parse(localStorage.getItem("wishlistGames")) || [],
+  libraryGames: JSON.parse(localStorage.getItem("libraryGames")) || [],
   selectedGames: [],
   customLists: JSON.parse(localStorage.getItem("customLists")) || [],
   topList: JSON.parse(localStorage.getItem("topList")) || leaderboardGames,
@@ -86,7 +86,7 @@ const StoreContextProvider = ({ children }) => {
 
   useEffect(() => {
     localStorage.setItem("cartGames", JSON.stringify(state.cartGames));
-    localStorage.setItem("wishlistGames", JSON.stringify(state.wishlistGames));
+    localStorage.setItem("libraryGames", JSON.stringify(state.libraryGames));
     localStorage.setItem("lists", JSON.stringify(state.customLists));
     localStorage.setItem("topList", JSON.stringify(state.topList));
   });
@@ -132,21 +132,21 @@ const StoreContextProvider = ({ children }) => {
   //     addtoCart(game);
   // }
 
-  function addToWishlist(game) {
+  function addToLibrary(game) {
     dispatch({
       type: "ADD_TO_WISHLIST",
       payload: game
     });
   }
 
-  function removeFromWishlist(id) {
+  function removeFromLibrary(id) {
     dispatch({
       type: "REMOVE_FROM_WISHLIST",
       payload: id
     });
   }
 
-  function clearWishlist() {
+  function clearLibrary() {
     dispatch({
       type: "CLEAR_WISHLIST",
       payload: []
@@ -193,8 +193,8 @@ const StoreContextProvider = ({ children }) => {
     const game = state.storeGames.find(storeGame => storeGame.id === id);
     if (page === "cart") {
       addToCart(game);
-    } else if (page === "wishlist") {
-      addToWishlist(game);
+    } else if (page === "library") {
+      addToLibrary(game);
     } else if (page === "selectedGames") {
       addToSelectedGames(game);
     }
@@ -266,14 +266,14 @@ const StoreContextProvider = ({ children }) => {
         customLists: state.customLists,
         topList: state.topList,
         selectedGames: state.selectedGames,
-        wishlistGames: state.wishlistGames,
+        libraryGames: state.libraryGames,
         heading: state.heading,
 
         toggleNav,
         findGame,
         removeFromCart,
-        removeFromWishlist,
-        clearWishlist,
+        removeFromLibrary,
+        clearLibrary,
         showGames,
         updateHeading,
 

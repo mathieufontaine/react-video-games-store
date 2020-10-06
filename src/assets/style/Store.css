@@ -28,8 +28,11 @@
   border-radius: 10px;
 }
 
-.game-card h3 {
+.game-card .title {
   color: var(--light);
+  padding: 1.8rem;
+  margin: 0;
+  font-size: 1.8rem;
 }
 
 .game-card .price {
@@ -71,10 +74,6 @@
   z-index: 1;
 }
 
-.game-card .title {
-  font-size: 1.5rem;
-}
-
 .rating-price {
   width: 100%;
   height: 100%;
@@ -114,12 +113,10 @@
 @media (max-width: 950px) {
   .store-list {
     margin: 10px auto;
-    /* width: 90%; */
     display: inline-block;
   }
   .game-card {
-    padding-top: 10px;
-    margin: 50px auto;
+    margin: 0 auto 20px auto;
     width: 500px;
     height: auto;
   }

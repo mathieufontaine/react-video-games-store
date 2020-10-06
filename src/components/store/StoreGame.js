@@ -5,7 +5,7 @@ import Slider from "react-slick";
 import Rating from "@material-ui/lab/Rating";
 
 const StoreGame = ({ game }) => {
-  const { findGame, wishlistGames, cartGames } = useContext(StoreContext);
+  const { findGame, libraryGames, cartGames } = useContext(StoreContext);
 
   const settings = {
     // dots: true,
@@ -22,7 +22,7 @@ const StoreGame = ({ game }) => {
     if (listBtnRef.current) {
       listBtnRef.current.setAttribute("disabled", "disabled");
     }
-    findGame(game.id, "wishlist");
+    findGame(game.id, "library");
   };
 
   const onCartBtnClick = e => {
@@ -77,9 +77,9 @@ const StoreGame = ({ game }) => {
         </div>
       </Link>
       <div className="actions">
-        {wishlistGames.some(listGame => listGame.id === game.id) ? (
+        {libraryGames.some(listGame => listGame.id === game.id) ? (
           <button className="btn secondary">
-            <Link to={"/wishlist"}>In your library</Link>
+            <Link to={"/library"}>In your library</Link>
           </button>
         ) : (
           <button
@@ -88,7 +88,7 @@ const StoreGame = ({ game }) => {
             onClick={onListBtnClick}
           >
             Add to My Games
-            {/* <Link to={'/wishlist'}>Add to Wishlist</Link> */}
+            {/* <Link to={'/library'}>Add to Library</Link> */}
           </button>
         )}
         {cartGames.some(listGame => listGame.id === game.id) ? (
