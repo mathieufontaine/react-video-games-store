@@ -35,7 +35,11 @@ const LeaderBoard = () => {
       name: game.name,
       score: getScore(index + 1),
       cover: (
-        <img className="leaderboard cover" src={`${game.background_image}`} />
+        <img
+          className="leaderboard cover"
+          src={`${game.background_image}`}
+          alt="game-cover"
+        />
       ),
       key: game.id
     };
@@ -107,6 +111,7 @@ const LeaderBoard = () => {
     </div>
 
     //  : (<div className="empty-library">No games in the Leaderboard yet.. Come back here after creating your first lists 😉</div>)
+    /*: (<div className="empty-library">No games in the Leaderboard yet.. Come back here after creating your first lists 😉</div>)*/
     /*: (<div className="empty-library">No games in the Leaderboard yet.. Come back here after creating your first lists 😉</div>)*/
     /*: (<div className="empty-library">No games in the Leaderboard yet.. Come back here after creating your first lists 😉</div>)*/
     /*: (<div className="empty-library">No games in the Leaderboard yet.. Come back here after creating your first lists 😉</div>)*/

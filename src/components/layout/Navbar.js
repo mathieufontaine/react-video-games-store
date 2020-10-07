@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext } from "react";
 import { StoreContext } from "../../context/StoreContext";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,8 +6,7 @@ import {
   faShoppingCart,
   faGamepad,
   faStore,
-  faListOl,
-  faBars
+  faListOl
 } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {

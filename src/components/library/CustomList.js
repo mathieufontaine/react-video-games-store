@@ -26,12 +26,9 @@ const CustomList = ({ list }) => {
     );
   });
 
-  const {
-    customLists,
-    removeCustomList,
-    findItem,
-    updateOrderGames
-  } = useContext(StoreContext);
+  const { customLists, removeCustomList, updateOrderGames } = useContext(
+    StoreContext
+  );
 
   const selectedList = customLists.filter(
     customList => customList.id === list.id

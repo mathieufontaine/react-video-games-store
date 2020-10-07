@@ -104,7 +104,11 @@ const VideoGamePage = props => {
             {game.website !== "" ? (
               <p className="website">
                 <strong>More info: </strong>
-                <a target="_blank" href={game.website}>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={game.website}
+                >
                   {game.website}
                 </a>
               </p>

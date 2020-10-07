@@ -1,14 +1,8 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import { StoreContext } from "../../context/StoreContext";
 
 const CustomListForm = () => {
-  const {
-    addCustomList,
-    removeList,
-    editList,
-    setEditList,
-    editTitle
-  } = useContext(StoreContext);
+  const { addCustomList } = useContext(StoreContext);
   const [title, setTitle] = useState("");
 
   const handleSubmit = e => {
