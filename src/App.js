@@ -2,14 +2,14 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import StoreContextProvider from "./context/StoreContext";
-import Header from "./components/layout/Header";
-import Overlay from "./components/layout/Overlay";
-import Navbar from "./components/layout/Navbar";
-import Index from "./components/layout/Index";
-import Cart from "./components/cart/Cart";
-import Library from "./components/library/Library";
-import VideoGamePage from "./components/game/VideoGamePage";
-import LeaderBoard from "./components/leaderboard/Leaderboard";
+import Header from "./Components/layout/Header";
+import Overlay from "./Components/layout/Overlay";
+import Navbar from "./Components/layout/Navbar";
+import Index from "./Components/layout/Index";
+import Cart from "./Components/cart/Cart";
+import Library from "./Components/library/Library";
+import VideoGamePage from "./Components/game/VideoGamePage";
+import LeaderBoard from "./Components/leaderboard/Leaderboard";
 
 import "./assets/style/App.css";
 import "./assets/style/Store.css";
