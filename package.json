@@ -1,6 +1,5 @@
 {
-  "homepage": "http://mathieufontaine.github.io/react-video-games-store",
-  "name": "react-video-games-store",
+  "name": "video-games-store",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
