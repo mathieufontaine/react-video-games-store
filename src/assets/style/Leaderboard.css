@@ -1,0 +1,130 @@
+.leaderboard {
+  height: 100%;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.leaderboard p,
+.leaderboard .title,
+.leaderboard .search {
+  display: none;
+}
+
+table .table-headers {
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  height: 50px;
+}
+
+table .name,
+table .name-header {
+  text-align: left;
+  margin-left: 15px;
+}
+
+table tr {
+  /* padding: 10px; */
+  color: black;
+  background-color: rgb(223, 222, 222);
+  margin: 10px 60px;
+  display: grid;
+  grid-template-columns: 3fr 2fr 4fr 2fr;
+  align-items: center;
+  font-weight: 800;
+  height: 100px;
+  font-size: 2rem;
+  border-radius: 20px;
+}
+
+table td {
+  border: none;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 2rem;
+}
+
+table .rank,
+table .cover,
+table .score {
+  text-align: center;
+}
+
+table .rank,
+.score {
+  margin: 0 auto;
+  font-size: 2rem;
+}
+
+table .cover {
+  height: 100px;
+  width: 100%;
+  margin: 0 auto;
+  margin-left: -1px;
+  margin-top: -0.5px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  object-fit: cover;
+}
+
+table .gold .rank,
+table .silver .rank,
+table .bronze .rank {
+  font-size: 2rem !important;
+}
+
+.gold {
+  background-color: rgb(230, 205, 12) !important;
+}
+
+.silver {
+  background-color: lightslategray !important;
+}
+
+.bronze {
+  background-color: rgb(222, 165, 68) !important;
+}
+
+.leaderboard .empty {
+  font-size: 32px;
+  color: black;
+  padding: 32px;
+  padding-top: 64px;
+}
+
+@media (max-width: 1250px) {
+  table td {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 1150px) {
+  table {
+    width: 100%;
+  }
+  table tr {
+    grid-template-columns: 3fr 2fr 3fr 2fr;
+  }
+}
+
+@media (max-width: 940px) {
+  .leaderboard {
+    width: 100%;
+  }
+  table tr {
+    grid-template-columns: 2fr 1fr 3fr 1fr;
+    height: 60px;
+  }
+
+  table .cover {
+    height: 60px;
+  }
+}
+
+@media (max-width: 750px) {
+  table tr,
+  table .rank,
+  table .score {
+    margin: 10px;
+  }
+}
