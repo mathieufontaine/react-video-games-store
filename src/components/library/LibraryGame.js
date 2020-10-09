@@ -18,31 +18,36 @@ const LibraryGame = ({ game, showDelete, showFavorites }) => {
           className="cover"
         />
       </Link>
-      <Link to={`game/${game.id}`}>
-        <h4>{game.name}</h4>
-      </Link>
-      <div className="actions">
-        {showFavorites ? (
-          favorites.some(listGame => listGame.id == game.id) ? (
-            ""
+      <div>
+        <Link to={`game/${game.id}`}>
+          <h4>{game.name}</h4>
+        </Link>
+        <div className="actions">
+          {showFavorites ? (
+            favorites.some(listGame => listGame.id == game.id) ? (
+              ""
+            ) : (
+              <button
+                className="btn yellow"
+                onClick={() => addToFavorites(game)}
+              >
+                Add to Favorites
+              </button>
+            )
           ) : (
-            <button className="btn yellow" onClick={() => addToFavorites(game)}>
-              Add to Favorites
-            </button>
-          )
-        ) : (
-          ""
-        )}
-        {showDelete ? (
-          <div
-            className="icon-btn cross"
-            onClick={() => removeFromLibrary(game.id)}
-          >
-            <FontAwesomeIcon icon={faTimes} />
-          </div>
-        ) : (
-          ""
-        )}
+            ""
+          )}
+          {showDelete ? (
+            <div
+              className="icon-btn cross"
+              onClick={() => removeFromLibrary(game.id)}
+            >
+              <FontAwesomeIcon icon={faTimes} />
+            </div>
+          ) : (
+            ""
+          )}
+        </div>
       </div>
     </li>
   );

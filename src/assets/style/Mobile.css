@@ -163,8 +163,9 @@
     width: 100%;
   }
   .library-item {
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    /* min-height: 180px; */
+    /* height: auto; */
     margin: 5px;
   }
   .library-item .cover {
