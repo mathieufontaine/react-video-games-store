@@ -89,22 +89,32 @@ const Wishlist = () => {
           ) : (
             <div className="empty-list">
               <h3>To create a custom wishlist your need to:</h3>
-              <p>
-                <strong>1. </strong>Use the form above to give a name to your
-                list.
-              </p>
-              <p>
-                <strong>2. </strong>Add some games from the Store to your
-                Wishlist.
-              </p>
-              <p>
-                <strong>3. </strong>Select the games you want to add by clicking
-                on "add to custom list".
-              </p>
-              <p>
-                <strong>4. </strong>Choose your list among all your custom
-                lists.
-              </p>
+              <div className="indications">
+                <div>
+                  <p>
+                    <strong>1. </strong>Add some games from the Store to your
+                    Wishlist.
+                  </p>
+                </div>
+                <div>
+                  <p>
+                    <strong>2. </strong>Use the form above to give a name to
+                    your list.
+                  </p>
+                </div>
+                <div>
+                  <p>
+                    <strong>3. </strong>Select the games you want to add by
+                    clicking on the <span>+</span> button next to the game.
+                  </p>
+                </div>
+                <div>
+                  <p>
+                    <strong>4. </strong>Choose your list among all your custom
+                    wishlists available.
+                  </p>
+                </div>
+              </div>
             </div>
           )}
         </div>

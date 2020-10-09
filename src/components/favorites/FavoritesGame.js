@@ -7,7 +7,7 @@ const FavoritesGame = ({ game, sortIndex }) => {
   const { favorites, removeFromFavorites } = useContext(StoreContext);
 
   return (
-    <li className="library-item">
+    <li className="favorite-item">
       <div className="ranking">{sortIndex + 1}</div>
       <img
         src={game.background_image}

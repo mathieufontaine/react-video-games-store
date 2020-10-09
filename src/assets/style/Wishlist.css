@@ -88,12 +88,3 @@
   font-weight: 600;
   text-align: left;
 }
-
-.custom-lists {
-  margin-top: 5rem;
-  background-color: var(--secondary);
-}
-
-.custom-lists .search-bar {
-  border-radius: 10px;
-}

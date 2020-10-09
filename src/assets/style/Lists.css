@@ -1,3 +1,49 @@
+.custom-lists {
+  margin-top: 5rem;
+  background-color: var(--secondary);
+}
+
+.custom-lists .search-bar {
+  border-radius: 10px;
+}
+
+.custom-lists .empty-list {
+  width: 90%;
+  margin: auto;
+}
+
+.custom-lists .empty-list .indications {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  grid-gap: 2rem;
+}
+.custom-lists .empty-list .indications > div {
+  height: 220px;
+  padding: 0 2rem 2rem 2rem;
+  background: white;
+  color: black;
+  border-radius: 20px;
+}
+
+.custom-lists .empty-list .indications p strong {
+  color: var(--secondary);
+  font-size: 4rem;
+  display: block;
+  text-align: center;
+}
+
+.custom-lists .empty-list .indications p span {
+  color: var(--secondary);
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.custom-btn {
+}
+
 .lists {
   display: flex;
   flex-wrap: wrap;

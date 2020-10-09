@@ -39,8 +39,7 @@ const Library = () => {
       )}
       <div className="games-list">
         {libraryGames.length > 0 ? (
-          <div>
-            <h3>You have {libraryGames.length} games in your library</h3>
+          <>
             <ul className="games-list">
               {libraryGames.map(game => (
                 <LibraryGame
@@ -51,7 +50,8 @@ const Library = () => {
                 />
               ))}
             </ul>
-          </div>
+            <h3>You have {libraryGames.length} games in your library</h3>
+          </>
         ) : (
           <div className="empty-list">
             No Games.

@@ -85,7 +85,7 @@ section {
 }
 
 .empty-list {
-  padding: 2rem;
+  padding: 2rem 4rem;
   text-align: center;
 }
 
@@ -120,6 +120,11 @@ p {
 
 .show {
   display: inline-block;
+}
+
+.show h2 {
+  padding: 2rem 2rem 0 2rem;
+  color: black;
 }
 
 .primary {
@@ -185,4 +190,29 @@ p {
   100% {
     opacity: 1;
   }
+}
+
+.footer {
+  height: 7vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  background: var(--primary);
+}
+
+.footer .logos {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.footer .logos .fa {
+  font-size: 2rem;
+  margin-left: 20px;
 }

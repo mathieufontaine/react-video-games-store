@@ -50,7 +50,7 @@ const Favorites = () => {
         {sortedGames.length === 3 ? (
           <div className="empty-list">
             <p>
-              You need at least 3 games in your Top List. If you want to remove
+              You need at least 3 games in your Favorites. If you want to remove
               any of these games, add more games first.
             </p>
           </div>

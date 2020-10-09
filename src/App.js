@@ -10,6 +10,8 @@ import Library from "./components/library/Library";
 import Favorites from "./components/favorites/Favorites";
 import Wishlist from "./components/wishlist/Wishlist";
 import VideoGamePage from "./components/game/VideoGamePage";
+import Footer from "./components/layout/Footer";
+
 // import LeaderBoard from "./components/leaderboard/Leaderboard";
 
 import "./assets/style/App.css";
@@ -44,6 +46,7 @@ const App = () => {
             {/* <Route path="/leaderboard" component={LeaderBoard} /> */}
           </Switch>
         </div>
+        <Footer />
       </Router>
     </StoreContextProvider>
   );
