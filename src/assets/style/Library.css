@@ -17,6 +17,11 @@
   color: white;
 }
 
+.games-list h3 {
+  padding-top: 1rem;
+  color: var(--primary);
+}
+
 .library-item {
   position: relative;
   width: 300px;
@@ -29,9 +34,8 @@
 
 .library-item h4,
 .library-item h3 {
-  padding: 2rem;
-  margin-top: 0;
-  margin-bottom: 0;
+  /* padding: 2rem; */
+  /* margin: 2rem auto; */
   color: var(--primary);
 }
 
@@ -48,7 +52,7 @@
   position: absolute;
   font-size: 5rem;
   left: 8px;
-  z-index: 10;
+  z-index: 5;
   color: var(--secondary);
 }
 
@@ -64,50 +68,4 @@
   font-size: 1rem;
   padding: 1rem;
   margin: 0.5rem;
-}
-
-@media (max-width: 880px) {
-  .mobile .library-item {
-    width: 200px;
-    height: 200px;
-    margin: 10px;
-  }
-
-  .mobile .library-item .cover {
-    width: 100%;
-    height: 60%;
-  }
-
-  .library-item h4 {
-    padding: 0;
-    margin: 0;
-  }
-
-  .favorites .library-item {
-    width: 80%;
-    margin: auto;
-  }
-  .games-list {
-    justify-content: center;
-    align-items: center;
-  }
-}
-
-@media (max-width: 540px) {
-  .library {
-    width: 100%;
-  }
-  .mobile .library-item {
-    width: 140px;
-    height: 140px;
-    margin: 5px;
-  }
-
-  .mobile .library-item .cover {
-    width: 100%;
-    height: 60%;
-  }
-  .favorites .library-item .cover {
-    height: 100px;
-  }
 }

@@ -37,9 +37,10 @@ const Library = () => {
           </button>
         </div>
       )}
-      <div className="added-games library-section mobile">
+      <div className="games-list">
         {libraryGames.length > 0 ? (
           <div>
+            <h3>You have {libraryGames.length} games in your library</h3>
             <ul className="games-list">
               {libraryGames.map(game => (
                 <LibraryGame

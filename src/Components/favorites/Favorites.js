@@ -46,13 +46,12 @@ const Favorites = () => {
     <section className="favorites">
       <h2 className="section-title yellow">Favorites</h2>
       <div className="section-inner">
-        <h2>Rank your favorite games below.</h2>
-
+        <h3>Rank your favorite games below.</h3>
         {sortedGames.length === 3 ? (
           <div className="empty-list">
-            <h3>You need at least 3 games in your Top List.</h3>
             <p>
-              If you want to remove any of these games, add more games first.
+              You need at least 3 games in your Top List. If you want to remove
+              any of these games, add more games first.
             </p>
           </div>
         ) : (

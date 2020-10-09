@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { StoreContext } from "../../context/StoreContext";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faTimes, faPlus } from "@fortawesome/free-solid-svg-icons";
 
 const WishlistGame = ({ game, setSelectListSection }) => {
   const {
@@ -44,8 +44,8 @@ const WishlistGame = ({ game, setSelectListSection }) => {
           selectedGames.some(listGame => listGame.id === game.id) ? (
             ""
           ) : (
-            <button className="btn primary" onClick={() => handleClick(game)}>
-              Add to a Custom Wishlist
+            <button onClick={() => handleClick(game)}>
+              <FontAwesomeIcon icon={faPlus} />
             </button>
           )
         ) : (

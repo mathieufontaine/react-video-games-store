@@ -12,9 +12,9 @@ const Header = () => {
   };
 
   return (
-    <div className="header sticky">
+    <div className="header">
       <div className="hamburger" onClick={handleShowNav}>
-        <FontAwesomeIcon icon={faBars} className="nav-icon" />
+        <FontAwesomeIcon icon={faBars} />
       </div>
       <h1>
         <Link to="/">Video Games Manager</Link>

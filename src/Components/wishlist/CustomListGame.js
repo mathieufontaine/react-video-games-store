@@ -9,7 +9,7 @@ const CustomListGame = ({ game, sortIndex, id }) => {
   const { removeFromCustomList } = useContext(StoreContext);
 
   return (
-    <li className="video-game-library">
+    <li className="library-item">
       <div className="ranking">{sortIndex + 1}</div>
       <Link to={`game/${game.id}`}>
         <img
@@ -18,16 +18,14 @@ const CustomListGame = ({ game, sortIndex, id }) => {
           className="cover"
         />
       </Link>
-      <div className="actions">
-        <Link to={`game/${game.id}`}>
-          <h3>{game.name}</h3>
-        </Link>
-        <div
-          className="cross-btn"
-          onClick={() => removeFromCustomList(game.id, id)}
-        >
-          <FontAwesomeIcon icon={faTimes} />
-        </div>
+      <Link to={`game/${game.id}`}>
+        <h4>{game.name}</h4>
+      </Link>
+      <div
+        className="icon-btn cross"
+        onClick={() => removeFromCustomList(game.id, id)}
+      >
+        <FontAwesomeIcon icon={faTimes} />
       </div>
     </li>
   );

@@ -65,7 +65,7 @@ const Wishlist = () => {
             </div>
           ) : (
             <div className="empty-list">
-              No Games.
+              <h3 className="empty-list-title">No Games.</h3>
               <p>
                 To change your Top Games or your Custom Lists, you need to add
                 some games from the <Link to="/">store</Link> first.

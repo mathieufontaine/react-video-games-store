@@ -17,8 +17,8 @@ const LibraryGame = ({ game, showDelete, showFavorites }) => {
           alt={game.background_image}
           className="cover"
         />
-        <h4>{game.name}</h4>
       </Link>
+      <h4>{game.name}</h4>
       <div className="actions">
         {showFavorites ? (
           favorites.some(listGame => listGame.id == game.id) ? (

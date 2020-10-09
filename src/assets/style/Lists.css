@@ -3,18 +3,35 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-start;
+  width: 90%;
+  padding: 2rem 1rem;
+  margin: auto;
 }
 
 .list {
   background-color: rgb(226, 226, 242);
   border-radius: 15px;
-  margin: 10px 30px;
+  margin: 1rem;
+}
+
+.list .empty-list p {
+  color: var(--primary);
 }
 
 .list .title {
   color: var(--primary);
-  font-weight: 500;
+  font-weight: 800;
   text-transform: uppercase;
+}
+
+.list .total {
+  background-color: var(--primary);
+  font-size: 1.5rem;
+  padding: 2rem 1rem;
+  display: block;
+  font-weight: 400;
+  width: auto;
+  margin-bottom: 0;
 }
 
 .list button {
