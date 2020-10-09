@@ -6,9 +6,9 @@ import { faTimes, faStar } from "@fortawesome/free-solid-svg-icons";
 
 const LibraryGame = ({ game, showDelete, showFavorites }) => {
   const {
-    topList,
+    favorites,
     removeFromLibrary,
-    addToTopList
+    addToFavorites
     // addToSelectedGames,
     // selectedGames
   } = useContext(StoreContext);
@@ -43,10 +43,10 @@ const LibraryGame = ({ game, showDelete, showFavorites }) => {
       </Link>
       <div className="actions">
         {showFavorites ? (
-          topList.some(listGame => listGame.id == game.id) ? (
+          favorites.some(listGame => listGame.id == game.id) ? (
             ""
           ) : (
-            <button className="btn yellow" onClick={() => addToTopList(game)}>
+            <button className="btn yellow" onClick={() => addToFavorites(game)}>
               Add to Favorites
             </button>
           )

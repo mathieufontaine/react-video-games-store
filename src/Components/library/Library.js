@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { StoreContext } from "../../context/StoreContext";
 import LibraryGame from "./LibraryGame";
-import TopList from "./TopList";
+// import TopList from "./TopList";
 import { Link } from "react-router-dom";
 import ScrollArrow from "../layout/ScrollArrow";
 
@@ -50,7 +50,27 @@ const Library = () => {
 
   return (
     <div className="library">
-      <h2 className="section-title black">My Games</h2>
+      <h2 className="section-title black">My Library</h2>
+      {showDelete || showFavorites ? (
+        <button className="btn" onClick={handleCancel}>
+          Cancel
+        </button>
+      ) : (
+        <div className="button-container">
+          <button className="btn secondary">
+            <Link to="/">Add Games to Libray</Link>
+          </button>
+          <button className="btn yellow" onClick={() => setShowFavorites(true)}>
+            Add Games to Favorites
+          </button>
+          <button
+            className="btn remove-btn"
+            onClick={() => setShowDelete(true)}
+          >
+            Remove some Games
+          </button>
+        </div>
+      )}
       <div className="added-games library-section mobile">
         {libraryGames.length > 0 ? (
           <div>
@@ -67,26 +87,7 @@ const Library = () => {
                 />
               ))}
             </ul>
-            {showDelete || showFavorites ? (
-              <button className="btn" onClick={handleCancel}>
-                Cancel
-              </button>
-            ) : (
-              <div className="button-container">
-                <button
-                  className="btn secondary"
-                  onClick={() => setShowFavorites(true)}
-                >
-                  Add Games to Favorites
-                </button>
-                <button
-                  className="btn remove-btn"
-                  onClick={() => setShowDelete(true)}
-                >
-                  Remove some Games
-                </button>
-              </div>
-            )}
+
             {/* {selectListSection === false ? (
               <button className="btn remove-btn" onClick={() => clearLibrary()}>
                 Remove all games
@@ -109,17 +110,17 @@ const Library = () => {
           <div className="empty-library">
             No Games.
             <p>
-              To add games to your Library or Favorites you need to select them
-              from the <Link to="/">store</Link> first.
+              Go to the <Link to="/">store</Link> and select the games you want
+              to add to your library.
             </p>
           </div>
         )}
       </div>
 
-      <h2 className="section-title black">Favorites</h2>
+      {/* <h2 className="section-title black">Favorites</h2>
       <div className="top-games library-section">
         <TopList />
-      </div>
+      </div> */}
 
       {/* <h2 className="section-title black">My Custom Lists</h2>
       <div className="custom-lists library-section">

@@ -54,7 +54,7 @@ const initialState = {
   storeGames: [],
   selectedGames: [],
   libraryGames: JSON.parse(localStorage.getItem("libraryGames")) || [],
-  topList: JSON.parse(localStorage.getItem("topList")) || leaderboardGames,
+  favorites: JSON.parse(localStorage.getItem("favorites")) || leaderboardGames,
   wishlistGames: JSON.parse(localStorage.getItem("wishlistGames")) || [],
   customLists: JSON.parse(localStorage.getItem("customLists")) || [],
   // cartGames: JSON.parse(localStorage.getItem("cartGames")) || [],
@@ -79,8 +79,8 @@ const StoreContextProvider = ({ children }) => {
           ...game
         }));
         showGames(newGames);
-        // const gamesTopList = newGames.slice(Math.floor(Math.random() * (5 - 0) + 0), Math.floor(Math.random() * (12 - 6) + 6));
-        //  addToTopList(gamesTopList);
+        // const gamesFavorites = newGames.slice(Math.floor(Math.random() * (5 - 0) + 0), Math.floor(Math.random() * (12 - 6) + 6));
+        //  addToFavorites(gamesFavorites);
       })
       .catch(err => console.log(err));
   }, []);
@@ -88,7 +88,7 @@ const StoreContextProvider = ({ children }) => {
   useEffect(() => {
     // localStorage.setItem("cartGames", JSON.stringify(state.cartGames));
     localStorage.setItem("libraryGames", JSON.stringify(state.libraryGames));
-    localStorage.setItem("topList", JSON.stringify(state.topList));
+    localStorage.setItem("favorites", JSON.stringify(state.favorites));
     localStorage.setItem("wishlistGames", JSON.stringify(state.wishlistGames));
     localStorage.setItem("lists", JSON.stringify(state.customLists));
   });
@@ -176,23 +176,23 @@ const StoreContextProvider = ({ children }) => {
     });
   }
 
-  function addToTopList(game) {
+  function addToFavorites(game) {
     dispatch({
-      type: "ADD_TO_TOP_LIST",
+      type: "ADD_TO_FAVORITES",
       payload: game
     });
   }
 
-  function removeFromTopList(id) {
+  function removeFromFavorites(id) {
     dispatch({
-      type: "REMOVE_FROM_TOP_LIST",
+      type: "REMOVE_FROM_FAVORITES",
       payload: id
     });
   }
 
-  function updateTopList(games) {
+  function updateFavorites(games) {
     dispatch({
-      type: "UPDATE_TOP_LIST",
+      type: "UPDATE_FAVORITES",
       payload: games
     });
   }
@@ -289,7 +289,7 @@ const StoreContextProvider = ({ children }) => {
         storeGames: state.storeGames,
         // cartGames: state.cartGames,
         customLists: state.customLists,
-        topList: state.topList,
+        favorites: state.favorites,
         selectedGames: state.selectedGames,
         libraryGames: state.libraryGames,
         wishlistGames: state.wishlistGames,
@@ -311,9 +311,9 @@ const StoreContextProvider = ({ children }) => {
         removeFromCustomList,
         updateOrderGames,
 
-        addToTopList,
-        removeFromTopList,
-        updateTopList,
+        addToFavorites,
+        removeFromFavorites,
+        updateFavorites,
 
         addToSelectedGames,
         clearSelectedGames,

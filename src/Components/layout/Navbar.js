@@ -6,7 +6,8 @@ import {
   faShoppingCart,
   faGamepad,
   faStore,
-  faListOl
+  faListOl,
+  faStar
 } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
@@ -32,6 +33,15 @@ const Navbar = () => {
         >
           <FontAwesomeIcon icon={faGamepad} className="nav-icon" />
           <span>MY LIBRARY</span>
+        </div>
+      </Link>
+      <Link to="/favorites">
+        <div
+          className="btn nav-tab"
+          // onClick={handleClick}
+        >
+          <FontAwesomeIcon icon={faStar} className="nav-icon" />
+          <span>My Favorites</span>
         </div>
       </Link>
       <Link to="/wishlist">

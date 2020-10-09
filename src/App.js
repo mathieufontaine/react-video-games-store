@@ -8,6 +8,7 @@ import Navbar from "./Components/layout/Navbar";
 import Index from "./Components/layout/Index";
 // import Cart from "./Components/cart/Cart";
 import Library from "./Components/library/Library";
+import Favorites from "./Components/favorites/Favorites";
 import Wishlist from "./Components/wishlist/Wishlist";
 import VideoGamePage from "./Components/game/VideoGamePage";
 // import LeaderBoard from "./Components/leaderboard/Leaderboard";
@@ -36,6 +37,7 @@ const App = () => {
           <Switch>
             <Route exact path="/" component={Index} />
             <Route path="/library" component={Library} />
+            <Route path="/favorites" component={Favorites} />
             <Route path="/wishlist" component={Wishlist} />
             {/* <Route path="/leaderboard" component={LeaderBoard} /> */}
             <Route path="/game/:id" component={VideoGamePage} />

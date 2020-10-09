@@ -79,23 +79,23 @@ export const AppReducer = (state, action) => {
           list => list.id !== action.payload
         )
       };
-    case "ADD_TO_TOP_LIST":
+    case "ADD_TO_FAVORITES":
       return {
         ...state,
-        topList:
+        favorites:
           action.payload.length > 0
-            ? [...state.topList, ...action.payload]
-            : [...state.topList, action.payload]
+            ? [...state.favorites, ...action.payload]
+            : [...state.favorites, action.payload]
       };
-    case "REMOVE_FROM_TOP_LIST":
+    case "REMOVE_FROM_FAVORITES":
       return {
         ...state,
-        topList: state.topList.filter(game => game.id !== action.payload)
+        favorites: state.favorites.filter(game => game.id !== action.payload)
       };
-    case "UPDATE_TOP_LIST":
+    case "UPDATE_FAVORITES":
       return {
         ...state,
-        topList: [...action.payload]
+        favorites: [...action.payload]
       };
     case "ADD_TO_SELECTED_GAMES":
       return {
