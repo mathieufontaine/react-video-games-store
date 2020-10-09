@@ -6,10 +6,11 @@ import Header from "./Components/layout/Header";
 import Overlay from "./Components/layout/Overlay";
 import Navbar from "./Components/layout/Navbar";
 import Index from "./Components/layout/Index";
-import Cart from "./Components/cart/Cart";
+// import Cart from "./Components/cart/Cart";
 import Library from "./Components/library/Library";
+import Wishlist from "./Components/wishlist/Wishlist";
 import VideoGamePage from "./Components/game/VideoGamePage";
-import LeaderBoard from "./Components/leaderboard/Leaderboard";
+// import LeaderBoard from "./Components/leaderboard/Leaderboard";
 
 import "./assets/style/App.css";
 import "./assets/style/Store.css";
@@ -34,10 +35,11 @@ const App = () => {
           <Overlay />
           <Switch>
             <Route exact path="/" component={Index} />
-            <Route path="/cart" component={Cart} />
             <Route path="/library" component={Library} />
-            <Route path="/leaderboard" component={LeaderBoard} />
+            <Route path="/wishlist" component={Wishlist} />
+            {/* <Route path="/leaderboard" component={LeaderBoard} /> */}
             <Route path="/game/:id" component={VideoGamePage} />
+            {/* <Route path="/cart" component={Cart} /> */}
           </Switch>
         </div>
       </Router>

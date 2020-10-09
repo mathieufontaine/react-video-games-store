@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { StoreContext } from "../../context/StoreContext";
 
-import TopListGame from "./game/TopListGame";
+import TopListGame from "./TopListGame";
 
 import { SortableContainer, SortableElement } from "react-sortable-hoc";
 import arrayMove from "array-move";

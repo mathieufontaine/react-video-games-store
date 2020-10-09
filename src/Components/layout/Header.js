@@ -17,7 +17,7 @@ const Header = () => {
         <FontAwesomeIcon icon={faBars} className="nav-icon" />
       </div>
       <h1>
-        <Link to="/">Video Games Store </Link>
+        <Link to="/">Video Games Manager</Link>
       </h1>
     </div>
   );

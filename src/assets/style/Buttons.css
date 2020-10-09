@@ -18,8 +18,12 @@
 .actions {
   display: flex;
   justify-content: center;
-  /* padding: 2rem 0; */
+  padding: 1rem 0;
   /* width: 100%; */
+}
+
+.store .actions {
+  padding: 0;
 }
 
 .store .actions .btn {

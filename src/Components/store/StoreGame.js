@@ -5,7 +5,7 @@ import Slider from "react-slick";
 import Rating from "@material-ui/lab/Rating";
 
 const StoreGame = ({ game }) => {
-  const { findGame, libraryGames, cartGames } = useContext(StoreContext);
+  const { findGame, libraryGames, wishlistGames } = useContext(StoreContext);
 
   const settings = {
     // dots: true,
@@ -16,21 +16,29 @@ const StoreGame = ({ game }) => {
   };
 
   let listBtnRef = useRef();
-  let cartBtnRef = useRef();
+  let wishlistBtnRef = useRef();
+  // let cartBtnRef = useRef();
 
-  const onListBtnClick = e => {
+  const onLibraryBtnClick = e => {
     if (listBtnRef.current) {
       listBtnRef.current.setAttribute("disabled", "disabled");
     }
     findGame(game.id, "library");
   };
 
-  const onCartBtnClick = e => {
-    if (cartBtnRef.current) {
-      cartBtnRef.current.setAttribute("disabled", "disabled");
+  const onWishlistBtnClick = e => {
+    if (wishlistBtnRef.current) {
+      wishlistBtnRef.current.setAttribute("disabled", "disabled");
     }
-    findGame(game.id, "cart");
+    findGame(game.id, "wishlist");
   };
+
+  // const onCartBtnClick = e => {
+  //   if (cartBtnRef.current) {
+  //     cartBtnRef.current.setAttribute("disabled", "disabled");
+  //   }
+  //   findGame(game.id, "cart");
+  // };
 
   return (
     <li className="game-card">
@@ -85,13 +93,26 @@ const StoreGame = ({ game }) => {
           <button
             className="btn primary"
             ref={listBtnRef}
-            onClick={onListBtnClick}
+            onClick={onLibraryBtnClick}
           >
-            Add to My Games
+            I own this Game
             {/* <Link to={'/library'}>Add to Library</Link> */}
           </button>
         )}
-        {cartGames.some(listGame => listGame.id === game.id) ? (
+        {wishlistGames.some(listGame => listGame.id === game.id) ? (
+          <button className="btn secondary">
+            <Link to={"/wishlist"}>In your Wishlist</Link>
+          </button>
+        ) : (
+          <button
+            className="btn primary"
+            ref={wishlistBtnRef}
+            onClick={onWishlistBtnClick}
+          >
+            <Link to={"/wishlist"}>I want this Game</Link>
+          </button>
+        )}
+        {/* {cartGames.some(listGame => listGame.id === game.id) ? (
           <button className="btn secondary">
             <Link to={"/cart"}>In your Cart</Link>
           </button>
@@ -103,7 +124,7 @@ const StoreGame = ({ game }) => {
           >
             <Link to={"/cart"}>Add to Cart</Link>
           </button>
-        )}
+        )} */}
       </div>
     </li>
   );

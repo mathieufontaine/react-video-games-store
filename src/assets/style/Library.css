@@ -20,12 +20,19 @@
   flex-wrap: wrap;
 }
 
+.added-games-list .price {
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 1rem;
+  color: white;
+}
+
 .top-games {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: var(--primary);
 }
 
 .custom-lists {
-  background-color: rgb(89, 7, 53, 0.7);
+  background-color: var(--secondary);
 }
 
 .custom-lists .search-bar {
@@ -58,6 +65,7 @@
 .video-game-library h3 {
   padding: 2rem;
   margin-top: 0;
+  margin-bottom: 0;
   color: var(--primary);
 }
 
@@ -94,27 +102,55 @@
   margin: 0.5rem;
 }
 
-.cross-btn {
+.icon-btn {
   position: absolute;
   right: 1rem;
   top: 1rem;
   font-size: 2rem;
-  color: red;
   width: 15px;
   margin: 0 auto;
   cursor: pointer;
   align-self: center;
+  transition: all 0.5s ease;
+}
+
+.icon-btn:hover {
+  font-size: 5rem;
+  right: 3rem;
+  top: 0rem;
+}
+
+.cross {
+  color: red;
+  z-index: 10;
 }
 
 .top-games .video-game-library {
   width: 50%;
-  margin: auto;
+  margin: 2rem auto;
+  cursor: grab;
 }
+
 .top-games .video-game-library .cover {
   height: 200px;
   object-fit: cover;
+  cursor: grab;
 }
 
+.top-games .video-game-library::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 1;
+}
+
+.top-games .video-game-library:hover {
+  background: var(--secondary);
+}
 @media (max-width: 880px) {
   .mobile .video-game-library {
     width: 200px;

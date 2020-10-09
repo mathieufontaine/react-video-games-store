@@ -1,9 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { StoreContext } from "../../context/StoreContext";
-import LibraryGame from "./game/LibraryGame";
-import CustomList from "./CustomList";
-import CustomListForm from "./CustomListForm";
-import CustomListSelect from "./CustomListSelect";
+import LibraryGame from "./LibraryGame";
 import TopList from "./TopList";
 import { Link } from "react-router-dom";
 import ScrollArrow from "../layout/ScrollArrow";
@@ -26,21 +23,30 @@ import ScrollArrow from "../layout/ScrollArrow";
 //   });
 
 const Library = () => {
-  const { customLists, libraryGames, selectedGames, clearLibrary } = useContext(
+  const [showDelete, setShowDelete] = useState(false);
+  const [showFavorites, setShowFavorites] = useState(false);
+  const { libraryGames, selectedGames, clearLibrary } = useContext(
     StoreContext
   );
+
+  const handleCancel = () => {
+    setShowDelete(false);
+    setShowFavorites(false);
+  };
+
+  console.log(showDelete, showFavorites);
   // const [sortedGames, setGames] = useState(libraryGames);
 
   //  const onSortEnd = ({oldIndex, newIndex}) => {
   //   setGames(arrayMove(sortedGames, oldIndex, newIndex));
   //     };
 
-  const [selectListSection, setSelectListSection] = useState(false);
-  const [gamesToAdd, setGamesToAdd] = useState(selectedGames);
+  // const [selectListSection, setSelectListSection] = useState(false);
+  // const [gamesToAdd, setGamesToAdd] = useState(selectedGames);
 
-  useEffect(() => {
-    setGamesToAdd(selectedGames);
-  }, [selectedGames.length]);
+  // useEffect(() => {
+  //   setGamesToAdd(selectedGames);
+  // }, [selectedGames.length]);
 
   return (
     <div className="library">
@@ -54,19 +60,41 @@ const Library = () => {
                 <LibraryGame
                   game={game}
                   key={game.id}
-                  setSelectListSection={setSelectListSection}
-                  selectListSection={selectListSection}
+                  showDelete={showDelete}
+                  showFavorites={showFavorites}
+                  // setSelectListSection={setSelectListSection}
+                  // selectListSection={selectListSection}
                 />
               ))}
             </ul>
-            {selectListSection === false ? (
+            {showDelete || showFavorites ? (
+              <button className="btn" onClick={handleCancel}>
+                Cancel
+              </button>
+            ) : (
+              <div className="button-container">
+                <button
+                  className="btn secondary"
+                  onClick={() => setShowFavorites(true)}
+                >
+                  Add Games to Favorites
+                </button>
+                <button
+                  className="btn remove-btn"
+                  onClick={() => setShowDelete(true)}
+                >
+                  Remove some Games
+                </button>
+              </div>
+            )}
+            {/* {selectListSection === false ? (
               <button className="btn remove-btn" onClick={() => clearLibrary()}>
                 Remove all games
               </button>
             ) : (
               ""
-            )}
-            {customLists.length > 0 ? (
+            )} */}
+            {/* {customLists.length > 0 ? (
               <CustomListSelect
                 customLists={customLists}
                 gamesToAdd={gamesToAdd}
@@ -75,25 +103,25 @@ const Library = () => {
               />
             ) : (
               ""
-            )}
+            )} */}
           </div>
         ) : (
           <div className="empty-library">
             No Games.
             <p>
-              To change your Top Games or your Custom Lists, you need to add
-              some games from the <Link to="/">store</Link> first.
+              To add games to your Library or Favorites you need to select them
+              from the <Link to="/">store</Link> first.
             </p>
           </div>
         )}
       </div>
 
-      <h2 className="section-title black">My TOP Games</h2>
+      <h2 className="section-title black">Favorites</h2>
       <div className="top-games library-section">
         <TopList />
       </div>
 
-      <h2 className="section-title black">My Custom Lists</h2>
+      {/* <h2 className="section-title black">My Custom Lists</h2>
       <div className="custom-lists library-section">
         <CustomListForm />
         {customLists.length ? (
@@ -120,7 +148,7 @@ const Library = () => {
             </p>
           </div>
         )}
-      </div>
+      </div> */}
       <ScrollArrow />
     </div>
   );

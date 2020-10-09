@@ -145,6 +145,11 @@ p {
   color: white;
 }
 
+.yellow {
+  background-color: rgb(223, 223, 34);
+  color: black;
+}
+
 .section-title {
   height: 60px;
   width: 100%;

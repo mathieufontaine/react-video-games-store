@@ -34,7 +34,16 @@ const Navbar = () => {
           <span>MY LIBRARY</span>
         </div>
       </Link>
-      <Link to="/leaderboard">
+      <Link to="/wishlist">
+        <div
+          className="btn nav-tab"
+          // onClick={handleClick}
+        >
+          <FontAwesomeIcon icon={faShoppingCart} className="nav-icon" />
+          <span>My WISHLIST</span>
+        </div>
+      </Link>
+      {/* <Link to="/leaderboard">
         <div
           className="btn nav-tab"
           // onClick={handleClick}
@@ -42,8 +51,8 @@ const Navbar = () => {
           <FontAwesomeIcon icon={faListOl} className="nav-icon" />
           <span>LEADERBOARD</span>
         </div>
-      </Link>
-      <Link to="/cart">
+      </Link> */}
+      {/* <Link to="/cart">
         <div
           className="btn nav-tab cart"
           // onClick={handleClick}
@@ -51,7 +60,7 @@ const Navbar = () => {
           <FontAwesomeIcon icon={faShoppingCart} className="nav-icon" />
           <span>CART({cartGames.length})</span>
         </div>
-      </Link>
+      </Link> */}
     </div>
   );
 };

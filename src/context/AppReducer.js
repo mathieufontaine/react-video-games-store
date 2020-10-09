@@ -17,30 +17,44 @@ export const AppReducer = (state, action) => {
         ...state,
         heading: `Search Results for: "${action.payload}"`
       };
-    case "ADD_TO_CART":
-      return {
-        ...state,
-        cartGames: [...state.cartGames, { ...action.payload }]
-      };
-    case "REMOVE_FROM_CART":
-      return {
-        ...state,
-        cartGames: state.cartGames.filter(game => game.id !== action.payload)
-      };
-    case "ADD_TO_WISHLIST":
+    // case "ADD_TO_CART":
+    //   return {
+    //     ...state,
+    //     cartGames: [...state.cartGames, { ...action.payload }]
+    //   };
+    // case "REMOVE_FROM_CART":
+    //   return {
+    //     ...state,
+    //     cartGames: state.cartGames.filter(game => game.id !== action.payload)
+    //   };
+    case "ADD_TO_LIBRARY":
       return {
         ...state,
         libraryGames: [...state.libraryGames, { ...action.payload }]
       };
-    case "REMOVE_FROM_WISHLIST":
+    case "REMOVE_FROM_LIBRARY":
       return {
         ...state,
         libraryGames: state.libraryGames.filter(
           game => game.id !== action.payload
         )
       };
-    case "CLEAR_WISHLIST":
+    case "CLEAR_LIBRARY":
       return { ...state, libraryGames: action.payload };
+    case "ADD_TO_WISHLIST":
+      return {
+        ...state,
+        wishlistGames: [...state.wishlistGames, { ...action.payload }]
+      };
+    case "REMOVE_FROM_WISHLIST":
+      return {
+        ...state,
+        wishlistGames: state.wishlistGames.filter(
+          game => game.id !== action.payload
+        )
+      };
+    case "CLEAR_WISHLIST":
+      return { ...state, wishlistGames: action.payload };
     case "FILTER_GAMES":
       return {
         ...state,

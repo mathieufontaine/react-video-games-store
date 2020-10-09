@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { StoreContext } from "../../../context/StoreContext";
+import { StoreContext } from "../../context/StoreContext";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
