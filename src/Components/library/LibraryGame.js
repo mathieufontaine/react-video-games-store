@@ -18,7 +18,9 @@ const LibraryGame = ({ game, showDelete, showFavorites }) => {
           className="cover"
         />
       </Link>
-      <h4>{game.name}</h4>
+      <Link to={`game/${game.id}`}>
+        <h4>{game.name}</h4>
+      </Link>
       <div className="actions">
         {showFavorites ? (
           favorites.some(listGame => listGame.id == game.id) ? (
