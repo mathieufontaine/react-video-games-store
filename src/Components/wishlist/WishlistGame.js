@@ -4,20 +4,13 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
-const WishlistGame = ({ game, selectListSection, setSelectListSection }) => {
+const WishlistGame = ({ game, setSelectListSection }) => {
   const {
     customLists,
     addToSelectedGames,
     removeFromWishlist,
-    selectedGames,
-    cartGames,
-    findGame
+    selectedGames
   } = useContext(StoreContext);
-
-  // const [bgColor, setBgColor] = useState('');
-  // const [color, setColor] = useState('');
-
-  // const [selectedGames, setSelectedGames] = useState([]);
 
   const handleClick = game => {
     setSelectListSection(true);
@@ -32,7 +25,7 @@ const WishlistGame = ({ game, selectListSection, setSelectListSection }) => {
 
   return (
     <li
-      className="cart-item"
+      className="wishlist-item"
       style={{ backgroundColor: styleCart.bgColor, color: styleCart.color }}
     >
       <Link to={`game/${game.id}`}>

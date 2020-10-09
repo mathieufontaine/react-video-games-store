@@ -1,22 +1,20 @@
 import React, { useContext, useState, useEffect } from "react";
 import { StoreContext } from "../../context/StoreContext";
-import WishlistGame from "./WishlistGame";
+import CustomListGame from "./CustomListGame";
 import { SortableContainer, SortableElement } from "react-sortable-hoc";
 import arrayMove from "array-move";
-import CartTotal from "../cart/CartTotal";
+import CartTotal from "./Total";
 
 const CustomList = ({ list }) => {
   const SortableItem = SortableElement(({ game, sortIndex }) => (
-    <WishlistGame game={game} sortIndex={sortIndex} id={list.id} />
+    <CustomListGame game={game} sortIndex={sortIndex} id={list.id} />
   ));
 
   const SortableList = SortableContainer(({ sortedGames }) => {
     return (
       <>
         <ul className="sortable-list">
-          {/* {console.log(sortedGames)} */}
           {sortedGames.map((game, index) => (
-            // console.log(game)
             <SortableItem
               key={index}
               index={index}
@@ -74,9 +72,9 @@ const CustomList = ({ list }) => {
           />
         </ul>
       ) : (
-        <div className="empty-library">
+        <div className="empty-list">
           <p>No game yet.</p>
-          {/* <p>Add some games from your added games list.</p> */}
+          <p>Add some games from your custom list.</p>
         </div>
       )}
 

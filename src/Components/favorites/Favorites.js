@@ -1,8 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { StoreContext } from "../../context/StoreContext";
-
 import FavoritesGame from "./FavoritesGame";
-
 import { SortableContainer, SortableElement } from "react-sortable-hoc";
 import arrayMove from "array-move";
 
@@ -14,9 +12,7 @@ const Favorites = () => {
   const SortableList = SortableContainer(({ sortedGames }) => {
     return (
       <ul className="sortable-list">
-        {/* {console.log(sortedGames)} */}
         {sortedGames.map((game, index) => (
-          // console.log(game)
           <SortableItem
             key={index}
             index={index}
@@ -31,7 +27,6 @@ const Favorites = () => {
   const { favorites, updateFavorites } = useContext(StoreContext);
 
   const [sortedGames, setGames] = useState(favorites);
-  // console.log(sortedGames);
 
   useEffect(() => {
     setGames(favorites);
@@ -48,12 +43,10 @@ const Favorites = () => {
   }, [sortedGames]);
 
   return (
-    <>
+    <section className="favorites">
       <h2 className="section-title yellow">Favorites</h2>
-      <div className="top-games top-list library-section">
-        <div className="list-information">
-          <h3>Rank your favorite games below.</h3>
-        </div>
+      <div className="section-inner">
+        <h2>Rank your favorite games below.</h2>
 
         {sortedGames.length === 3 ? (
           <div className="empty-list">
@@ -74,7 +67,7 @@ const Favorites = () => {
           />
         </ul>
       </div>
-    </>
+    </section>
   );
 };
 

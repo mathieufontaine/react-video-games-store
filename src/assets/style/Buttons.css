@@ -61,9 +61,28 @@
   color: rgb(143, 3, 3);
 }
 
-/* .cross-btn:hover{
-    color:rgb(143, 3, 3);;
-  } */
+.icon-btn {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: 2rem;
+  width: 15px;
+  margin: 0 auto;
+  cursor: pointer;
+  align-self: center;
+  transition: all 0.5s ease;
+}
+
+.icon-btn:hover {
+  font-size: 5rem;
+  right: 3rem;
+  top: 0rem;
+}
+
+.cross {
+  color: red;
+  z-index: 10;
+}
 
 .actions-lists {
   padding: 20px;

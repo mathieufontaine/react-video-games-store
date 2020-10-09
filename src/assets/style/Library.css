@@ -1,18 +1,8 @@
 .library {
-  height: 100%;
-  width: 100%;
-  margin: auto;
-}
-
-.library-section {
-  width: 100%;
-  margin: 0 auto 40px auto;
-  position: relative;
-  padding: 3rem 0;
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-.added-games-list {
+.games-list {
   margin: 0;
   display: flex;
   justify-content: flex-start;
@@ -20,38 +10,14 @@
   flex-wrap: wrap;
 }
 
-.added-games-list .price {
+.games-list .price {
   font-size: 2rem;
   font-weight: 500;
   padding: 1rem;
   color: white;
 }
 
-.top-games {
-  background-color: var(--primary);
-}
-
-.custom-lists {
-  background-color: var(--secondary);
-}
-
-.custom-lists .search-bar {
-  border-radius: 10px;
-}
-
-.empty-library {
-  font-size: 1.5rem;
-  color: black;
-  padding: 3rem;
-  padding-top: 5rem;
-  text-align: center;
-}
-
-.empty-list {
-  color: white;
-}
-
-.video-game-library {
+.library-item {
   position: relative;
   width: 300px;
   background-color: white;
@@ -61,26 +27,24 @@
   border-radius: 20px;
 }
 
-.video-game-library h4,
-.video-game-library h3 {
+.library-item h4,
+.library-item h3 {
   padding: 2rem;
   margin-top: 0;
   margin-bottom: 0;
   color: var(--primary);
 }
 
-.video-game-library:hover {
+.library-item:hover {
   background-color: var(--primary);
 }
 
-.video-game-library:hover h3,
-.video-game-library:hover h4 {
+.library-item:hover h3,
+.library-item:hover h4 {
   color: white;
-  /* margin: 8px; */
-  /* margin-top: 0; */
 }
 
-.video-game-library .ranking {
+.library-item .ranking {
   position: absolute;
   font-size: 5rem;
   left: 8px;
@@ -88,7 +52,7 @@
   color: var(--secondary);
 }
 
-.video-game-library .cover {
+.library-item .cover {
   height: 160px;
   width: 100%;
   border-top-right-radius: 20px;
@@ -96,83 +60,34 @@
   object-fit: cover;
 }
 
-.video-game-library .btn {
+.library-item .btn {
   font-size: 1rem;
   padding: 1rem;
   margin: 0.5rem;
 }
 
-.icon-btn {
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-  font-size: 2rem;
-  width: 15px;
-  margin: 0 auto;
-  cursor: pointer;
-  align-self: center;
-  transition: all 0.5s ease;
-}
-
-.icon-btn:hover {
-  font-size: 5rem;
-  right: 3rem;
-  top: 0rem;
-}
-
-.cross {
-  color: red;
-  z-index: 10;
-}
-
-.top-games .video-game-library {
-  width: 50%;
-  margin: 2rem auto;
-  cursor: grab;
-}
-
-.top-games .video-game-library .cover {
-  height: 200px;
-  object-fit: cover;
-  cursor: grab;
-}
-
-.top-games .video-game-library::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  z-index: 1;
-}
-
-.top-games .video-game-library:hover {
-  background: var(--secondary);
-}
 @media (max-width: 880px) {
-  .mobile .video-game-library {
+  .mobile .library-item {
     width: 200px;
     height: 200px;
     margin: 10px;
   }
 
-  .mobile .video-game-library .cover {
+  .mobile .library-item .cover {
     width: 100%;
     height: 60%;
   }
 
-  .video-game-library h4 {
+  .library-item h4 {
     padding: 0;
     margin: 0;
   }
 
-  .top-games .video-game-library {
+  .favorites .library-item {
     width: 80%;
     margin: auto;
   }
-  .added-games-list {
+  .games-list {
     justify-content: center;
     align-items: center;
   }
@@ -182,17 +97,17 @@
   .library {
     width: 100%;
   }
-  .mobile .video-game-library {
+  .mobile .library-item {
     width: 140px;
     height: 140px;
     margin: 5px;
   }
 
-  .mobile .video-game-library .cover {
+  .mobile .library-item .cover {
     width: 100%;
     height: 60%;
   }
-  .top-games .video-game-library .cover {
+  .favorites .library-item .cover {
     height: 100px;
   }
 }

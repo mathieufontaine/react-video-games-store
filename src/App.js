@@ -2,29 +2,29 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import StoreContextProvider from "./context/StoreContext";
-import Header from "./Components/layout/Header";
-import Overlay from "./Components/layout/Overlay";
-import Navbar from "./Components/layout/Navbar";
-import Index from "./Components/layout/Index";
-// import Cart from "./Components/cart/Cart";
-import Library from "./Components/library/Library";
-import Favorites from "./Components/favorites/Favorites";
-import Wishlist from "./Components/wishlist/Wishlist";
-import VideoGamePage from "./Components/game/VideoGamePage";
-// import LeaderBoard from "./Components/leaderboard/Leaderboard";
+import Header from "./components/layout/Header";
+import Overlay from "./components/layout/Overlay";
+import Navbar from "./components/layout/Navbar";
+import Index from "./components/layout/Index";
+import Library from "./components/library/Library";
+import Favorites from "./components/favorites/Favorites";
+import Wishlist from "./components/wishlist/Wishlist";
+import VideoGamePage from "./components/game/VideoGamePage";
+// import LeaderBoard from "./components/leaderboard/Leaderboard";
 
 import "./assets/style/App.css";
 import "./assets/style/Store.css";
-import "./assets/style/Cart.css";
 import "./assets/style/Search.css";
 import "./assets/style/Game.css";
 import "./assets/style/Buttons.css";
 import "./assets/style/Navbar.css";
 import "./assets/style/Library.css";
+import "./assets/style/Favorites.css";
+import "./assets/style/Wishlist.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./assets/style/List.css";
-import "./assets/style/Leaderboard.css";
+// import "./assets/style/Leaderboard.css";
 
 const App = () => {
   return (
@@ -39,9 +39,8 @@ const App = () => {
             <Route path="/library" component={Library} />
             <Route path="/favorites" component={Favorites} />
             <Route path="/wishlist" component={Wishlist} />
-            {/* <Route path="/leaderboard" component={LeaderBoard} /> */}
             <Route path="/game/:id" component={VideoGamePage} />
-            {/* <Route path="/cart" component={Cart} /> */}
+            {/* <Route path="/leaderboard" component={LeaderBoard} /> */}
           </Switch>
         </div>
       </Router>

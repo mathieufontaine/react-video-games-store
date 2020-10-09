@@ -110,13 +110,14 @@ const LeaderBoard = () => {
       <ScrollArrow />
     </div>
 
-    //  : (<div className="empty-library">No games in the Leaderboard yet.. Come back here after creating your first lists 😉</div>)
-    /*: (<div className="empty-library">No games in the Leaderboard yet.. Come back here after creating your first lists 😉</div>)*/
-    /*: (<div className="empty-library">No games in the Leaderboard yet.. Come back here after creating your first lists 😉</div>)*/
-    /*: (<div className="empty-library">No games in the Leaderboard yet.. Come back here after creating your first lists 😉</div>)*/
-    /*: (<div className="empty-library">No games in the Leaderboard yet.. Come back here after creating your first lists 😉</div>)*/
-    /*: (<div className="empty-library">No games in the Leaderboard yet.. Come back here after creating your first lists 😉</div>)*/
-   /*: (<div className="empty-library">No games in the Leaderboard yet.. Come back here after creating your first lists 😉</div>)*/);
+    //  : (<div className="empty-list">No games in the Leaderboard yet.. Come back here after creating your first lists 😉</div>)
+    /*: (<div className="empty-list">No games in the Leaderboard yet.. Come back here after creating your first lists 😉</div>)*/
+    /*: (<div className="empty-list">No games in the Leaderboard yet.. Come back here after creating your first lists 😉</div>)*/
+    /*: (<div className="empty-list">No games in the Leaderboard yet.. Come back here after creating your first lists 😉</div>)*/
+    /*: (<div className="empty-list">No games in the Leaderboard yet.. Come back here after creating your first lists 😉</div>)*/
+    /*: (<div className="empty-list">No games in the Leaderboard yet.. Come back here after creating your first lists 😉</div>)*/
+    /*: (<div className="empty-list">No games in the Leaderboard yet.. Come back here after creating your first lists 😉</div>)*/
+   /*: (<div className="empty-list">No games in the Leaderboard yet.. Come back here after creating your first lists 😉</div>)*/);
 };
 
 export default LeaderBoard;

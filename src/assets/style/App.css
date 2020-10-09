@@ -12,7 +12,7 @@ html {
 
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background: url("../games-store.jpg");
+  background: url("../img/games-store.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-blend-mode: multiply;
@@ -57,6 +57,7 @@ li {
   height: 100%;
   min-height: 80vh;
   padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .overlay {
@@ -68,6 +69,19 @@ li {
   height: 100%;
   background: rgba(1, 1, 1, 0.7);
   z-index: 15;
+}
+
+section {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.section-inner {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  padding: 2rem auto;
 }
 
 .sticky {
@@ -122,7 +136,6 @@ p {
 .white {
   background-color: white;
   color: black;
-  /* border-bottom: 1px solid black; */
 }
 
 .green {
@@ -164,6 +177,12 @@ p {
 
 .svg-inline--fa.fa-w-16 {
   width: 100px;
+}
+
+.empty-list {
+  font-size: 1.5rem;
+  padding: 3rem;
+  text-align: center;
 }
 
 @keyframes fadeIn {

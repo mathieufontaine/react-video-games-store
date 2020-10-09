@@ -1,0 +1,30 @@
+.favorites {
+  background-color: var(--primary);
+}
+
+.favorites .library-item {
+  width: 50%;
+  margin: 2rem auto;
+  cursor: grab;
+}
+
+.favorites .library-item .cover {
+  height: 200px;
+  object-fit: cover;
+  cursor: grab;
+}
+
+.favorites .library-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 1;
+}
+
+.favorites .library-item:hover {
+  background: var(--secondary);
+}

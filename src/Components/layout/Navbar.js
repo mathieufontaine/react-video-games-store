@@ -6,12 +6,11 @@ import {
   faShoppingCart,
   faGamepad,
   faStore,
-  faListOl,
   faStar
 } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
-  const { cartGames, showNav } = useContext(StoreContext);
+  const { showNav } = useContext(StoreContext);
 
   return (
     <div
@@ -60,15 +59,6 @@ const Navbar = () => {
         >
           <FontAwesomeIcon icon={faListOl} className="nav-icon" />
           <span>LEADERBOARD</span>
-        </div>
-      </Link> */}
-      {/* <Link to="/cart">
-        <div
-          className="btn nav-tab cart"
-          // onClick={handleClick}
-        >
-          <FontAwesomeIcon icon={faShoppingCart} className="nav-icon" />
-          <span>CART({cartGames.length})</span>
         </div>
       </Link> */}
     </div>
