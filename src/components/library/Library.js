@@ -54,7 +54,7 @@ const Library = () => {
           </>
         ) : (
           <div className="empty-list">
-            No Games.
+            <h3 className=".empty-list-title">No Games.</h3>
             <p>
               Go to the <Link to="/">store</Link> and select the games you want
               to add to your library.

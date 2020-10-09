@@ -87,6 +87,13 @@ section {
 .empty-list {
   padding: 2rem 4rem;
   text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.empty-list p,
+.empty-list-title {
+  color: var(--primary);
 }
 
 h1 {

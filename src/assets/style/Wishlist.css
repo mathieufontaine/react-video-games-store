@@ -1,10 +1,5 @@
 .wishlist {
-  background-color: rgba(255, 255, 255, 0.6);
-}
-
-.wishlist .empty-list p,
-.wishlist .empty-list-title {
-  color: var(--primary) !important;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .wishlist .icon-btn {
