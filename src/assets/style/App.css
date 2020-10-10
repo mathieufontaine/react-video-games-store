@@ -3,7 +3,7 @@
   --secondary: #590735;
   --light: rgb(255, 255, 255);
   --green: #2acb97;
-  --background-color: rgba(1, 1, 1, 0.7);
+  --background-color: rgba(1, 1, 1, 0.5);
 }
 
 html {
@@ -187,9 +187,9 @@ p {
   display: none;
 }
 
-.svg-inline--fa.fa-w-16 {
+/* .svg-inline--fa.fa-w-16 {
   width: 100px;
-}
+} */
 
 @keyframes fadeIn {
   0% {

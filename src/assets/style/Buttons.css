@@ -120,9 +120,9 @@ button {
 
 .scrollTop {
   position: fixed;
-  width: 8rem;
-  height: 6rem;
-  bottom: 20px;
+  width: 8rem !important;
+  height: 5rem;
+  bottom: 11vh;
   align-items: center;
   justify-content: center;
   z-index: 1000;
@@ -130,6 +130,8 @@ button {
   animation: fadeIn 0.3s;
   transition: opacity 0.4s;
   opacity: 0.7;
+  right: 5rem;
+  margin: auto;
 }
 
 .scrollTop:hover {
