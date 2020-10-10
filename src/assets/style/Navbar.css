@@ -1,6 +1,6 @@
 .header {
   margin: 0 auto;
-  height: 10rem;
+  height: 10vh;
   background-color: var(--primary);
   color: white;
   text-align: center;
@@ -15,7 +15,8 @@
   justify-content: space-around;
   color: white;
   position: sticky;
-  top: 10rem;
+  height: 6vh;
+  top: 10vh;
   z-index: 15;
 }
 
@@ -40,7 +41,7 @@
 
 .nav-tab {
   border-radius: 0;
-  height: 60px;
+  height: 100%;
   cursor: pointer;
   background: var(--secondary);
   transition: all 0.5s ease;
@@ -52,7 +53,7 @@
 
 .nav-tab span {
   font-size: 1.8rem;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 100%;
 }
 

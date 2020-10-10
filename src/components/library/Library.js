@@ -37,7 +37,7 @@ const Library = () => {
           </button>
         </div>
       )}
-      <div className="games-list">
+      <div className="library-section">
         {libraryGames.length > 0 ? (
           <>
             <ul className="games-list">

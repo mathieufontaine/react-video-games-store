@@ -2,6 +2,15 @@
   background-color: rgba(255, 255, 255, 0.8);
 }
 
+.library-section {
+  padding: 2rem;
+}
+
+.library-section h3 {
+  padding-top: 1rem;
+  color: var(--primary);
+}
+
 .games-list {
   margin: 0;
   display: flex;
@@ -16,11 +25,6 @@
   font-weight: 500;
   padding: 1rem;
   color: white;
-}
-
-.games-list h3 {
-  padding-top: 1rem;
-  color: var(--primary);
 }
 
 .library-item {

@@ -125,9 +125,11 @@
   .container {
     padding-top: 0rem;
     width: 100%;
+    min-height: 77vh;
   }
   section {
-    margin-top: 4rem;
+    /* margin-top: 4rem; */
+    border-top: 1px solid white;
   }
   .section-title {
     /* position: sticky;
@@ -142,17 +144,17 @@
     height: 5rem;
   }
   .header {
-    height: 15rem;
+    height: 13vh;
   }
   h1 {
-    height: 10rem;
+    height: 13vh;
   }
   .navbar {
-    top: 15rem;
+    top: 13vh;
   }
   .button-container {
     position: sticky;
-    top: 15rem;
+    top: 13vh;
   }
   .library .btn {
     padding: 12px;

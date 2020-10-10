@@ -47,8 +47,13 @@
 
 .favorite-item .ranking {
   position: absolute;
-  font-size: 5rem;
+  font-size: 10rem;
   left: 8px;
   z-index: 5;
   color: var(--secondary);
+}
+
+.favorites .empty-list p,
+.favorites .empty-list-title {
+  color: var(--light);
 }
