@@ -35,7 +35,7 @@
   }
 
   .html {
-    font-size: 55%;
+    font-size: 60%;
   }
   .container {
     width: 95%;
@@ -43,6 +43,7 @@
   .navbar {
     display: inline-block;
     width: 100%;
+    height: 10vh;
   }
 
   .search-box {
@@ -124,7 +125,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
   .custom-lists .empty-list .indications > div {
-    height: 120px;
+    height: 150px;
   }
   .favorite-item {
     width: 300px;
@@ -133,7 +134,7 @@
 
 @media (max-width: 580px) {
   html {
-    font-size: 40%;
+    font-size: 45%;
   }
   .container {
     padding-top: 0rem;
@@ -142,7 +143,7 @@
   }
   section {
     /* margin-top: 4rem; */
-    border-top: 1px solid white;
+    /* border-top: 1px solid white; */
   }
 
   .header {
@@ -174,18 +175,19 @@
     height: 150px;
   }
   .scrollTop {
-    right: 0;
-    left: 0;
-    bottom: 9vh;
+    right: 3rem;
+    bottom: 4rem;
+    /* left: 0; */
+    /* bottom: 15vh; */
   }
   .button-container {
     position: sticky;
     top: 13vh;
   }
   .library .btn {
-    padding: 12px;
+    padding: 12px 6px;
     margin: 3px;
-    font-size: 0.6rem;
+    font-size: 0.9rem;
   }
   .library {
     width: 100%;
@@ -226,6 +228,16 @@
     height: 60px;
   }
   .footer {
-    padding: 0;
+    height: 12vh;
+    padding: 1rem 0;
+    grid-template-columns: 1fr;
+  }
+  .footer p {
+    margin: 0;
+    padding: 2px;
+    font-size: 1.3rem;
+  }
+  .footer .logos .nav-icon {
+    margin: 0;
   }
 }

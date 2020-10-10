@@ -100,8 +100,8 @@ section {
 h1 {
   color: white;
   margin: 0;
-  font-size: 3rem;
-  line-height: 10rem;
+  font-size: 2.5rem;
+  line-height: 10vh;
   width: 100%;
 }
 
@@ -220,7 +220,8 @@ p {
   align-items: center;
   justify-content: center;
 }
-.footer .logos .fa {
-  font-size: 2rem;
+.footer .logos .nav-icon {
+  width: 4rem;
+  font-size: 4rem;
   margin-left: 20px;
 }

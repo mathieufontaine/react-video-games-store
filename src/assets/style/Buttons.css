@@ -122,7 +122,7 @@ button {
   position: fixed;
   width: 8rem !important;
   height: 5rem;
-  bottom: 11vh;
+  bottom: 10vh;
   align-items: center;
   justify-content: center;
   z-index: 1000;
