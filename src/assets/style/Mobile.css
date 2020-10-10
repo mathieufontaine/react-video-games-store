@@ -1,3 +1,7 @@
+.mobile {
+  display: none;
+}
+
 @media (min-width: 850px) {
   .overlay {
     display: none;
@@ -23,6 +27,13 @@
 }
 
 @media (max-width: 850px) {
+  .mobile {
+    display: block;
+  }
+  .desktop {
+    display: none !important;
+  }
+
   .html {
     font-size: 55%;
   }

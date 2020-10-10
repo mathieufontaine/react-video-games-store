@@ -27,7 +27,7 @@ const Wishlist = () => {
     <>
       <section className="wishlist">
         <h2 className="section-title black">My Wishlist</h2>
-        <div className="added-games section-innner mobile">
+        <div className="section-innner">
           {wishlistGames.length > 0 ? (
             <div>
               <ul className="games-list">
