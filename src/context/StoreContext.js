@@ -59,7 +59,7 @@ const initialState = {
   customLists: JSON.parse(localStorage.getItem("customLists")) || [],
   // cartGames: JSON.parse(localStorage.getItem("cartGames")) || [],
   heading: "Popular Games",
-  showNav: true
+  showNav: false
 };
 
 export const StoreContext = createContext(initialState);

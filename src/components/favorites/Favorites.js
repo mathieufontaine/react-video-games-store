@@ -46,9 +46,10 @@ const Favorites = () => {
     <section className="favorites">
       <h2 className="section-title yellow">Favorites</h2>
       <div className="section-inner">
-        <h3>Rank your favorite games below.</h3>
+        <h3>Add some Games from your Library and rank your Favorites below!</h3>
         {sortedGames.length === 3 ? (
           <div className="empty-list">
+            <p>You can drag and drop any game to change its ranking.</p>
             <p>
               You need at least 3 games in your Favorites. If you want to remove
               any of these games, add more games first.

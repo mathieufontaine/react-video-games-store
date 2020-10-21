@@ -33,7 +33,7 @@ body {
 
 a {
   text-decoration: none;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   color: inherit;
 }
 
@@ -103,6 +103,7 @@ h1 {
   font-size: 2.5rem;
   line-height: 10vh;
   width: 100%;
+  text-transform: uppercase;
 }
 
 h2 {
@@ -118,7 +119,7 @@ h3 {
 } */
 
 p {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   line-height: 1.6;
 }
 
