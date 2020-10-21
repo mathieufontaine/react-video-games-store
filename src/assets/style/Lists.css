@@ -1,6 +1,6 @@
 .custom-lists {
   margin-top: 5rem;
-  background-color: var(--secondary);
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .custom-lists .search-bar {
@@ -9,6 +9,10 @@
 
 .custom-lists .empty-list {
   margin: auto;
+}
+
+.custom-lists .empty-list h3 {
+  color: var(--primary);
 }
 
 .custom-lists .empty-list .indications {
@@ -40,7 +44,9 @@
   font-weight: 800;
 }
 
-.custom-btn {
+.custom-lists .add-btn {
+  background-color: var(--primary);
+  color: white;
 }
 
 .lists {
@@ -93,4 +99,8 @@
 .trash {
   margin: 0 15px;
   font-size: 20px;
+}
+
+.sortable-list {
+  margin: 4rem auto;
 }

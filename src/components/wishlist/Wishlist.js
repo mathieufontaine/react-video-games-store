@@ -42,16 +42,6 @@ const Wishlist = () => {
               </ul>
               <CartTotal games={wishlistGames} />
 
-              {selectListSection === false ? (
-                <button
-                  className="btn remove-btn"
-                  onClick={() => clearWishlist()}
-                >
-                  Remove all games
-                </button>
-              ) : (
-                ""
-              )}
               {customLists.length > 0 ? (
                 <CustomListSelect
                   customLists={customLists}
@@ -67,17 +57,30 @@ const Wishlist = () => {
             <div className="empty-list">
               <h3 className="empty-list-title">No Games.</h3>
               <p>
-                To change your Top Games or your Custom Lists, you need to add
-                some games from the <Link to="/">store</Link> first.
+                To create Wishlists, you need to add some games from the{" "}
+                <Link to="/">
+                  <strong>Store</strong>
+                </Link>{" "}
+                or from your{" "}
+                <Link to="/library">
+                  <strong>Library</strong>
+                </Link>{" "}
+                first.
               </p>
             </div>
           )}
         </div>
       </section>
-
+      {selectListSection === false ? (
+        <button className="btn remove-btn" onClick={() => clearWishlist()}>
+          Remove all games
+        </button>
+      ) : (
+        ""
+      )}
       <section className="custom-lists">
         <h2 className="section-title black">My Custom Wishlists</h2>
-        <div className="section-inner custom-lists">
+        <div className="section-inner">
           <CustomListForm />
           {customLists.length ? (
             <ul className="lists">
@@ -92,26 +95,24 @@ const Wishlist = () => {
               <div className="indications">
                 <div>
                   <p>
-                    <strong>1. </strong>Add some games from the Store to your
-                    Wishlist.
+                    <strong>1. </strong>Add some games to your Wishlist.
                   </p>
                 </div>
                 <div>
                   <p>
-                    <strong>2. </strong>Use the form above to give a name to
-                    your list.
+                    <strong>2. </strong>Create a new List with the form above
                   </p>
                 </div>
                 <div>
                   <p>
-                    <strong>3. </strong>Select the games you want to add by
-                    clicking on the <span>+</span> button next to the game.
+                    <strong>3. </strong>Select any game by clicking on the{" "}
+                    <span>+</span> button in the game card.
                   </p>
                 </div>
                 <div>
                   <p>
-                    <strong>4. </strong>Choose your list among all your custom
-                    wishlists available.
+                    <strong>4. </strong>Choose a list among all the custom
+                    wishlists you have created.
                   </p>
                 </div>
               </div>

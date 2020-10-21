@@ -55,7 +55,7 @@ const CustomList = ({ list }) => {
 
   return (
     <li className="list">
-      <h4 className="title">{list.title}</h4>
+      <h3 className="title">{list.title}</h3>
 
       {/* <button className="btn btn-edit"
                         onClick = {() => findItem(list.id)}>

@@ -49,6 +49,7 @@
 .library-item h4,
 .library-item h3 {
   /* padding: 2rem; */
+  font-size: 1.6rem;
   margin: 1rem auto;
   color: var(--primary);
 }

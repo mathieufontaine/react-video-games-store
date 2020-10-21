@@ -90,7 +90,7 @@ const StoreContextProvider = ({ children }) => {
     localStorage.setItem("libraryGames", JSON.stringify(state.libraryGames));
     localStorage.setItem("favorites", JSON.stringify(state.favorites));
     localStorage.setItem("wishlistGames", JSON.stringify(state.wishlistGames));
-    localStorage.setItem("lists", JSON.stringify(state.customLists));
+    localStorage.setItem("customLists", JSON.stringify(state.customLists));
   });
 
   function toggleNav(boolean) {
