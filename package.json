@@ -15,7 +15,7 @@
     "@testing-library/user-event": "^7.1.2",
     "@types/sortablejs": "^1.10.6",
     "array-move": "^2.2.2",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "jquery": "^3.5.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
