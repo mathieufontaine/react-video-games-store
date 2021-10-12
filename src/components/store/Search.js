@@ -1,7 +1,8 @@
 import React, { useState, useContext, useEffect } from "react";
 import { StoreContext } from "../../context/StoreContext";
 import axios from "axios";
-const API_URL = "https://api.rawg.io/api/games?search=";
+const API_URL = "https://api.rawg.io/api/games?";
+const KEY = process.env.REACT_APP_KEY;
 
 function Search() {
   const { showGames, updateHeading } = useContext(StoreContext);
@@ -14,7 +15,7 @@ function Search() {
   useEffect(() => {
     if (gameTitle.length > 0) {
       axios
-        .get(`${API_URL}${gameTitle}`)
+        .get(`${API_URL}key=${KEY}&search=${gameTitle}`)
         .then(res => {
           // console.log(res.data);
           const newGames = res.data.results.map(game => ({

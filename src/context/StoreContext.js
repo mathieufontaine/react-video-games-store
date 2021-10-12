@@ -3,7 +3,8 @@ import { AppReducer } from "./AppReducer";
 import axios from "axios";
 
 // const API_KEY = process.env.RAWG_API_KEY;
-const API_URL = "https://api.rawg.io/api/games";
+const API_URL = "https://api.rawg.io/api/games?";
+const KEY = process.env.REACT_APP_KEY;
 
 const leaderboardGames = [
   {
@@ -71,7 +72,7 @@ const StoreContextProvider = ({ children }) => {
 
   useEffect(() => {
     axios
-      .get(`${API_URL}`)
+      .get(`${API_URL}key=${KEY}`)
       .then(res => {
         // console.log(res.data);
         const newGames = res.data.results.map(game => ({
