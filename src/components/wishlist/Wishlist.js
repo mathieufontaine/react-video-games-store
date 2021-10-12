@@ -69,15 +69,15 @@ const Wishlist = () => {
               </p>
             </div>
           )}
+          {selectListSection === false ? (
+            <button className="btn remove-btn" onClick={() => clearWishlist()}>
+              Remove all games
+            </button>
+          ) : (
+            ""
+          )}
         </div>
       </section>
-      {selectListSection === false ? (
-        <button className="btn remove-btn" onClick={() => clearWishlist()}>
-          Remove all games
-        </button>
-      ) : (
-        ""
-      )}
       <section className="custom-lists">
         <h2 className="section-title black">My Custom Wishlists</h2>
         <div className="section-inner">

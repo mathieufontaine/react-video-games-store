@@ -25,7 +25,7 @@ const Library = () => {
       ) : (
         <div className="button-container">
           <button className="btn secondary">
-            <Link to="/">Add Games to Libray</Link>
+            <Link to="/">Add Games to Library</Link>
           </button>
           <button
             className="btn secondary"

@@ -11,6 +11,7 @@
   align-items: center;
   justify-content: center;
   padding: 2rem;
+  border-top: 3px solid var(--secondary);
 }
 
 /* .footer .container {
