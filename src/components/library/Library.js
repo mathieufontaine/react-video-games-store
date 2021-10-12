@@ -27,7 +27,10 @@ const Library = () => {
           <button className="btn secondary">
             <Link to="/">Add Games to Libray</Link>
           </button>
-          <button className="btn yellow" onClick={() => setShowFavorites(true)}>
+          <button
+            className="btn secondary"
+            onClick={() => setShowFavorites(true)}
+          >
             Add Games to Favorites
           </button>
           <button

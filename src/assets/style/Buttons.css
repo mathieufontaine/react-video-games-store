@@ -46,8 +46,9 @@ button {
 }
 
 .store .actions .btn:hover {
-  background: var(--secondary);
+  background: var(--light);
   transform: scale(1);
+  color: (--primary);
 }
 
 .video-game-page .actions .btn {
@@ -63,7 +64,7 @@ button {
 }
 
 .trash-btn:hover {
-  color: rgb(143, 3, 3);
+  color: rgb(233, 7, 7);
 }
 
 .icon-btn {

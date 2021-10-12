@@ -10,57 +10,78 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
-  const { showNav, toggleNav } = useContext(StoreContext);
+  const { showNav, toggleNav, currentTab, changeTab } = useContext(
+    StoreContext
+  );
 
-  const handleShowNav = () => {
-    toggleNav(!showNav);
-  };
+  const handleShowNav = () => toggleNav(!showNav);
+  const handleChangeTab = tabName => changeTab(tabName);
 
   return (
-    <>
-      <div
+    <nav>
+      <ul
         className={
           showNav === true
             ? "navbar show-navbar desktop"
             : "navbar hide-navbar desktop"
         }
       >
-        <Link to="/">
-          <div
-            className="btn nav-tab"
-            // onClick={handleClick}
-          >
-            <FontAwesomeIcon icon={faStore} className="nav-icon" />
-            <span>STORE</span>
-          </div>
-        </Link>
-        <Link to="/library">
-          <div
-            className="btn nav-tab"
-            // onClick={handleClick}
-          >
-            <FontAwesomeIcon icon={faGamepad} className="nav-icon" />
-            <span>MY LIBRARY</span>
-          </div>
-        </Link>
-        <Link to="/favorites">
-          <div
-            className="btn nav-tab"
-            // onClick={handleClick}
-          >
-            <FontAwesomeIcon icon={faStar} className="nav-icon" />
-            <span>My Favorites</span>
-          </div>
-        </Link>
-        <Link to="/wishlist">
-          <div
-            className="btn nav-tab"
-            // onClick={handleClick}
-          >
-            <FontAwesomeIcon icon={faShoppingCart} className="nav-icon" />
-            <span>My WISHLIST</span>
-          </div>
-        </Link>
+        <li
+          className={currentTab === "store" ? "selected" : ""}
+          onClick={() => handleChangeTab("store")}
+        >
+          <Link to="/">
+            <div
+              className="btn nav-tab"
+              // onClick={handleClick}
+            >
+              <FontAwesomeIcon icon={faStore} className="nav-icon" />
+              <span>STORE</span>
+            </div>
+          </Link>
+        </li>
+        <li
+          className={currentTab === "library" ? "selected" : ""}
+          onClick={() => handleChangeTab("library")}
+        >
+          <Link to="/library">
+            <div
+              className="btn nav-tab"
+              // onClick={handleClick}
+            >
+              <FontAwesomeIcon icon={faGamepad} className="nav-icon" />
+              <span>MY LIBRARY</span>
+            </div>
+          </Link>
+        </li>
+        <li
+          className={currentTab === "favorites" ? "selected" : ""}
+          onClick={() => handleChangeTab("favorites")}
+        >
+          <Link to="/favorites">
+            <div
+              className="btn nav-tab"
+              // onClick={handleClick}
+            >
+              <FontAwesomeIcon icon={faStar} className="nav-icon" />
+              <span>My Favorites</span>
+            </div>
+          </Link>
+        </li>
+        <li
+          className={currentTab === "whishlist" ? "selected" : ""}
+          onClick={() => handleChangeTab("whishlist")}
+        >
+          <Link to="/wishlist">
+            <div
+              className="btn nav-tab"
+              // onClick={handleClick}
+            >
+              <FontAwesomeIcon icon={faShoppingCart} className="nav-icon" />
+              <span>My WISHLIST</span>
+            </div>
+          </Link>
+        </li>
         {/* <Link to="/leaderboard">
         <div
           className="btn nav-tab"
@@ -70,40 +91,48 @@ const Navbar = () => {
           <span>LEADERBOARD</span>
         </div>
       </Link> */}
-      </div>
-      <div
+      </ul>
+      <ul
         className={
           showNav === true
             ? "navbar show-navbar mobile"
             : "navbar hide-navbar mobile"
         }
       >
-        <Link to="/">
-          <div className="btn nav-tab" onClick={handleShowNav}>
-            <FontAwesomeIcon icon={faStore} className="nav-icon" />
-            <span>STORE</span>
-          </div>
-        </Link>
-        <Link to="/library">
-          <div className="btn nav-tab" onClick={handleShowNav}>
-            <FontAwesomeIcon icon={faGamepad} className="nav-icon" />
-            <span>MY LIBRARY</span>
-          </div>
-        </Link>
-        <Link to="/favorites">
-          <div className="btn nav-tab" onClick={handleShowNav}>
-            <FontAwesomeIcon icon={faStar} className="nav-icon" />
-            <span>My Favorites</span>
-          </div>
-        </Link>
-        <Link to="/wishlist">
-          <div className="btn nav-tab" onClick={handleShowNav}>
-            <FontAwesomeIcon icon={faShoppingCart} className="nav-icon" />
-            <span>My WISHLIST</span>
-          </div>
-        </Link>
-      </div>
-    </>
+        <li>
+          <Link to="/">
+            <div className="btn nav-tab" onClick={handleShowNav}>
+              <FontAwesomeIcon icon={faStore} className="nav-icon" />
+              <span>STORE</span>
+            </div>
+          </Link>
+        </li>
+        <li>
+          <Link to="/library">
+            <div className="btn nav-tab" onClick={handleShowNav}>
+              <FontAwesomeIcon icon={faGamepad} className="nav-icon" />
+              <span>MY LIBRARY</span>
+            </div>
+          </Link>
+        </li>
+        <li>
+          <Link to="/favorites">
+            <div className="btn nav-tab" onClick={handleShowNav}>
+              <FontAwesomeIcon icon={faStar} className="nav-icon" />
+              <span>My Favorites</span>
+            </div>
+          </Link>
+        </li>
+        <li>
+          <Link to="/wishlist">
+            <div className="btn nav-tab" onClick={handleShowNav}>
+              <FontAwesomeIcon icon={faShoppingCart} className="nav-icon" />
+              <span>My WISHLIST</span>
+            </div>
+          </Link>
+        </li>
+      </ul>
+    </nav>
   );
 };
 

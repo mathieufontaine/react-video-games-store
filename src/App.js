@@ -15,6 +15,8 @@ import Footer from "./components/layout/Footer";
 // import LeaderBoard from "./components/leaderboard/Leaderboard";
 
 import "./assets/style/App.css";
+import "./assets/style/Header.css";
+import "./assets/style/Footer.css";
 import "./assets/style/Store.css";
 import "./assets/style/Search.css";
 import "./assets/style/Game.css";
@@ -34,18 +36,20 @@ const App = () => {
     <StoreContextProvider>
       <Router>
         <Header />
-        <Navbar />
-        <div className="container">
-          <Overlay />
-          <Switch>
-            <Route exact path="/" component={Index} />
-            <Route path="/library" component={Library} />
-            <Route path="/favorites" component={Favorites} />
-            <Route path="/wishlist" component={Wishlist} />
-            <Route path="/game/:id" component={VideoGamePage} />
-            {/* <Route path="/leaderboard" component={LeaderBoard} /> */}
-          </Switch>
-        </div>
+        <main>
+          <Navbar />
+          <div className="container">
+            <Overlay />
+            <Switch>
+              <Route exact path="/" component={Index} />
+              <Route path="/library" component={Library} />
+              <Route path="/favorites" component={Favorites} />
+              <Route path="/wishlist" component={Wishlist} />
+              <Route path="/game/:id" component={VideoGamePage} />
+              {/* <Route path="/leaderboard" component={LeaderBoard} /> */}
+            </Switch>
+          </div>
+        </main>
         <Footer />
       </Router>
     </StoreContextProvider>

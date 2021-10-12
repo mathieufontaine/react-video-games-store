@@ -12,14 +12,16 @@ const Header = () => {
   };
 
   return (
-    <div className="header">
+    <header className="header">
       <div className="hamburger" onClick={handleShowNav}>
         <FontAwesomeIcon icon={faBars} />
       </div>
-      <h1>
-        <Link to="/">Video Games Manager</Link>
-      </h1>
-    </div>
+      <div className="title">
+        <h1>
+          <Link to="/">Video Games Manager</Link>
+        </h1>
+      </div>
+    </header>
   );
 };
 

@@ -30,7 +30,7 @@ const LibraryGame = ({ game, showDelete, showFavorites }) => {
               </h4>
             ) : (
               <button
-                className="btn yellow"
+                className="btn secondary"
                 onClick={() => addToFavorites(game)}
               >
                 Add to Favorites

@@ -60,7 +60,8 @@ const initialState = {
   customLists: JSON.parse(localStorage.getItem("customLists")) || [],
   // cartGames: JSON.parse(localStorage.getItem("cartGames")) || [],
   heading: "Popular Games",
-  showNav: false
+  showNav: true,
+  currentTab: "store"
 };
 
 export const StoreContext = createContext(initialState);
@@ -92,12 +93,20 @@ const StoreContextProvider = ({ children }) => {
     localStorage.setItem("favorites", JSON.stringify(state.favorites));
     localStorage.setItem("wishlistGames", JSON.stringify(state.wishlistGames));
     localStorage.setItem("customLists", JSON.stringify(state.customLists));
+    localStorage.setItem("currenTab", JSON.stringify(state.currentTab));
   });
 
   function toggleNav(boolean) {
     dispatch({
       type: "TOGGLE_NAV",
       payload: boolean
+    });
+  }
+
+  function changeTab(name) {
+    dispatch({
+      type: "CHANGE_TAB",
+      payload: name
     });
   }
 
@@ -287,6 +296,7 @@ const StoreContextProvider = ({ children }) => {
     <StoreContext.Provider
       value={{
         showNav: state.showNav,
+        currentTab: state.currentTab,
         storeGames: state.storeGames,
         // cartGames: state.cartGames,
         customLists: state.customLists,
@@ -297,6 +307,7 @@ const StoreContextProvider = ({ children }) => {
         heading: state.heading,
 
         toggleNav,
+        changeTab,
         findGame,
         // removeFromCart,
         removeFromLibrary,

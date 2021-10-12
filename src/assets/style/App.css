@@ -1,9 +1,16 @@
 :root {
   --primary: rgb(0, 0, 0);
-  --secondary: #590735;
+  --secondary: rgb(223, 223, 34);
   --light: rgb(255, 255, 255);
   --green: #2acb97;
   --background-color: rgba(1, 1, 1, 0.5);
+  /* --secondary: rgb(223, 223, 34); */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -24,7 +31,7 @@ body {
 }
 
 #root {
-  background-color: rgba(1, 1, 1, 0.7);
+  background-color: rgba(1, 1, 1, 0.4);
   width: 100%;
   height: 100%;
   min-height: 100vh;
@@ -48,17 +55,22 @@ li {
   text-align: center;
 }
 
+main {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+}
+
 .container {
   text-align: center;
   color: white;
-  /* background-color: rgba(1, 1, 1, 0.7); */
-  width: 90%;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  /* background-color: rgba(1, 1, 1, 0.8); */
+  /* width: 90%; */
   max-width: 1300px;
-  margin: auto;
-  height: 100%;
   min-height: 68vh;
   position: relative;
-  padding: 3vh 0;
+  margin: 4vh;
 }
 
 .overlay {
@@ -68,14 +80,16 @@ li {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(1, 1, 1, 0.7);
+  background: rgba(1, 1, 1, 0.5);
   z-index: 10;
 }
 
 section {
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
   margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .section-inner {
@@ -91,6 +105,7 @@ section {
   /* width: 100%; */
   height: 100%;
   margin: auto;
+  background: white;
 }
 
 .empty-list p,
@@ -99,16 +114,11 @@ section {
 }
 
 h1 {
-  color: white;
-  margin: 0;
   font-size: 2.5rem;
-  line-height: 10vh;
-  width: 100%;
-  text-transform: uppercase;
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
 }
 
 h3 {
@@ -142,9 +152,19 @@ p {
   color: var(--light);
 }
 
+.primary:hover {
+  background: var(--light);
+  color: var(--primary);
+}
+
 .secondary {
   background: var(--secondary);
-  color: var(--light);
+  color: var(--primary);
+}
+
+.secondary:hover {
+  background: var(--primary);
+  color: var(--secondary);
 }
 
 .white {
@@ -200,33 +220,4 @@ p {
   100% {
     opacity: 1;
   }
-}
-
-.footer {
-  color: white;
-  width: 100%;
-  margin: 0 auto;
-  background: var(--secondary);
-}
-
-.footer .container {
-  min-height: 5vh;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-}
-
-.footer .logos {
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-}
-.footer .logos .nav-icon {
-  width: 4rem;
-  font-size: 3rem;
-  margin-left: 20px;
 }

@@ -42,12 +42,12 @@
 }
 
 .game-card:hover {
-  background-color: rgb(12, 12, 12);
+  background-color: var(--secondary);
 }
 
 .game-card:hover h3,
 .game-card:hover .price {
-  color: var(--light);
+  color: var(--primary);
 }
 
 .game-card .caroussel {
