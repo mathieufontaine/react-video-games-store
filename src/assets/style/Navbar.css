@@ -21,6 +21,7 @@ nav {
 .navbar li {
   width: 100%;
   height: 100%;
+  transition: background 0.5s ease;
   background: var(--primary);
   border-bottom: 3px solid var(--primary);
 }
@@ -28,7 +29,9 @@ nav {
 .navbar a {
   width: 100%;
   height: 100%;
-  /* padding: 2rem; */
+}
+.navbar a:hover {
+  scale: 1.2;
 }
 
 .navbar li:hover,
@@ -46,7 +49,6 @@ nav {
   border-radius: 0;
   height: 100%;
   cursor: pointer;
-  transition: all 0.5s ease;
   text-align: center;
   display: flex;
   align-items: center;
@@ -86,8 +88,8 @@ nav {
   justify-content: center;
   font-size: 5rem;
   cursor: pointer;
-  border-right: 3px solid var(--secondary);
-  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  border-right: 3px solid var(--light);
+  transition: color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
   color: var(--primary);
   background: var(--light);
   /* max-width: 25vh; */
@@ -105,6 +107,7 @@ nav {
 .hamburger:hover {
   color: var(--light);
   background: var(--primary);
+  border-right: 3px solid var(--primary);
 }
 
 @keyframes inFromTop {

@@ -38,11 +38,11 @@
 }
 
 .game-card:hover {
-  background-color: var(--secondary);
+  background-color: var(--light);
 }
 
 .game-card:hover h3,
-.game-card:hover .genre {
+.game-card:hover .rating-genre {
   color: var(--primary);
 }
 
@@ -78,9 +78,9 @@
   align-items: center;
   font-size: 1.5rem;
 }
+
 .game-card .genre {
   padding: 15px;
-  color: var(--light);
 }
 
 @media (max-width: 1570px) {

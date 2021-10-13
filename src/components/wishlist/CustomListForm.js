@@ -25,7 +25,7 @@ const CustomListForm = () => {
   // }, [editList]);
 
   return (
-    <form className="form" onSubmit={handleSubmit}>
+    <form className="search-box" onSubmit={handleSubmit}>
       <input
         type="text"
         className="search-bar"

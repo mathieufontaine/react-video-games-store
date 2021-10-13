@@ -25,9 +25,7 @@ const LibraryGame = ({ game, showDelete, showFavorites }) => {
         <div className="actions">
           {showFavorites ? (
             favorites.some(listGame => listGame.id == game.id) ? (
-              <h4 style={{ color: "var(--secondary)" }}>
-                Already in your favorites
-              </h4>
+              <p>Added to your favorites</p>
             ) : (
               <button
                 className="btn secondary"
