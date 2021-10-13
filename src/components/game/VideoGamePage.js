@@ -123,7 +123,7 @@ const VideoGamePage = props => {
         </div>
 
         <div className="actions">
-          <button className="btn primary">
+          <button className="btn">
             <Link to="/">Go to Store</Link>
           </button>
           {libraryGames.some(listGame => listGame.id === game.id) ? (

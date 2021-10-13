@@ -62,6 +62,7 @@
     left: 5rem;
     top: 2.5rem;
     border: none;
+    background: none;
   }
   .navbar a:last-child .nav-tab {
     border: none;
@@ -147,11 +148,12 @@
   }
 
   .header {
-    height: 13vh;
+    height: 10vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border-bottom: 3px solid var(--primary);
   }
   .hamburger {
     position: relative;
@@ -159,15 +161,19 @@
     left: 0;
     top: 0;
     margin: auto;
-    height: 5rem;
+  }
+  .hamburger:hover {
+    color: initial;
+    background: initial;
   }
   h1 {
-    height: 5vh;
-    line-height: initial;
+    font-size: 2rem;
   }
-  .navbar {
-    top: 13vh;
+  nav {
+    height: 90vh;
+    top: 10vh;
   }
+
   .nav-tab span {
     font-size: 2.2rem;
   }

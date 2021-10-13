@@ -1,6 +1,10 @@
 .favorites {
   background-color: rgba(0, 0, 0, 0.7);
 }
+.favorites .section-title {
+  background-color: var(--light);
+  color: var(--primary);
+}
 
 .favorite-item {
   /* width: 50%; */
@@ -26,7 +30,6 @@
   /* padding: 2rem; */
   margin-top: 1rem;
   padding-bottom: 1rem;
-
   color: var(--primary);
 }
 

@@ -1,6 +1,6 @@
 nav {
   position: sticky;
-  top: 10vh;
+  top: 12vh;
   height: 88vh;
   z-index: 15;
   width: 100%;
@@ -22,12 +22,13 @@ nav {
   width: 100%;
   height: 100%;
   background: var(--primary);
+  border-bottom: 3px solid var(--primary);
 }
 
 .navbar a {
   width: 100%;
   height: 100%;
-  padding: 2rem;
+  /* padding: 2rem; */
 }
 
 .navbar li:hover,
@@ -83,11 +84,12 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--light);
   font-size: 5rem;
   cursor: pointer;
   border-right: 3px solid var(--secondary);
   transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  color: var(--primary);
+  background: var(--light);
   /* max-width: 25vh; */
   /* margin: 2px 0; */
 
@@ -98,6 +100,11 @@ nav {
   /* position: absolute;
   left: 12rem;
   top: 2.8rem; */
+}
+
+.hamburger:hover {
+  color: var(--light);
+  background: var(--primary);
 }
 
 @keyframes inFromTop {

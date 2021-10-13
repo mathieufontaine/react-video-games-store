@@ -44,7 +44,7 @@ const Favorites = () => {
 
   return (
     <section className="favorites">
-      <h2 className="section-title yellow">Favorites</h2>
+      <h2 className="section-title">Favorites</h2>
       <div className="section-inner">
         <h3>
           Add some Games from your Library and rank your Favorite games below!
