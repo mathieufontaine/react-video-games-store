@@ -168,6 +168,9 @@
   .navbar {
     top: 13vh;
   }
+  .nav-tab span {
+    font-size: 2.2rem;
+  }
   .game-card {
     width: 300px;
   }
@@ -175,6 +178,9 @@
     height: 150px;
   }
   .game-quick-infos {
+    flex-direction: column;
+  }
+  .search-section {
     flex-direction: column;
   }
   .scrollTop {

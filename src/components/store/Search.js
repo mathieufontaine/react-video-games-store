@@ -38,7 +38,7 @@ function Search() {
   };
 
   return (
-    <>
+    <div className="search-section">
       <form onSubmit={findGame} className="search-box">
         <input
           type="text"
@@ -50,12 +50,11 @@ function Search() {
         <button className="btn black-btn" type="submit">
           Search
         </button>
-
-        <button className="btn btn-secondary" onClick={() => getPopularGames()}>
-          Show Popular Games
-        </button>
       </form>
-    </>
+      <button className="btn btn-secondary" onClick={() => getPopularGames()}>
+        Show Popular Games
+      </button>
+    </div>
   );
 }
 
