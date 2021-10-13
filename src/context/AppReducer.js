@@ -7,6 +7,11 @@ export const AppReducer = (state, action) => {
         ...state,
         showNav: action.payload
       };
+    case "SET_LOADING":
+      return {
+        ...state,
+        loading: action.payload
+      };
     case "CHANGE_TAB":
       return {
         ...state,

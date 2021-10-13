@@ -2,22 +2,25 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { StoreContext } from "../../context/StoreContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
-  const { toggleNav, showNav } = useContext(StoreContext);
+  const { toggleNav, showNav, changeTab } = useContext(StoreContext);
 
-  const handleShowNav = () => {
-    toggleNav(!showNav);
-  };
+  const handleShowNav = () => toggleNav(!showNav);
+  const handleChangeTab = tabName => changeTab(tabName);
 
   return (
     <header className="header">
       <div className="hamburger" onClick={handleShowNav}>
-        <FontAwesomeIcon icon={faBars} />
+        {showNav === true ? (
+          <FontAwesomeIcon icon={faTimes} />
+        ) : (
+          <FontAwesomeIcon icon={faBars} />
+        )}
       </div>
       <div className="title">
-        <h1>
+        <h1 onClick={() => handleChangeTab("store")}>
           <Link to="/">Video Games Manager</Link>
         </h1>
       </div>

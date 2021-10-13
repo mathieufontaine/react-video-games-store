@@ -94,8 +94,7 @@ const VideoGamePage = props => {
             ""
           )}
           <p className="released">
-            <strong>Released Date:</strong>
-            {game.released}
+            <strong>Release Date:</strong> {game.released}
           </p>
         </div>
         <div className="game-details">

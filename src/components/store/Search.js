@@ -5,7 +5,9 @@ const API_URL = "https://api.rawg.io/api/games?";
 const KEY = process.env.REACT_APP_KEY;
 
 function Search() {
-  const { showGames, updateHeading } = useContext(StoreContext);
+  const { getPopularGames, showGames, updateHeading, setLoading } = useContext(
+    StoreContext
+  );
 
   const [userInput, setUserInput] = useState("");
   const [gameTitle, setGameTitle] = useState("");
@@ -14,18 +16,17 @@ function Search() {
 
   useEffect(() => {
     if (gameTitle.length > 0) {
+      setLoading(true);
       axios
         .get(`${API_URL}key=${KEY}&search=${gameTitle}`)
         .then(res => {
-          // console.log(res.data);
           const newGames = res.data.results.map(game => ({
             ...{ price: randomNumber() },
             ...game
           }));
-          // console.log(newGames);
-
           showGames(newGames);
           updateHeading(gameTitle);
+          setLoading(false);
         })
         .catch(err => console.log(err));
     }
@@ -37,18 +38,24 @@ function Search() {
   };
 
   return (
-    <form onSubmit={findGame} className="search-box">
-      <input
-        type="text"
-        className="search-bar"
-        placeholder="Search for any game"
-        onChange={e => setUserInput(e.target.value)}
-        value={userInput}
-      />
-      <button className="btn black-btn" type="submit">
-        Search
-      </button>
-    </form>
+    <>
+      <form onSubmit={findGame} className="search-box">
+        <input
+          type="text"
+          className="search-bar"
+          placeholder="Search for any game"
+          onChange={e => setUserInput(e.target.value)}
+          value={userInput}
+        />
+        <button className="btn black-btn" type="submit">
+          Search
+        </button>
+
+        <button className="btn btn-secondary" onClick={() => getPopularGames()}>
+          Show Popular Games
+        </button>
+      </form>
+    </>
   );
 }
 

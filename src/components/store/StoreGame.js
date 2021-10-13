@@ -67,7 +67,7 @@ const StoreGame = ({ game }) => {
           />
         )}
 
-        <div className="rating-price">
+        <div className="rating-genre">
           <span className="rating">
             {game.rating === 0 ? (
               "N/A"
@@ -81,13 +81,15 @@ const StoreGame = ({ game }) => {
               />
             )}
           </span>
-          <span className="price">${game.price}</span>
+          <span className="genre">
+            {game.genres[0] !== undefined ? game.genres[0].name : "N/A"}
+          </span>
         </div>
       </Link>
       <div className="actions">
         {libraryGames.some(listGame => listGame.id === game.id) ? (
           <button className="btn secondary">
-            <Link to={"/library"}>In your library</Link>
+            <Link to={"/library"}>Added to Library</Link>
           </button>
         ) : (
           <button
@@ -95,13 +97,13 @@ const StoreGame = ({ game }) => {
             ref={listBtnRef}
             onClick={onLibraryBtnClick}
           >
-            I own this Game
+            Add to Library
             {/* <Link to={'/library'}>Add to Library</Link> */}
           </button>
         )}
         {wishlistGames.some(listGame => listGame.id === game.id) ? (
           <button className="btn secondary">
-            <Link to={"/wishlist"}>In your Wishlist</Link>
+            <Link to={"/wishlist"}>Added to Wishlist</Link>
           </button>
         ) : (
           <button
@@ -109,7 +111,7 @@ const StoreGame = ({ game }) => {
             ref={wishlistBtnRef}
             onClick={onWishlistBtnClick}
           >
-            <Link to={"/wishlist"}>I want this Game</Link>
+            <Link to={"/wishlist"}>Add to Wishlist</Link>
           </button>
         )}
         {/* {cartGames.some(listGame => listGame.id === game.id) ? (

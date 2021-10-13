@@ -1,15 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import StoreContextProvider from "./context/StoreContext";
 import Header from "./components/layout/Header";
-import Overlay from "./components/layout/Overlay";
-import Navbar from "./components/layout/Navbar";
-import Index from "./components/layout/Index";
-import Library from "./components/library/Library";
-import Favorites from "./components/favorites/Favorites";
-import Wishlist from "./components/wishlist/Wishlist";
-import VideoGamePage from "./components/game/VideoGamePage";
+import Content from "./Content";
 import Footer from "./components/layout/Footer";
 
 // import LeaderBoard from "./components/leaderboard/Leaderboard";
@@ -36,20 +30,7 @@ const App = () => {
     <StoreContextProvider>
       <Router>
         <Header />
-        <main>
-          <Navbar />
-          <div className="container">
-            <Overlay />
-            <Switch>
-              <Route exact path="/" component={Index} />
-              <Route path="/library" component={Library} />
-              <Route path="/favorites" component={Favorites} />
-              <Route path="/wishlist" component={Wishlist} />
-              <Route path="/game/:id" component={VideoGamePage} />
-              {/* <Route path="/leaderboard" component={LeaderBoard} /> */}
-            </Switch>
-          </div>
-        </main>
+        <Content />
         <Footer />
       </Router>
     </StoreContextProvider>

@@ -12,20 +12,22 @@
 
 .store-list {
   margin: 0 auto;
-  padding: 10px 50px;
+  padding: 1rem 0;
+  width: 90%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  grid-gap: 1.5rem;
   justify-content: center;
   align-items: center;
 }
 
 .game-card {
   margin: 30px;
-  width: 400px;
+  width: 380px;
   font-weight: 500;
   background-color: var(--primary);
   border-radius: 10px;
+  overflow: hidden;
 }
 
 .game-card .title {
@@ -35,18 +37,12 @@
   font-size: 1.8rem;
 }
 
-.game-card .price {
-  font-size: 16px;
-  padding: 15px;
-  color: var(--light);
-}
-
 .game-card:hover {
   background-color: var(--secondary);
 }
 
 .game-card:hover h3,
-.game-card:hover .price {
+.game-card:hover .genre {
   color: var(--primary);
 }
 
@@ -74,12 +70,17 @@
   z-index: 1;
 }
 
-.rating-price {
+.rating-genre {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  font-size: 1.5rem;
+}
+.game-card .genre {
+  padding: 15px;
+  color: var(--light);
 }
 
 @media (max-width: 1570px) {
@@ -92,12 +93,6 @@
 }
 
 @media (max-width: 1470px) {
-  .store-list {
-    /* margin: 30px auto; */
-    width: 70%;
-    gap: 30px;
-    grid-template-columns: 1fr 1fr;
-  }
   .game-card {
     margin: 30px auto;
   }

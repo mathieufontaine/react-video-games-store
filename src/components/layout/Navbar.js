@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { StoreContext } from "../../context/StoreContext";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,27 +14,27 @@ const Navbar = () => {
     StoreContext
   );
 
-  const handleShowNav = () => toggleNav(!showNav);
-  const handleChangeTab = tabName => changeTab(tabName);
+  useEffect(() => {
+    if (window.innerWidth > 850) toggleNav(showNav);
+  }, []);
+
+  const handleClick = tabName => {
+    changeTab(tabName);
+    if (window.innerWidth < 850) toggleNav(!showNav);
+  };
 
   return (
-    <nav>
-      <ul
-        className={
-          showNav === true
-            ? "navbar show-navbar desktop"
-            : "navbar hide-navbar desktop"
-        }
-      >
+    <nav
+      className={showNav === true ? "show-nav" : "hide-nav"}
+      style={showNav === false ? { display: "none" } : {}}
+    >
+      <ul className="navbar">
         <li
           className={currentTab === "store" ? "selected" : ""}
-          onClick={() => handleChangeTab("store")}
+          onClick={() => handleClick("store")}
         >
           <Link to="/">
-            <div
-              className="btn nav-tab"
-              // onClick={handleClick}
-            >
+            <div className="btn nav-tab">
               <FontAwesomeIcon icon={faStore} className="nav-icon" />
               <span>STORE</span>
             </div>
@@ -42,13 +42,10 @@ const Navbar = () => {
         </li>
         <li
           className={currentTab === "library" ? "selected" : ""}
-          onClick={() => handleChangeTab("library")}
+          onClick={() => handleClick("library")}
         >
           <Link to="/library">
-            <div
-              className="btn nav-tab"
-              // onClick={handleClick}
-            >
+            <div className="btn nav-tab">
               <FontAwesomeIcon icon={faGamepad} className="nav-icon" />
               <span>MY LIBRARY</span>
             </div>
@@ -56,13 +53,10 @@ const Navbar = () => {
         </li>
         <li
           className={currentTab === "favorites" ? "selected" : ""}
-          onClick={() => handleChangeTab("favorites")}
+          onClick={() => handleClick("favorites")}
         >
           <Link to="/favorites">
-            <div
-              className="btn nav-tab"
-              // onClick={handleClick}
-            >
+            <div className="btn nav-tab">
               <FontAwesomeIcon icon={faStar} className="nav-icon" />
               <span>My Favorites</span>
             </div>
@@ -70,62 +64,10 @@ const Navbar = () => {
         </li>
         <li
           className={currentTab === "whishlist" ? "selected" : ""}
-          onClick={() => handleChangeTab("whishlist")}
+          onClick={() => handleClick("whishlist")}
         >
           <Link to="/wishlist">
-            <div
-              className="btn nav-tab"
-              // onClick={handleClick}
-            >
-              <FontAwesomeIcon icon={faShoppingCart} className="nav-icon" />
-              <span>My WISHLIST</span>
-            </div>
-          </Link>
-        </li>
-        {/* <Link to="/leaderboard">
-        <div
-          className="btn nav-tab"
-          // onClick={handleClick}
-        >
-          <FontAwesomeIcon icon={faListOl} className="nav-icon" />
-          <span>LEADERBOARD</span>
-        </div>
-      </Link> */}
-      </ul>
-      <ul
-        className={
-          showNav === true
-            ? "navbar show-navbar mobile"
-            : "navbar hide-navbar mobile"
-        }
-      >
-        <li>
-          <Link to="/">
-            <div className="btn nav-tab" onClick={handleShowNav}>
-              <FontAwesomeIcon icon={faStore} className="nav-icon" />
-              <span>STORE</span>
-            </div>
-          </Link>
-        </li>
-        <li>
-          <Link to="/library">
-            <div className="btn nav-tab" onClick={handleShowNav}>
-              <FontAwesomeIcon icon={faGamepad} className="nav-icon" />
-              <span>MY LIBRARY</span>
-            </div>
-          </Link>
-        </li>
-        <li>
-          <Link to="/favorites">
-            <div className="btn nav-tab" onClick={handleShowNav}>
-              <FontAwesomeIcon icon={faStar} className="nav-icon" />
-              <span>My Favorites</span>
-            </div>
-          </Link>
-        </li>
-        <li>
-          <Link to="/wishlist">
-            <div className="btn nav-tab" onClick={handleShowNav}>
+            <div className="btn nav-tab">
               <FontAwesomeIcon icon={faShoppingCart} className="nav-icon" />
               <span>My WISHLIST</span>
             </div>

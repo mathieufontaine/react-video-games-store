@@ -60,8 +60,9 @@ const initialState = {
   customLists: JSON.parse(localStorage.getItem("customLists")) || [],
   // cartGames: JSON.parse(localStorage.getItem("cartGames")) || [],
   heading: "Popular Games",
-  showNav: true,
-  currentTab: "store"
+  showNav: false,
+  currentTab: "store",
+  loading: true
 };
 
 export const StoreContext = createContext(initialState);
@@ -72,6 +73,17 @@ const StoreContextProvider = ({ children }) => {
   const randomNumber = () => Math.floor(Math.random() * (60 - 10 + 1) + 10);
 
   useEffect(() => {
+    getPopularGames();
+    localStorage.setItem("libraryGames", JSON.stringify(state.libraryGames));
+    localStorage.setItem("favorites", JSON.stringify(state.favorites));
+    localStorage.setItem("wishlistGames", JSON.stringify(state.wishlistGames));
+    localStorage.setItem("customLists", JSON.stringify(state.customLists));
+    localStorage.setItem("currenTab", JSON.stringify(state.currentTab));
+    // localStorage.setItem("cartGames", JSON.stringify(state.cartGames));
+  }, []);
+
+  function getPopularGames() {
+    setLoading(true);
     axios
       .get(`${API_URL}key=${KEY}`)
       .then(res => {
@@ -81,24 +93,23 @@ const StoreContextProvider = ({ children }) => {
           ...game
         }));
         showGames(newGames);
+        setLoading(false);
+        updateHeading("Popular Games");
         // const gamesFavorites = newGames.slice(Math.floor(Math.random() * (5 - 0) + 0), Math.floor(Math.random() * (12 - 6) + 6));
         //  addToFavorites(gamesFavorites);
       })
       .catch(err => console.log(err));
-  }, []);
-
-  useEffect(() => {
-    // localStorage.setItem("cartGames", JSON.stringify(state.cartGames));
-    localStorage.setItem("libraryGames", JSON.stringify(state.libraryGames));
-    localStorage.setItem("favorites", JSON.stringify(state.favorites));
-    localStorage.setItem("wishlistGames", JSON.stringify(state.wishlistGames));
-    localStorage.setItem("customLists", JSON.stringify(state.customLists));
-    localStorage.setItem("currenTab", JSON.stringify(state.currentTab));
-  });
+  }
 
   function toggleNav(boolean) {
     dispatch({
       type: "TOGGLE_NAV",
+      payload: boolean
+    });
+  }
+  function setLoading(boolean) {
+    dispatch({
+      type: "SET_LOADING",
       payload: boolean
     });
   }
@@ -296,6 +307,7 @@ const StoreContextProvider = ({ children }) => {
     <StoreContext.Provider
       value={{
         showNav: state.showNav,
+        loading: state.loading,
         currentTab: state.currentTab,
         storeGames: state.storeGames,
         // cartGames: state.cartGames,
@@ -308,6 +320,8 @@ const StoreContextProvider = ({ children }) => {
 
         toggleNav,
         changeTab,
+        setLoading,
+        getPopularGames,
         findGame,
         // removeFromCart,
         removeFromLibrary,

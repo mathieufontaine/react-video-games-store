@@ -8,7 +8,6 @@ const Library = () => {
   const [showDelete, setShowDelete] = useState(false);
   const [showFavorites, setShowFavorites] = useState(false);
   const { libraryGames } = useContext(StoreContext);
-  console.log(showFavorites);
 
   const handleCancel = () => {
     setShowDelete(false);

@@ -1,6 +1,7 @@
 .game-page {
   margin: 0 auto;
-  border-radius: 0;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .game-intro {
@@ -22,14 +23,9 @@
 }
 
 .game-intro img {
-  /* min-height: 300px; */
-  /* max-height: 500px; */
-  /* min-width: 1000px; */
-  /* max-width: 500px; */
   height: 100%;
   width: 100%;
   object-fit: cover;
-  /* margin: 0 auto; */
 }
 
 .game-quick-infos {

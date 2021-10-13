@@ -5,26 +5,30 @@ import Spinner from "../layout/Spinner";
 import ScrollArrow from "../layout/ScrollArrow";
 
 const Store = () => {
-  const { storeGames, heading } = useContext(StoreContext);
+  const { storeGames, heading, loading } = useContext(StoreContext);
 
   return (
     <div className="store">
-      {storeGames === undefined || storeGames.length === 0 ? (
+      {loading === true ? (
         <Spinner />
       ) : (
         <>
           <h3 className="heading">{heading}</h3>
-          <ul className="store-list">
-            {storeGames &&
-              storeGames.map(game =>
-                game.background_image !== null || game.name !== null ? (
-                  <StoreGame game={game} key={game.id} />
-                ) : (
-                  ""
-                )
-              )}
-          </ul>
           <ScrollArrow />
+          {storeGames === undefined || storeGames.length === 0 ? (
+            <p className="empty-list">No Result found :/</p>
+          ) : (
+            <ul className="store-list">
+              {storeGames &&
+                storeGames.map(game =>
+                  game.background_image !== null || game.name !== null ? (
+                    <StoreGame game={game} key={game.id} />
+                  ) : (
+                    ""
+                  )
+                )}
+            </ul>
+          )}
         </>
       )}
     </div>
