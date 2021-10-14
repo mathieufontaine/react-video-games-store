@@ -5,7 +5,9 @@ import Slider from "react-slick";
 import Rating from "@material-ui/lab/Rating";
 
 const StoreGame = ({ game }) => {
-  const { findGame, libraryGames, wishlistGames } = useContext(StoreContext);
+  const { findGame, libraryGames, wishlistGames, changeTab } = useContext(
+    StoreContext
+  );
 
   const settings = {
     // dots: true,
@@ -88,12 +90,15 @@ const StoreGame = ({ game }) => {
       </Link>
       <div className="actions">
         {libraryGames.some(listGame => listGame.id === game.id) ? (
-          <button className="btn secondary">
+          <button
+            className="btn secondary"
+            onClick={() => changeTab("library")}
+          >
             <Link to={"/library"}>Added to Library</Link>
           </button>
         ) : (
           <button
-            className="btn primary"
+            className="btn btn--library"
             ref={listBtnRef}
             onClick={onLibraryBtnClick}
           >
@@ -102,16 +107,17 @@ const StoreGame = ({ game }) => {
           </button>
         )}
         {wishlistGames.some(listGame => listGame.id === game.id) ? (
-          <button className="btn secondary">
+          <button className="btn green" onClick={() => changeTab("wishlist")}>
             <Link to={"/wishlist"}>Added to Wishlist</Link>
           </button>
         ) : (
           <button
-            className="btn primary"
+            className="btn btn--wishlist"
             ref={wishlistBtnRef}
             onClick={onWishlistBtnClick}
           >
-            <Link to={"/wishlist"}>Add to Wishlist</Link>
+            Add to Wishlist
+            {/* <Link to={"/wishlist"}>Add to Wishlist</Link> */}
           </button>
         )}
         {/* {cartGames.some(listGame => listGame.id === game.id) ? (

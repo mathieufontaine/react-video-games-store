@@ -10,7 +10,9 @@ const API_URL = "https://api.rawg.io/api/games";
 const KEY = process.env.REACT_APP_KEY;
 
 const VideoGamePage = props => {
-  const { findGame, wishlistGames, libraryGames } = useContext(StoreContext);
+  const { findGame, wishlistGames, libraryGames, changeTab } = useContext(
+    StoreContext
+  );
   const [game, setGame] = useState("");
   const ID = props.match.params.id;
 
@@ -122,13 +124,16 @@ const VideoGamePage = props => {
           )}
         </div>
 
-        <div className="actions">
+        <div className="button-container">
           <button className="btn">
             <Link to="/">Go to Store</Link>
           </button>
           {libraryGames.some(listGame => listGame.id === game.id) ? (
-            <button className="btn secondary">
-              <Link to={"/library"}>In Your library</Link>
+            <button
+              className="btn secondary"
+              onClick={() => changeTab("library")}
+            >
+              <Link to={"/library"}>Added to library</Link>
             </button>
           ) : (
             <button
@@ -139,8 +144,8 @@ const VideoGamePage = props => {
             </button>
           )}
           {wishlistGames.some(listGame => listGame.id === game.id) ? (
-            <button className="btn green">
-              <Link to={"/wishlist"}>In Your Wishlist </Link>
+            <button className="btn green" onClick={() => changeTab("wishlist")}>
+              <Link to={"/wishlist"}>Added to Wishlist </Link>
             </button>
           ) : (
             <button

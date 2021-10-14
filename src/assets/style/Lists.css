@@ -3,54 +3,39 @@
 }
 
 .custom-lists .section-title {
-  background-color: var(--secondary);
-  color: var(--primary);
+  background: var(--green);
+  color: var(--light);
 }
 
-.custom-lists .search-bar {
-  border-radius: 10px;
-}
-
-.custom-lists .empty-list {
-  margin: auto;
-}
-
-.custom-lists .empty-list h3 {
-  margin-bottom: 3rem;
-}
-
-.custom-lists .empty-list .indications {
+.custom-lists .indications {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   text-align: left;
   grid-gap: 2rem;
+  padding: 2rem;
 }
-.custom-lists .empty-list .indications > div {
+
+.custom-lists .indications > div {
   height: 220px;
-  padding: 0 2rem 2rem 2rem;
+  padding: 2rem;
   background: white;
   color: black;
   border-radius: 20px;
 }
 
-.custom-lists .empty-list .indications p strong {
-  color: var(--secondary);
+.custom-lists .indications p strong {
   font-size: 4rem;
   display: block;
   text-align: center;
 }
 
-.custom-lists .empty-list .indications p span {
+.custom-lists .indications p span {
   color: var(--secondary);
   font-size: 2rem;
   font-weight: 800;
-}
-
-.custom-lists .add-btn {
-  background-color: var(--primary);
-  color: white;
 }
 
 .lists {
@@ -67,7 +52,8 @@
   background-color: var(--primary);
   border-radius: 15px;
   margin: 1rem;
-  border: 2px solid var(--secondary);
+  padding: 1rem;
+  border: 3px solid var(--green);
 }
 
 .list .title {

@@ -20,10 +20,12 @@ button {
 }
 
 .button-container {
-  padding: 2rem 0;
-  width: 100%;
-  background: white;
-  z-index: 9;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: auto;
 }
 
 .actions {
@@ -38,24 +40,22 @@ button {
 }
 
 .store .actions .btn {
-  font-size: 1.5rem;
   margin: 0px;
-  padding: 20px;
+  padding: 2rem;
   border-radius: 0;
   width: 50%;
   cursor: pointer;
 }
 
 .store .actions .btn:hover {
-  background: var(--light);
-  transform: scale(1);
-  color: (--primary);
+  transform: none;
 }
 
-.video-game-page .actions .btn {
-  font-size: 20px;
-  margin: 20px;
-  padding: 15px;
+.btn--library:hover {
+  background: var(--secondary);
+}
+.btn--wishlist:hover {
+  background: var(--green);
 }
 
 .trash-btn {

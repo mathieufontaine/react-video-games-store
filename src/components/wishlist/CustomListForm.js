@@ -29,13 +29,13 @@ const CustomListForm = () => {
       <input
         type="text"
         className="search-bar"
-        placeholder="Add List.."
+        placeholder="2021 Christmas list, Action Game list.."
         value={title}
         onChange={e => setTitle(e.target.value)}
         required
       />
       <div className="buttons">
-        <button className="btn add-btn">Add new List</button>
+        <button className="btn">Add</button>
         {/* <button className="btn remove-btn"
                     onClick={removeList}>
                 Remove

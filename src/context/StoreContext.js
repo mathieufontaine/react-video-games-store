@@ -73,7 +73,7 @@ const StoreContextProvider = ({ children }) => {
   const randomNumber = () => Math.floor(Math.random() * (60 - 10 + 1) + 10);
 
   useEffect(() => {
-    getPopularGames();
+    // getPopularGames();
     localStorage.setItem("libraryGames", JSON.stringify(state.libraryGames));
     localStorage.setItem("favorites", JSON.stringify(state.favorites));
     localStorage.setItem("wishlistGames", JSON.stringify(state.wishlistGames));

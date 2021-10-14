@@ -26,8 +26,8 @@ const Wishlist = () => {
   return (
     <>
       <section className="wishlist">
-        <h2 className="section-title black">My Wishlist</h2>
-        <div className="section-innner">
+        <h2 className="section-title">My Wishlist</h2>
+        <div className="section-inner">
           {wishlistGames.length > 0 ? (
             <div>
               <ul className="games-list">
@@ -55,7 +55,7 @@ const Wishlist = () => {
             </div>
           ) : (
             <div className="empty-list">
-              <h3 className="empty-list-title">No Games.</h3>
+              <h3>No Games.</h3>
               <p>
                 To create Wishlists, you need to add some games from the{" "}
                 <Link to="/">
@@ -79,7 +79,7 @@ const Wishlist = () => {
         </div>
       </section>
       <section className="custom-lists">
-        <h2 className="section-title black">My Custom Wishlists</h2>
+        <h2 className="section-title">My Custom Wishlists</h2>
         <div className="section-inner">
           <CustomListForm />
           {customLists.length ? (
@@ -91,7 +91,8 @@ const Wishlist = () => {
             </ul>
           ) : (
             <div className="empty-list">
-              <h3>To create a custom wishlist your need to:</h3>
+              <h3>No Lists</h3>
+              <p>To create a custom wishlist your need to:</p>
               <div className="indications">
                 <div>
                   <p>

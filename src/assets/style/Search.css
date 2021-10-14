@@ -45,8 +45,17 @@
   border-radius: 0 10px 10px 0;
   color: var(--light);
   background-color: var(--primary);
+  border: 2px solid var(--light);
+}
+.search-box .btn:hover {
+  transform: none;
+  background: var(--light);
+  color: var(--primary);
 }
 
+.search-bar::placeholder {
+  font-style: italic;
+}
 .search-box .btn-secondary {
   border-radius: 10px;
   margin: 1rem;

@@ -45,6 +45,9 @@
   nav {
     display: initial !important;
   }
+  .navbar {
+    height: auto;
+  }
   .navbar .nav-tab {
     flex-direction: row;
     justify-content: center;
@@ -110,9 +113,6 @@
   .wishlist-item .cover {
     height: 100px;
   }
-  .custom-lists .empty-list .indications {
-    grid-template-columns: repeat(2, 1fr);
-  }
   .custom-lists .empty-list .indications > div {
     height: 150px;
   }
@@ -123,16 +123,20 @@
 
 @media (max-width: 580px) {
   html {
-    font-size: 45%;
+    font-size: 50%;
+  }
+  section {
+    border-radius: 0;
   }
   .container {
     width: 100%;
     min-height: 77vh;
+    padding: 2rem 0;
   }
   .header {
     height: 10vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
     align-items: center;
     justify-content: center;
     border-bottom: 3px solid var(--primary);
@@ -143,6 +147,8 @@
     left: 0;
     top: 0;
     margin: auto;
+    padding: 1rem;
+    width: 30%;
   }
   .hamburger:hover {
     color: initial;
@@ -159,6 +165,12 @@
 
   .nav-tab span {
     font-size: 2.2rem;
+  }
+  .game-page {
+    border-radius: 0;
+  }
+  .game-details > div {
+    padding: 2rem 0;
   }
   .game-card {
     width: 300px;
@@ -179,8 +191,7 @@
     /* bottom: 15vh; */
   }
   .button-container {
-    position: sticky;
-    top: 13vh;
+    flex-direction: column;
   }
   .library .btn {
     padding: 12px 6px;
@@ -214,6 +225,9 @@
   }
   .wishlist-item .cover {
     height: 60px;
+  }
+  .empty-list {
+    padding: 2rem 0;
   }
   .footer .container {
     padding: 1rem 0;

@@ -47,11 +47,7 @@
 } */
 
 .game-details {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
   padding: 2rem 0;
-  /* margin-bottom: 20px; */
   text-align: left;
   font-size: 1.5rem;
   width: 80%;
@@ -61,13 +57,11 @@
 .game-details > div {
   padding: 2rem;
 }
+
 .game-details h3 {
   margin-bottom: 2rem;
 }
 
 .game-page .actions {
   margin-bottom: 4rem;
-}
-.game-page .clip video {
-  /* width: auto; */
 }

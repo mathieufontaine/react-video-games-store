@@ -44,6 +44,10 @@
   margin: 1rem auto;
 }
 
+.library-item:hover {
+  border: 2px solid var(--secondary);
+}
+
 .library-item:hover > div {
   background-color: var(--primary);
   color: white;

@@ -7,7 +7,7 @@ import ScrollArrow from "../layout/ScrollArrow";
 const Library = () => {
   const [showDelete, setShowDelete] = useState(false);
   const [showFavorites, setShowFavorites] = useState(false);
-  const { libraryGames } = useContext(StoreContext);
+  const { libraryGames, changeTab } = useContext(StoreContext);
 
   const handleCancel = () => {
     setShowDelete(false);
@@ -16,21 +16,21 @@ const Library = () => {
 
   return (
     <section className="library">
-      <h2 className="section-title black">My Library</h2>
+      <h2 className="section-title">My Library</h2>
       {showDelete || showFavorites ? (
         <button className="btn" onClick={handleCancel}>
           Cancel
         </button>
       ) : (
         <div className="button-container">
-          <button className="btn secondary">
-            <Link to="/">Add Games to Library</Link>
+          <button className="btn" onClick={() => changeTab("store")}>
+            <Link to="/">Add Games From Store</Link>
           </button>
           <button
             className="btn secondary"
             onClick={() => setShowFavorites(true)}
           >
-            Add Games to Favorites
+            Send Games to Favorites
           </button>
           <button
             className="btn remove-btn"

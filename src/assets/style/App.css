@@ -39,6 +39,27 @@ body {
   margin: 0;
 }
 
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2.3rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+/* h4 {
+  font-size: 1.5rem;
+} */
+
+p {
+  font-size: 1.7rem;
+  line-height: 2;
+}
+
 a {
   text-decoration: none;
   /* text-transform: uppercase; */
@@ -75,7 +96,6 @@ main {
 
 section {
   /* height: 100%; */
-
   width: 100%;
   max-width: 1100px;
   margin: auto;
@@ -86,44 +106,25 @@ section {
 
 .section-inner {
   height: 100%;
-  /* width: 100%; */
   margin: auto;
   padding: 2rem;
+}
+
+.section-title {
+  height: 60px;
+  width: 100%;
+  margin: 0 auto 2rem;
+  text-align: center;
+  line-height: 60px;
+  background: var(--light);
+  color: var(--primary);
 }
 
 .empty-list {
   padding: 2rem 4rem;
   text-align: center;
-  /* width: 100%; */
   height: 100%;
   margin: auto;
-  /* background: white; */
-}
-
-.empty-list p,
-.empty-list-title {
-  color: var(--primary);
-}
-
-h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
-  font-size: 2.2rem;
-}
-
-h3 {
-  font-size: 2rem;
-}
-
-/* h4 {
-  font-size: 1.5rem;
-} */
-
-p {
-  font-size: 1.5rem;
-  line-height: 1.6;
 }
 
 .hide {
@@ -159,42 +160,9 @@ p {
   color: var(--secondary);
 }
 
-.white {
-  background-color: white;
-  color: black;
-}
-
 .green {
   background-color: var(--green);
   color: white;
-}
-
-.black {
-  background-color: black;
-  color: white;
-}
-
-.purple {
-  background-color: var(--secondary);
-  color: white;
-}
-
-.blue {
-  background-color: rgb(76, 157, 208);
-  color: white;
-}
-
-.yellow {
-  background-color: rgb(223, 223, 34);
-  color: black;
-}
-
-.section-title {
-  height: 60px;
-  width: 100%;
-  margin: auto;
-  text-align: center;
-  line-height: 60px;
 }
 
 .page-title {
